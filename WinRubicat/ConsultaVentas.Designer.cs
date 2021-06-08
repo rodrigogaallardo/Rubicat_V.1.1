@@ -59,7 +59,7 @@
             // ConsultaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(590, 330);
+            this.ClientSize = new System.Drawing.Size(808, 440);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnVentas);
             this.Name = "ConsultaVentas";

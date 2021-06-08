@@ -12,51 +12,56 @@ namespace WinRubicat
 {
     public partial class FrmVenta : Form
     {
+        public delegate void DelegadoTabla(List<DetalleVenta> carrito);
+        List<DetalleVenta> carrito = new List<DetalleVenta>();
+
+        // Clases a usar en los métodos
+        Logica.Venta objLogicaVenta = new Logica.Venta();
+        Logica.Producto objLogProd = new Logica.Producto();
+        Logica.DetalleVenta objLogDet = new Logica.DetalleVenta();
         public FrmVenta()
         {
             InitializeComponent();
-            btnAgregarVta.Click += botones;
-            btnCancelar.Click += botones;
-            btnNuevoCliente.Click += botones;
-            btnNuevoVendedor.Click += botones;
-            btnAgregarProd.Click += botones;
-            dgvProductos.CellEndEdit += ModificarCantidad;
+            btnAgregarVta.Click += Botones;
+            btnCancelar.Click += Botones;
+            btnNuevoCliente.Click += Botones;
+            btnNuevoVendedor.Click += Botones;
+            btnAgregarProd.Click += Botones;
+            btnDescuento.Click += Botones;
+            dgvProductos.CellEndEdit += ModificarCarrito;
             dtpFecha.Value = DateTime.Now;
             LlenarCombos();
         }
 
-        private void ModificarCantidad(object sender, DataGridViewCellEventArgs e)
+        /// <summary>
+        /// Modificar el carrito del <typeparamref name="DataGridView"/> basándose en las modificaciones
+        /// hechas en el control y carga Subtotal y Total
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ModificarCarrito(object sender, DataGridViewCellEventArgs e)
         {
             int intCant = Convert.ToInt32(dgvProductos.CurrentRow.Cells[2].Value);
             decimal decImporte = Convert.ToDecimal(dgvProductos.CurrentRow.Cells[4].Value);
             int intIndex = Convert.ToInt32(dgvProductos.CurrentRow.Cells[0].Value);
-            foreach(var prod in carrito)
-            {
-                if (prod.ProductoId == intIndex)
-                {
-                    prod.Cantidad = intCant;
-                    prod.Precio = decImporte;
-                }
-            }
-            CargarTabla(carrito);
+
+            objLogDet.ModificarCarrito(intCant, decImporte, intIndex, carrito);
+            CargarTotales();
+            AplicarDescuento();
+            BeginInvoke(new DelegadoTabla(CargarTabla), carrito);
         }
 
-        List<DetalleVenta> carrito = new List<DetalleVenta>();
-        private void botones(object sender, EventArgs e)
+        private void Botones(object sender, EventArgs e)
         {
             Button boton = sender as Button;
-
-            // Clases a usar en los métodos
-            Logica.Venta objLogicaVenta = new Logica.Venta();
-            Logica.Producto objLogProd = new Logica.Producto();
-            Logica.DetalleVenta objLogDet = new Logica.DetalleVenta();
 
             switch (boton.Name)
             {
                 case "btnAgregarVta":
                     Venta objModelVenta = new Venta();
+                    objModelVenta.Importe = Convert.ToDecimal(txtTotal.Text);
                     objLogicaVenta.CargarVenta(objModelVenta, carrito);
-                    objModelVenta.Fecha = DateTime.Now ;
+                    objModelVenta.Fecha = dtpFecha.Value;
                     objModelVenta.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
                     objModelVenta.VendedorId = Convert.ToInt32(cboVendedor.SelectedValue);
                     objLogicaVenta.AgregarVenta(objModelVenta);
@@ -78,7 +83,7 @@ namespace WinRubicat
                 case "btnAgregarProd":
                     //Agrega productos a la DataGridView del formulario
                     DetalleVenta nItem = new DetalleVenta();
-                    Producto prod = new Producto();
+                    Producto prod;
                     prod = objLogProd.TraerPorId(Convert.ToInt32(cboProducto.SelectedValue));
                     decimal precio = Convert.ToDecimal(txtPrecio.Text);
                     nItem.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
@@ -87,14 +92,25 @@ namespace WinRubicat
                     nItem.Costo = prod.Costo;
                     nItem.Peso = prod.Peso;
                     // Comprueba si ya se agrego un producto con el mismo id y sino lo agrega
-                    objLogDet.CargarProductos(nItem, carrito);
-                    // Carga la tabla en base a una List<DetalleVenta>
+                    objLogDet.CargarCarrito(nItem, carrito);
+                    // Carga la tabla en base al carrito
+                    CargarTotales();
+                    AplicarDescuento();
                     CargarTabla(carrito);
+                    break;
+                case "btnDescuento":
+                    AplicarDescuento();
                     break;
                 case "btnCancelar":
                     this.Close();
                     break;
             }
+        }
+
+        void CargarTotales()
+        {
+            txtSubTotal.Text = objLogDet.CargarSubtotal(carrito).ToString();
+            txtTotal.Text = objLogDet.CargarTotal(carrito).ToString();
         }
 
         /// <summary>
@@ -104,7 +120,6 @@ namespace WinRubicat
         /// <param name="ventas"></param>
         void CargarTabla(List<DetalleVenta> ventas)
         {
-            Logica.Producto prod = new Logica.Producto();
             DataTable dtProductos = new DataTable();
             dtProductos.Columns.Add("IdProducto", typeof(int));
             dtProductos.Columns.Add("Nombre", typeof(string));
@@ -114,12 +129,12 @@ namespace WinRubicat
             dtProductos.Columns.Add("Importe", typeof(decimal));
             dtProductos.Columns.Add("Rentabilidad Bruta", typeof(decimal));
             dtProductos.Columns.Add("CMV", typeof(decimal));
-
+            
             foreach (var venta in ventas)
             {
                 DataRow fila = dtProductos.NewRow();
                 fila["IdProducto"] = venta.ProductoId; ;
-                fila["Nombre"] = prod.TraerPorId(venta.ProductoId).Nombre;
+                fila["Nombre"] = objLogProd.TraerPorId(venta.ProductoId).Nombre;
                 fila["Cantidad"] = venta.Cantidad;
                 fila["Costo unidad"] = Math.Round(venta.Costo, 2);
                 fila["Precio unidad"] = Math.Round(venta.Precio, 2);
@@ -129,9 +144,35 @@ namespace WinRubicat
 
                 dtProductos.Rows.Add(fila);
             }
-
             dgvProductos.DataSource = dtProductos;
         }
+
+        void AplicarDescuento()
+        {
+            decimal descuento=0;
+            string tipo;
+            if (txtDescuento.Text=="")
+            {
+                txtDescuento.Text = "0";
+            }
+            else
+            {
+                txtVerDesc.Text = txtDescuento.Text;
+            }
+            descuento = Convert.ToDecimal(txtVerDesc.Text);
+
+            if (rbEfectivo.Checked==true & carrito.Count>0)
+            {
+                tipo = rbEfectivo.Text;
+                txtTotal.Text = Convert.ToString(objLogDet.TraerDescuento(carrito, descuento, tipo));
+            }
+            else if(rbPorcentaje.Checked==true & carrito.Count > 0)
+            {
+                tipo = rbPorcentaje.Text;
+                txtTotal.Text = Convert.ToString(objLogDet.TraerDescuento(carrito, descuento, tipo));
+            }
+        }
+
         /// <summary>
         /// Carga los ComboBox del formulario mostrando el campo "Nombre" del registro
         /// y guardando como valor el campo "Id" del mismo

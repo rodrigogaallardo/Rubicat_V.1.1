@@ -41,9 +41,9 @@ namespace Logica
         /// de clientes de la base de datos
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.Cliente> TraerClientes()
+        public List<object> TraerClientes()
         {
-            return AdmCliente.SelectClientes();
+            return AdmCliente.SelectClientes().ToList();
         }
     }
 }

@@ -58,10 +58,13 @@
             this.lblTitDatos = new System.Windows.Forms.Label();
             this.lblTitDescuentos = new System.Windows.Forms.Label();
             this.tlpDescuentos = new System.Windows.Forms.TableLayoutPanel();
-            this.txtDescuento = new System.Windows.Forms.TextBox();
-            this.btnDescuento = new System.Windows.Forms.Button();
-            this.rbPorcentaje = new System.Windows.Forms.RadioButton();
             this.rbEfectivo = new System.Windows.Forms.RadioButton();
+            this.btnDescuento = new System.Windows.Forms.Button();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.rbPorcentaje = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tlpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tlpProductos.SuspendLayout();
@@ -293,6 +296,7 @@
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Location = new System.Drawing.Point(13, 331);
             this.dgvProductos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvProductos.MultiSelect = false;
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersVisible = false;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -344,6 +348,7 @@
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(100, 29);
             this.txtSubTotal.TabIndex = 28;
+            this.txtSubTotal.Text = "0";
             // 
             // txtTotal
             // 
@@ -352,6 +357,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 29);
             this.txtTotal.TabIndex = 30;
+            this.txtTotal.Text = "0";
             // 
             // txtVerDesc
             // 
@@ -360,6 +366,7 @@
             this.txtVerDesc.ReadOnly = true;
             this.txtVerDesc.Size = new System.Drawing.Size(100, 29);
             this.txtVerDesc.TabIndex = 29;
+            this.txtVerDesc.Text = "0";
             // 
             // lblTitProductos
             // 
@@ -430,13 +437,17 @@
             this.tlpDescuentos.Size = new System.Drawing.Size(262, 100);
             this.tlpDescuentos.TabIndex = 2;
             // 
-            // txtDescuento
+            // rbEfectivo
             // 
-            this.txtDescuento.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDescuento.Location = new System.Drawing.Point(3, 60);
-            this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(120, 29);
-            this.txtDescuento.TabIndex = 8;
+            this.rbEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbEfectivo.AutoSize = true;
+            this.rbEfectivo.Location = new System.Drawing.Point(154, 12);
+            this.rbEfectivo.Name = "rbEfectivo";
+            this.rbEfectivo.Size = new System.Drawing.Size(82, 25);
+            this.rbEfectivo.TabIndex = 11;
+            this.rbEfectivo.TabStop = true;
+            this.rbEfectivo.Text = "Efectivo";
+            this.rbEfectivo.UseVisualStyleBackColor = true;
             // 
             // btnDescuento
             // 
@@ -450,6 +461,15 @@
             this.btnDescuento.Text = "Aplicar";
             this.btnDescuento.UseVisualStyleBackColor = true;
             // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDescuento.Location = new System.Drawing.Point(3, 60);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(120, 29);
+            this.txtDescuento.TabIndex = 8;
+            this.txtDescuento.Text = "0";
+            // 
             // rbPorcentaje
             // 
             this.rbPorcentaje.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -462,23 +482,41 @@
             this.rbPorcentaje.Text = "Porcentaje";
             this.rbPorcentaje.UseVisualStyleBackColor = true;
             // 
-            // rbEfectivo
+            // label1
             // 
-            this.rbEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbEfectivo.AutoSize = true;
-            this.rbEfectivo.Location = new System.Drawing.Point(154, 12);
-            this.rbEfectivo.Name = "rbEfectivo";
-            this.rbEfectivo.Size = new System.Drawing.Size(82, 25);
-            this.rbEfectivo.TabIndex = 11;
-            this.rbEfectivo.TabStop = true;
-            this.rbEfectivo.Text = "Efectivo";
-            this.rbEfectivo.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(784, 604);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(19, 21);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "$";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(784, 569);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(19, 21);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "$";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(784, 534);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(19, 21);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "$";
             // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 646);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tlpDescuentos);
             this.Controls.Add(this.lblTitDescuentos);
             this.Controls.Add(this.lblTitDatos);
@@ -548,5 +586,8 @@
         private System.Windows.Forms.Button btnDescuento;
         private System.Windows.Forms.RadioButton rbEfectivo;
         private System.Windows.Forms.RadioButton rbPorcentaje;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

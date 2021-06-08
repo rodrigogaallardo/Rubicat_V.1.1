@@ -17,10 +17,10 @@ namespace Logica
         /// </summary>
         /// <param name="prod"></param>
         /// <param name="ventas"></param>
-        public void CargarProductos(Entidades.DetalleVenta prod, List<Entidades.DetalleVenta> ventas)
+        public void CargarCarrito(Entidades.DetalleVenta prod, List<Entidades.DetalleVenta> carrito)
         {
             int cont = 0;
-            foreach (var venta in ventas)
+            foreach (var venta in carrito)
             {
                 if (venta.ProductoId == prod.ProductoId)
                 {
@@ -33,8 +33,54 @@ namespace Logica
             if (cont == 0)
             {
                 prod.Peso=prod.Cantidad* (infoProducto.TraerPorId(prod.ProductoId).Peso);
-                ventas.Add(prod);
+                carrito.Add(prod);
             }
+        }
+        public void ModificarCarrito(int cant, decimal importe, int id, List<Entidades.DetalleVenta> carrito)
+        {
+            foreach (var prod in carrito)
+            {
+                if (prod.ProductoId == id)
+                {
+                    prod.Cantidad = cant;
+                    prod.Precio = importe;
+                }
+            }
+        }
+        public decimal CargarTotal(List<Entidades.DetalleVenta> carrito)
+        {
+            decimal total = 0;
+            foreach(var prod in carrito)
+            {
+                total += prod.Cantidad * prod.Precio;
+            }
+            return total;
+        }
+        public decimal CargarSubtotal(List<Entidades.DetalleVenta> carrito)
+        {
+            decimal subtotal = 0;
+            foreach (var prod in carrito)
+            {
+                subtotal += prod.Cantidad * prod.Precio;
+            }
+            return subtotal;
+        }
+        public decimal TraerDescuento(List<Entidades.DetalleVenta> carrito, decimal desc, string tipo)
+        {
+            decimal total = 0;
+            foreach(var prod in carrito)
+            {
+                total += prod.Precio * prod.Cantidad;
+            }
+            if (tipo == "Efectivo")
+            {
+                total -= desc;
+            }
+            else if (tipo=="Porcentaje")
+            {
+                total = total-(total * desc / 100);
+            }
+            return total;
         }
         public List<object> TraerDetalle()
         {

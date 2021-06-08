@@ -42,9 +42,9 @@ namespace Logica
         /// de la tabla Venta de la base de datos
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.Venta> TraerVentas()
+        public List<object> TraerVentas()
         {
-            return AdmVenta.SelectVentas();
+            return AdmVenta.SelectVentas().ToList();
         }
         /// <summary>
         /// Recibe como parámetros una instancia de <typeparamref name="Venta"/> y una
@@ -60,7 +60,7 @@ namespace Logica
             foreach(var prod in prods)
             {
                 venta.Cvm += prod.Costo*prod.Cantidad;
-                venta.Importe += prod.Precio*prod.Cantidad;
+                //venta.Importe += prod.Precio*prod.Cantidad;
                 venta.Cantidad += prod.Cantidad;
                 venta.Peso += prod.Peso;
             }

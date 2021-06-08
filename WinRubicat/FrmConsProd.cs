@@ -54,10 +54,14 @@ namespace WinRubicat
                     break;
             }
             TraerProductos();
+            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
+            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
         }
         void TraerProductos()
         {
             dgvDatos.DataSource = objLogProd.TraerProductos();
+            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
+            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
         }
     }
 }
