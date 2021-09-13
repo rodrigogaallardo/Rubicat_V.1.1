@@ -76,13 +76,6 @@ namespace Datos
             rubicatDB.Ventas.Remove(venta);
             rubicatDB.SaveChanges();
         }
-        //public static List<Entidades.Venta> SelectVentas()
-        //{
-        //    DBRubicatContext rubicatDB = new DBRubicatContext();
-        //    var ventas = (from v in rubicatDB.Ventas
-        //                  select v).ToList();
-        //    return ventas;
-        //}
         public static IEnumerable<object> SelectVentas()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
@@ -95,8 +88,8 @@ namespace Datos
                              v.Cantidad,
                              Peso_Tot = Math.Round(v.Peso, 2),
                              Imp_Vta = Math.Round(v.Importe, 2),
-                             CVM=Math.Round(v.Cvm,2),
-                             Rent_Bruta=Math.Round(v.RentBruta,2),
+                             CVM = Math.Round(v.Cvm, 2),
+                             Rent_Bruta = Math.Round(v.RentBruta, 2),
                              Cliente = c.Nombre,
                              Vendedor = p.Nombre,
                              v.Fecha

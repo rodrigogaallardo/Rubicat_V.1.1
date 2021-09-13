@@ -86,5 +86,25 @@ namespace Logica
         {
             return AdmDetalleVenta.SelectVentas().ToList();
         }
+        public List<object> FiltrarDetalle(string tabla, DateTime inicio, DateTime fin, string orden)
+        {
+            List<object> lista = new List<object>();
+            switch (tabla)
+            {
+                case "Clientes":
+                    lista = AdmDetalleVenta.FiltrarClientes(inicio, fin, orden).ToList();
+                    break;
+                case "Vendedores":
+                    lista = AdmDetalleVenta.FiltrarVendedores(inicio, fin, orden).ToList();
+                    break;
+                case "Productos":
+                    lista = AdmDetalleVenta.FiltrarProductos(inicio, fin, orden).ToList();
+                    break;
+                default:
+                    break;
+            }
+            
+            return lista;
+        }
     }
 }

@@ -114,7 +114,7 @@
             this.cboVendedor.Items.AddRange(new object[] {
             "Jorge",
             "Andres"});
-            this.cboVendedor.Location = new System.Drawing.Point(94, 47);
+            this.cboVendedor.Location = new System.Drawing.Point(94, 51);
             this.cboVendedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboVendedor.Name = "cboVendedor";
             this.cboVendedor.Size = new System.Drawing.Size(208, 28);
@@ -130,7 +130,7 @@
             "Oh my Dog",
             "Tiendas del Sur",
             "Marynor"});
-            this.cboCliente.Location = new System.Drawing.Point(94, 6);
+            this.cboCliente.Location = new System.Drawing.Point(94, 10);
             this.cboCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(208, 28);
@@ -176,7 +176,7 @@
             "Rubicat Classic",
             "Rubicat Premium",
             "Rubicat Super Premium"});
-            this.cboProducto.Location = new System.Drawing.Point(94, 10);
+            this.cboProducto.Location = new System.Drawing.Point(94, 14);
             this.cboProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(209, 29);
@@ -311,7 +311,7 @@
             this.btnAgregarVta.Name = "btnAgregarVta";
             this.btnAgregarVta.Size = new System.Drawing.Size(135, 40);
             this.btnAgregarVta.TabIndex = 10;
-            this.btnAgregarVta.Text = "Agregar Venta";
+            this.btnAgregarVta.Text = "Agregar Pedido";
             this.btnAgregarVta.UseVisualStyleBackColor = true;
             // 
             // lblTotal
@@ -533,12 +533,12 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.tlpDatos);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmVenta";
-            this.Text = "NUEVA VENTA";
+            this.Text = "NUEVO PEDIDO";
             this.tlpDatos.ResumeLayout(false);
             this.tlpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

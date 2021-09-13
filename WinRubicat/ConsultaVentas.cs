@@ -13,15 +13,15 @@ namespace WinRubicat
         public ConsultaVentas()
         {
             InitializeComponent();
-            lblTipo.Text = "Clientes";
+            lblTipo.Text = "Pedidos";
+            dtpFechaInicio.Value = DateTime.Now.AddMonths(-1);
+            dtpFechaFin.Value = DateTime.Now;
             btnNuevo.Click += botones;
-            //btnModificar.Click += botones;
-            //btnBorrar.Click += botones;
             btnModificar.Visible = false;
             btnBorrar.Visible = false;
             btnVentas.Click += botones;
             btnDetalle.Click += botones;
-
+            btnAplicar.Click += botones;
             LlenarGridView();
         }
         Logica.DetalleVenta logDetalle;
@@ -34,10 +34,10 @@ namespace WinRubicat
             switch (boton.Name)
             {
                 case "btnNuevo":
-                    ConsultaVentas frmConsulta = new ConsultaVentas();
-                    frmConsulta.MdiParent = this;
-                    frmConsulta.StartPosition = FormStartPosition.CenterScreen;
-                    frmConsulta.Show();
+                    this.Close();
+                    FrmVenta frmVta = new FrmVenta();
+                    frmVta.StartPosition = FormStartPosition.CenterScreen;
+                    frmVta.Show();
                     break;
                 case "btnModificar":
                     break;
@@ -53,6 +53,22 @@ namespace WinRubicat
                     dgvDatos.Columns[5].DefaultCellStyle.Format = "N2";
                     dgvDatos.Columns[6].DefaultCellStyle.Format = "N2";
                     dgvDatos.Columns[7].DefaultCellStyle.Format = "N2";
+                    break;
+                case "btnAplicar":
+                    string strTabla = cboTabla.SelectedItem.ToString();
+                    DateTime dtInicio = dtpFechaInicio.Value;
+                    DateTime dtFin = dtpFechaFin.Value;
+                    string strOrden;
+                    if (rbAscendente.Checked)
+                    {
+                        strOrden = "asc";
+                    }
+                    else
+                    {
+                        strOrden = "desc";
+                    }
+                    logDetalle = new Logica.DetalleVenta();
+                    dgvDatos.DataSource= logDetalle.FiltrarDetalle(strTabla, dtInicio, dtFin, strOrden);
                     break;
                 default:
                     break;

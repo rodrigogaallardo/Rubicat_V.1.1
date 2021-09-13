@@ -187,7 +187,7 @@ namespace WinRubicat
 
             //Clientes
             cboCliente.DisplayMember = "Nombre";
-            cboCliente.ValueMember = "IdCliente";
+            cboCliente.ValueMember = "Id";
             Logica.Cliente objLogicaCli = new Logica.Cliente();
             cboCliente.DataSource = objLogicaCli.TraerClientes();
 

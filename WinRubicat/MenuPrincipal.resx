@@ -125,22 +125,22 @@
     <value>Segoe UI, 11.25pt</value>
   </data>
   <data name="tsmiNuevaVenta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 24</value>
+    <value>214, 24</value>
   </data>
   <data name="tsmiNuevaVenta.Text" xml:space="preserve">
-    <value>Nueva venta</value>
+    <value>Nuevo pedido</value>
   </data>
   <data name="tsmiConsultaVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 24</value>
+    <value>214, 24</value>
   </data>
   <data name="tsmiConsultaVentas.Text" xml:space="preserve">
-    <value>Consulta de ventas</value>
+    <value>Consulta de pedidos</value>
   </data>
   <data name="ventasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 24</value>
+    <value>73, 24</value>
   </data>
   <data name="ventasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ventas</value>
+    <value>Pedidos</value>
   </data>
   <data name="tsmiNuevoCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 24</value>

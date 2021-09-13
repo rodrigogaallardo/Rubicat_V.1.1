@@ -43,7 +43,7 @@
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Location = new System.Drawing.Point(12, 69);
+            this.dgvDatos.Location = new System.Drawing.Point(12, 64);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersVisible = false;
@@ -64,7 +64,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(307, 372);
+            this.btnSalir.Location = new System.Drawing.Point(279, 367);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(80, 25);
             this.btnSalir.TabIndex = 8;
@@ -105,7 +105,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 405);
+            this.ClientSize = new System.Drawing.Size(760, 433);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
@@ -121,11 +121,11 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSalir;
         public System.Windows.Forms.Button btnNuevo;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.Button btnBorrar;
         public System.Windows.Forms.Label lblTipo;
         public System.Windows.Forms.DataGridView dgvDatos;
+        public System.Windows.Forms.Button btnSalir;
     }
 }
