@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace Datos.Data
 {
-    public class DBRubicatContext:DbContext
+    public class DBRubicatContext : DbContext
     {
         private void FixEfProviderServicesProblem()
         {
@@ -25,8 +25,41 @@ namespace Datos.Data
         public DbSet<Entidades.Zona> Zonas { get; set; }
         public DbSet<Entidades.DetalleVenta> DetalleVentas { get; set; }
 
+        public DbSet<Entidades.Deposito> Depositos { get; set; }
+        public DbSet<Entidades.IngresoStock> IngresosStock { get; set; }
+        public DbSet<Entidades.MateriaPrima> MateriaPrimas { get; set; }
+        public DbSet<Entidades.Stock> Stocks { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //TablaDeposito
+            modelBuilder.Entity<Entidades.Deposito>().HasKey(d => d.IdDeposito);
+            modelBuilder.Entity<Entidades.Deposito>().HasMany(d => d.IngresosStock).WithRequired().HasForeignKey(d => d.DepositoId);
+            modelBuilder.Entity<Entidades.Deposito>().Property(d => d.Nombre).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Deposito>().Property(d => d.Descripcion).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Deposito>().Property(d => d.Espacio).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Deposito>().ToTable("Depositos");
+            //TablaStock
+            modelBuilder.Entity<Entidades.Stock>().HasKey(s => s.IdStockTotal);
+            //modelBuilder.Entity<Entidades.Stock>().HasKey(s => new { s.DepositoID, s.MateriaPrimaID });
+            modelBuilder.Entity<Entidades.Stock>().HasRequired(s => s.Deposito).WithMany().HasForeignKey(s => s.DepositoID).WillCascadeOnDelete(true);
+            modelBuilder.Entity<Entidades.Stock>().HasRequired(s => s.MateriaPrima).WithMany().HasForeignKey(s => s.MateriaPrimaID).WillCascadeOnDelete(true);
+            modelBuilder.Entity<Entidades.Stock>().Property(s => s.Cantidad).IsRequired().HasColumnType("int");
+            modelBuilder.Entity<Entidades.Stock>().ToTable("Stock");
+            //TablaIngresoStocks
+            modelBuilder.Entity<Entidades.IngresoStock>().HasKey(i => i.IdIngreso);
+            modelBuilder.Entity<Entidades.IngresoStock>().Property(i => i.FechaIngreso).IsRequired().HasColumnType("date");
+            modelBuilder.Entity<Entidades.IngresoStock>().Property(i => i.Cantidad).IsRequired().HasColumnType("int");
+            modelBuilder.Entity<Entidades.IngresoStock>().Property(i => i.NumeroRemito).IsRequired().HasColumnType("int");
+            modelBuilder.Entity<Entidades.IngresoStock>().Property(i => i.Responsable).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.IngresoStock>().ToTable("IngresosStock");
+            //MateriaPrimas
+            modelBuilder.Entity<Entidades.MateriaPrima>().HasKey(m => m.IdMateriaPrima);
+            modelBuilder.Entity<Entidades.MateriaPrima>().HasMany(m => m.IngresosStock).WithRequired().HasForeignKey(m => m.MateriaPrimaId);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.NombreMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.CostoMateriaPrima).IsRequired().HasColumnType("money");
+            modelBuilder.Entity<Entidades.MateriaPrima>().ToTable("MateriasPrimas");
+
             //TablaVenta
             modelBuilder.Entity<Entidades.Venta>().HasKey(v => v.IdVenta);
             modelBuilder.Entity<Entidades.Venta>().HasMany(v => v.DetalleVentas).WithRequired().HasForeignKey(v => v.VentaId);

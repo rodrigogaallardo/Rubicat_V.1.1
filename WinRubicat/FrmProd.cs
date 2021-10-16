@@ -36,11 +36,13 @@ namespace WinRubicat
             lblCod.Text = producto.IdProducto.ToString();
             lblTitulo.Text = "Modificar Producto";
             btnAgregar.Text = "Modificar";
+
             txtNombre.Text = producto.Nombre;
             txtPeso.Text = producto.Peso.ToString();
             txtCosto.Text = producto.Costo.ToString();
             txtPrecio.Text = producto.Precio.ToString();
             txtEan.Text = producto.Ean.ToString();
+
             Estado = Operacion.Modificacion;
         }
 

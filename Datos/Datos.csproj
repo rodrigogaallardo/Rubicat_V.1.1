@@ -51,12 +51,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdmCliente.cs" />
+    <Compile Include="Admin\AdmDeposito.cs" />
     <Compile Include="Admin\AdmDetalleVenta.cs" />
+    <Compile Include="Admin\AdmIngresoStock.cs" />
+    <Compile Include="Admin\AdmMateriaPrima.cs" />
+    <Compile Include="Admin\AdmStock.cs" />
     <Compile Include="Data\DBRubicatContext.cs" />
     <Compile Include="Admin\AdmProducto.cs" />
     <Compile Include="Migrations\202106052159215_init.cs" />
     <Compile Include="Migrations\202106052159215_init.Designer.cs">
       <DependentUpon>202106052159215_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs" />
+    <Compile Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.Designer.cs">
+      <DependentUpon>202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202110131905193_CambioStockTotal.cs" />
+    <Compile Include="Migrations\202110131905193_CambioStockTotal.Designer.cs">
+      <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +98,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106052159215_init.resx">
       <DependentUpon>202106052159215_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.resx">
+      <DependentUpon>202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110131905193_CambioStockTotal.resx">
+      <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

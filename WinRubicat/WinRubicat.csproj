@@ -33,7 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -51,6 +58,12 @@
     </Compile>
     <Compile Include="ConsultaVentas.Designer.cs">
       <DependentUpon>ConsultaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAromas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAromas.Designer.cs">
+      <DependentUpon>FrmAromas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
@@ -70,17 +83,83 @@
     <Compile Include="FrmConsProd.Designer.cs">
       <DependentUpon>FrmConsProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultaDeposito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaDeposito.Designer.cs">
+      <DependentUpon>FrmConsultaDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultasMateriasPrimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultasMateriasPrimas.Designer.cs">
+      <DependentUpon>FrmConsultasMateriasPrimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultasStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultasStock.Designer.cs">
+      <DependentUpon>FrmConsultasStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsVend.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsVend.Designer.cs">
       <DependentUpon>FrmConsVend.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDepositos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDepositos.Designer.cs">
+      <DependentUpon>FrmDepositos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEtiqueta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEtiqueta.Designer.cs">
+      <DependentUpon>FrmEtiqueta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresosStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresosStock.Designer.cs">
+      <DependentUpon>FrmIngresosStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMateriasPrimas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMateriasPrimas.Designer.cs">
+      <DependentUpon>FrmMateriasPrimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModificar.Designer.cs">
+      <DependentUpon>FrmModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPackaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPackaging.Designer.cs">
+      <DependentUpon>FrmPackaging.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmProd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmProd.Designer.cs">
       <DependentUpon>FrmProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockTotal.Designer.cs">
+      <DependentUpon>FrmStockTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTapas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTapas.Designer.cs">
+      <DependentUpon>FrmTapas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVendedor.cs">
       <SubType>Form</SubType>
@@ -117,17 +196,38 @@
     <EmbeddedResource Include="ConsultaVentas.resx">
       <DependentUpon>ConsultaVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAromas.resx">
+      <DependentUpon>FrmAromas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsProd.resx">
       <DependentUpon>FrmConsProd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaDeposito.resx">
+      <DependentUpon>FrmConsultaDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultasMateriasPrimas.resx">
+      <DependentUpon>FrmConsultasMateriasPrimas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmConsVend.resx">
       <DependentUpon>FrmConsVend.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDepositos.resx">
+      <DependentUpon>FrmDepositos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMateriasPrimas.resx">
+      <DependentUpon>FrmMateriasPrimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModificar.resx">
+      <DependentUpon>FrmModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmProd.resx">
       <DependentUpon>FrmProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockTotal.resx">
+      <DependentUpon>FrmStockTotal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVendedor.resx">
       <DependentUpon>FrmVendedor.cs</DependentUpon>
@@ -159,6 +259,7 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

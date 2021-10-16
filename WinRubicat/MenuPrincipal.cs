@@ -16,6 +16,7 @@ namespace WinRubicat
         {
             InitializeComponent();
             this.MaximizeBox = true;
+
             tsmiNuevaVenta.Click += OpcionesMenu;
             tsmiConsultaVentas.Click += OpcionesMenu;
             tsmiNuevoVendedor.Click += OpcionesMenu;
@@ -24,17 +25,141 @@ namespace WinRubicat
             tsmiConsultaClientes.Click += OpcionesMenu;
             tsmiNuevoProd.Click += OpcionesMenu;
             tsmiConsultaProd.Click += OpcionesMenu;
+            //******************************************//
+            //********Ingresar Productos a Stock********//
+            //******************************************//
+
+            tsmiPackaging.Click += OpcionesMenu;
+            tsmiEtiquetas.Click += OpcionesMenu;
+            tsmiAromas.Click += OpcionesMenu;
+            tsmiTapas.Click += OpcionesMenu;
+            tsmiMateriaPrima.Click += OpcionesMenu;
+
+            tsmiIngresarDepositos.Click += OpcionesMenu;
+            tsmiIngresarStock.Click += OpcionesMenu;
+            //******************************************//
+            //****Consultar el stock de los productos***//
+            //******************************************//
+
+            tsmiArticulos.Click += OpcionesMenu;
+            tsmiVerDepositos.Click += OpcionesMenu;
+            tsmiConsultarStock.Click += OpcionesMenu;
+            tsmiStockTotal.Click += OpcionesMenu;
+            //*****************************************//
+        }
+
+        private void TsmiIngresarStock_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void TsmiIngresarDepositos_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void OpcionesMenu(object sender, EventArgs e)
         {
             ToolStripMenuItem opcion = sender as ToolStripMenuItem;
-            foreach(var mdi in MdiChildren)
+            foreach (var mdi in MdiChildren)
             {
                 mdi.Close();
             }
             switch (opcion.Name)
             {
+                //******************************************//
+                //********Consultar Productos a Stock********//
+                //******************************************//
+                case "tsmiConsultarStock":
+                    FrmConsultasStock FrmConsultasStockPri = new FrmConsultasStock();
+                    FrmConsultasStockPri.MdiParent = this;
+                    FrmConsultasStockPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultasStockPri.Dock = DockStyle.Fill;
+                    FrmConsultasStockPri.Show();
+                    break;
+                case "tsmiVerDepositos":
+                    FrmConsultaDeposito FrmConsultaDepositoPri = new FrmConsultaDeposito();
+                    FrmConsultaDepositoPri.MdiParent = this;
+                    FrmConsultaDepositoPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultaDepositoPri.Dock = DockStyle.Fill;
+                    FrmConsultaDepositoPri.Show();
+                    break;
+                case "tsmiArticulos":
+                    FrmConsultasMateriasPrimas FrmConsultaMateriasPrimasPri = new FrmConsultasMateriasPrimas();
+                    FrmConsultaMateriasPrimasPri.MdiParent = this;
+                    FrmConsultaMateriasPrimasPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultaMateriasPrimasPri.Dock = DockStyle.Fill;
+                    FrmConsultaMateriasPrimasPri.Show();
+                    break;
+                case "tsmiStockTotal":
+                    FrmStockTotal FrmStockTotalPri = new FrmStockTotal();
+                    FrmStockTotalPri.MdiParent = this;
+                    FrmStockTotalPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmStockTotalPri.Dock = DockStyle.Fill;
+                    FrmStockTotalPri.Show();
+                    break;
+
+                //******************************************//
+                //********Ingresar Productos a Stock********//
+                //******************************************//
+
+                case "tsmiIngresarStock":
+                    FrmIngresosStock FrmIngresosStockPri = new FrmIngresosStock();
+                    FrmIngresosStockPri.MdiParent = this;
+                    FrmIngresosStockPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmIngresosStockPri.Dock = DockStyle.Fill;
+                    FrmIngresosStockPri.Show();
+                    break;
+
+                case "tsmiIngresarDepositos":
+                    FrmDepositos FrmDepositosPrim = new FrmDepositos();
+                    FrmDepositosPrim.MdiParent = this;
+                    FrmDepositosPrim.StartPosition = FormStartPosition.CenterScreen;
+                    FrmDepositosPrim.Dock = DockStyle.Fill;
+                    FrmDepositosPrim.Show();
+                    break;
+
+                case "tsmiMateriaPrima":
+                    FrmMateriasPrimas FrmMateriasPrimasPri = new FrmMateriasPrimas();
+                    FrmMateriasPrimasPri.MdiParent = this;
+                    FrmMateriasPrimasPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmMateriasPrimasPri.Dock = DockStyle.Fill;
+                    FrmMateriasPrimasPri.Show();
+                    break;
+
+                case "tsmiAromas":
+                    FrmAromas FrmAromasPrim = new FrmAromas();
+                    FrmAromasPrim.MdiParent = this;
+                    FrmAromasPrim.StartPosition = FormStartPosition.CenterScreen;
+                    FrmAromasPrim.Dock = DockStyle.Fill;
+                    FrmAromasPrim.Show();
+                    break;
+
+                case "tsmiTapas":
+                    FrmTapas FrmTapasPrim = new FrmTapas();
+                    FrmTapasPrim.MdiParent = this;
+                    FrmTapasPrim.StartPosition = FormStartPosition.CenterScreen;
+                    FrmTapasPrim.Dock = DockStyle.Fill;
+                    FrmTapasPrim.Show();
+                    break;
+
+                case "tsmiPackaging":
+                    FrmPackaging FrmPacka = new FrmPackaging();
+                    FrmPacka.MdiParent = this;
+                    FrmPacka.StartPosition = FormStartPosition.CenterScreen;
+                    FrmPacka.Dock = DockStyle.Fill;
+                    FrmPacka.Show();
+                    break;
+
+                case "tsmiEtiquetas":
+                    FrmEtiqueta FrmEtiq = new FrmEtiqueta();
+                    FrmEtiq.MdiParent = this;
+                    FrmEtiq.StartPosition = FormStartPosition.CenterScreen;
+                    FrmEtiq.Dock = DockStyle.Fill;
+                    FrmEtiq.Show();
+                    break;
+                //******************************************//
+
                 case "tsmiNuevaVenta":
                     FrmVenta FrmNuevaVent = new FrmVenta();
                     FrmNuevaVent.MdiParent = this;
@@ -94,6 +219,16 @@ namespace WinRubicat
                 default:
                     break;
             }
+        }
+
+        private void sectorBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ingresarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
