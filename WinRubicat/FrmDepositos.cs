@@ -67,7 +67,7 @@ namespace WinRubicat
                     {
                         case Operacion.Alta:
                             objLogDep.AgregarDeposito(depositoMod);
-                            MessageBox.Show("Producto agregado correctamente.");
+                            MessageBox.Show("Deposito agregado correctamente.");
                             Close();
                             break;
                         case Operacion.Modificacion:

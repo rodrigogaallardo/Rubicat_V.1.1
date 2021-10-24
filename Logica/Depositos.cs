@@ -29,5 +29,9 @@ namespace Logica
             return AdmDeposito.SelectDepositos();
         }
 
+        public Entidades.Deposito SelectId(int id)
+        {
+            return AdmDeposito.SelectId(id);
+        }
     }
 }

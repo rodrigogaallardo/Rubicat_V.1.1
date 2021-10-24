@@ -27,6 +27,7 @@ namespace WinRubicat
             Logica.Depositos objlogica = new Logica.Depositos();
             dgvDepositos.DataSource = objlogica.TraerDeposito();
         }
+
         Logica.Depositos objDep = new Logica.Depositos();
 
         public void botones(object sender, EventArgs e)
@@ -37,29 +38,40 @@ namespace WinRubicat
                 case "btnAgregarDeposito":
                     FrmDepositos frmDeposito = new FrmDepositos();
                     frmDeposito.StartPosition = FormStartPosition.CenterScreen;
+                    frmDeposito.FormClosing += ActualizarGrid;
                     frmDeposito.Show();
                     break;
                 case "btnBorrar":
                     int id = Convert.ToInt32(dgvDepositos.CurrentRow.Cells[0].Value);
                     objDep.BorrarDeposito(id);
-
+                    TraerDepositos();
                     break;
                 case "btnModificar":
                     //Crear instancia de producto y cargar datos del registro seleccionado
                     Deposito depositoMod = new Deposito();
+
                     depositoMod.IdDeposito = Convert.ToInt32(dgvDepositos.CurrentRow.Cells[0].Value);
-                    depositoMod.Nombre = dgvDepositos.CurrentRow.Cells[1].Value.ToString();
-                    depositoMod.Descripcion = dgvDepositos.CurrentRow.Cells[2].Value.ToString();
-                    depositoMod.Espacio = dgvDepositos.CurrentRow.Cells[3].Value.ToString();
+                    depositoMod = objDep.SelectId(depositoMod.IdDeposito);
+
                     // Mostrar formulario modificacion
                     FrmDepositos frmDepositoMod = new FrmDepositos(depositoMod);
                     frmDepositoMod.StartPosition = FormStartPosition.CenterScreen;
+                    frmDepositoMod.FormClosing += ActualizarGrid;
                     frmDepositoMod.Show();
+
+                    
                     break;
                 case "btnSalir":
                     Close();
                     break;
+             
             }
+            TraerDepositos();
+        }
+
+        private void ActualizarGrid(object sender, FormClosingEventArgs e)
+        {
+            TraerDepositos();
         }
 
         private void FrmConsultaDeposito_Load(object sender, EventArgs e)

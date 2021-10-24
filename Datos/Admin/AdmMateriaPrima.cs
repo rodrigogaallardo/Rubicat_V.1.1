@@ -41,5 +41,12 @@ namespace Datos
                              select p).ToList();
             return productos;
         }
+
+        public static Entidades.MateriaPrima SelectId(int id)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var materiaPrima = rubicatDB.MateriaPrimas.Find(id);
+            return materiaPrima;
+        }
     }
 }

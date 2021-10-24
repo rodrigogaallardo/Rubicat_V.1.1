@@ -30,5 +30,10 @@ namespace Logica
         {
             return AdmMateriaPrima.SelectMateriaPrima();
         }
+
+        public Entidades.MateriaPrima SelectId(int id)
+        {
+            return AdmMateriaPrima.SelectId(id);
+        }
     }
 }

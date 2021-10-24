@@ -13,6 +13,11 @@ namespace Datos
         public static void InsertIngresos(Entidades.IngresoStock ingresosstock)
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
+
+            //var uStock = rubicatDB.Stocks.Find(ingresosstock.MateriaPrimaId);
+            //uStock.Cantidad += ingresosstock.Cantidad;
+            //rubicatDB.Entry(uStock).State = EntityState.Modified;
+
             rubicatDB.IngresosStock.Add(ingresosstock);
             rubicatDB.SaveChanges();
         }

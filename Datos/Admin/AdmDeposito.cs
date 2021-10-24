@@ -34,6 +34,7 @@ namespace Datos
             var mDeposito = rubicatDB.Depositos.Find(id);
             rubicatDB.Depositos.Remove(mDeposito);
             rubicatDB.SaveChanges();
+
         }
         public static List<Entidades.Deposito> SelectDepositos()
         {
@@ -41,6 +42,13 @@ namespace Datos
             var productos = (from p in rubicatDB.Depositos
                              select p).ToList();
             return productos;
+        }
+
+        public static Entidades.Deposito SelectId(int id)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var deposito = rubicatDB.Depositos.Find(id);
+            return deposito;
         }
     }
 }
