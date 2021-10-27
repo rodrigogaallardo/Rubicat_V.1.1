@@ -22,7 +22,7 @@ namespace WinRubicat
         void TraerIngresosStock()
         {
             Logica.IngresosStock objLogica = new Logica.IngresosStock();
-            dgvIngresosStock.DataSource = objLogica.TraerIngresos();
+            dgvIngresosStock.DataSource = objLogica.TraerIngresosStock();
         }
 
         public void botones(object sender, EventArgs e)

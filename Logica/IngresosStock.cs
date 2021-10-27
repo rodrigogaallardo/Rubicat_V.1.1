@@ -25,9 +25,14 @@ namespace Logica
         {
             AdmIngresoStock.DeleteIngresos(id);
         }
-        public List<Entidades.IngresoStock> TraerIngresos()
+        //public List<Entidades.IngresoStock> TraerIngresos()
+        //{
+        //    return AdmIngresoStock.SelectIngresos();
+        //}
+
+        public List<object> TraerIngresosStock()
         {
-            return AdmIngresoStock.SelectIngresos();
+            return AdmIngresoStock.SelectIngresos().ToList();
         }
     }
 }

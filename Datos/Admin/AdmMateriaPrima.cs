@@ -34,12 +34,17 @@ namespace Datos
             rubicatDB.MateriaPrimas.Remove(mMateriaPrima);
             rubicatDB.SaveChanges();
         }
-        public static List<Entidades.MateriaPrima> SelectMateriaPrima()
+        public static IEnumerable<object> SelectMateriaPrima()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
-            var productos = (from p in rubicatDB.MateriaPrimas
-                             select p).ToList();
-            return productos;
+            var articulo = (from m in rubicatDB.MateriaPrimas
+                             select new { 
+                             Id_de_Articulo= m.IdMateriaPrima,
+                             Nombre_de_Articulo = m.NombreMateriaPrima,
+                             Costo_de_Articulo= m.CostoMateriaPrima
+                             }
+                             ).ToList();
+            return articulo;
         }
 
         public static Entidades.MateriaPrima SelectId(int id)

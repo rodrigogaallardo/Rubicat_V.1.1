@@ -24,10 +24,9 @@ namespace WinRubicat
         void TraerMateriasPrimas()
         {
             Logica.MateriasPrimas objLogicaMateriasPrimas = new Logica.MateriasPrimas();
-
             cmbIngresosMateriasPrimas1.DataSource = objLogicaMateriasPrimas.TraerMateriaPrimas();
-            cmbIngresosMateriasPrimas1.DisplayMember = "NombreMateriaPrima";
-            cmbIngresosMateriasPrimas1.ValueMember = "IdMateriaPrima";
+            cmbIngresosMateriasPrimas1.DisplayMember = "Nombre_de_Articulo";
+            cmbIngresosMateriasPrimas1.ValueMember = "Id_de_Articulo";
             
         }
 
@@ -36,7 +35,7 @@ namespace WinRubicat
             Logica.Depositos objLogicaDepositos = new Logica.Depositos();
             cmbSectorIngresos.DataSource = objLogicaDepositos.TraerDeposito();
             cmbSectorIngresos.DisplayMember = "Nombre";
-            cmbSectorIngresos.ValueMember = "IdDeposito";
+            cmbSectorIngresos.ValueMember = "Id_de_Deposito";
 
         }
 

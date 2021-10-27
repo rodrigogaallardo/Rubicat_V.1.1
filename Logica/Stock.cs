@@ -15,9 +15,14 @@ namespace Logica
             AdmStock.InsertStock(ingresosStock);
         }
 
-        public List<Entidades.Stock> TraerStock()
+        public List<object> TraerStock()
         {
-            return AdmStock.SelectStock();
+            return AdmStock.SelectStock().ToList();
         }
+
+        //public List<Entidades.Stock> TraerStock()
+        //{
+        //    return AdmStock.SelectStock();
+        //}
     }
 }

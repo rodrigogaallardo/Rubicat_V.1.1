@@ -22,6 +22,11 @@ namespace WinRubicat
             TraerProductos();
         }
         Logica.Producto objLogProd = new Logica.Producto();
+
+        private void ActualizarGrid(object sender, FormClosingEventArgs e)
+        {
+            TraerProductos();
+        }
         private void botones(object sender, EventArgs e)
         {
             Button boton = sender as Button;
@@ -30,25 +35,24 @@ namespace WinRubicat
                 case "btnNuevo":
                     FrmProd frmProd = new FrmProd();
                     frmProd.StartPosition = FormStartPosition.CenterScreen;
+                    frmProd.FormClosing += ActualizarGrid;
                     frmProd.Show();
                     break;
                 case "btnModificar":
                     //Crear instancia de producto y cargar datos del registro seleccionado
                     Producto modelProd = new Producto();
                     modelProd.IdProducto = Convert.ToInt32(dgvDatos.CurrentRow.Cells[0].Value);
-                    modelProd.Nombre = dgvDatos.CurrentRow.Cells[1].Value.ToString();
-                    modelProd.Peso = Convert.ToDouble(dgvDatos.CurrentRow.Cells[2].Value);
-                    modelProd.Costo = Convert.ToDecimal(dgvDatos.CurrentRow.Cells[3].Value);
-                    modelProd.Precio = Convert.ToDecimal(dgvDatos.CurrentRow.Cells[4].Value);
-                    modelProd.Ean = Convert.ToInt32(dgvDatos.CurrentRow.Cells[5].Value);
+                    modelProd = objLogProd.TraerPorId(modelProd.IdProducto);
                     // Mostrar formulario modificacion
                     FrmProd modifProd = new FrmProd(modelProd);
                     modifProd.StartPosition = FormStartPosition.CenterScreen;
+                    modifProd.FormClosing += ActualizarGrid;
                     modifProd.Show();
                     break;
                 case "btnBorrar":
                     int id = Convert.ToInt32(dgvDatos.CurrentRow.Cells[0].Value);
                     objLogProd.BorrarProducto(id);
+                    TraerProductos();
                     break;
                 default:
                     break;

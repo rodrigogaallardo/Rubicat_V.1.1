@@ -24,12 +24,17 @@ namespace Logica
         {
             AdmDeposito.DeleteDeposito(id);
         }
-        public List<Entidades.Deposito> TraerDeposito()
+        //public List<Entidades.Deposito> TraerDeposito()
+        //{
+        //    return AdmDeposito.SelectDepositos();
+        //}
+
+        public List<object> TraerDeposito()
         {
-            return AdmDeposito.SelectDepositos();
+            return AdmDeposito.SelectDepositos().ToList();
         }
 
-        public Entidades.Deposito SelectId(int id)
+        public Entidades.Deposito TraerPorId(int id)
         {
             return AdmDeposito.SelectId(id);
         }

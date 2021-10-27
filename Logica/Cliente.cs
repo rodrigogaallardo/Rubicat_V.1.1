@@ -45,5 +45,9 @@ namespace Logica
         {
             return AdmCliente.SelectClientes().ToList();
         }
+        public Entidades.Cliente TraerPorId(int id)
+        {
+            return AdmCliente.SelectId(id);
+        }
     }
 }

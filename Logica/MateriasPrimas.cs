@@ -26,9 +26,13 @@ namespace Logica
             AdmMateriaPrima.DeleteMateriaPrima(id);
         }
 
-        public List<Entidades.MateriaPrima> TraerMateriaPrimas()
+        //public List<Entidades.MateriaPrima> TraerMateriaPrimas()
+        //{
+        //    return AdmMateriaPrima.SelectMateriaPrima();
+        //}
+        public List<object> TraerMateriaPrimas()
         {
-            return AdmMateriaPrima.SelectMateriaPrima();
+            return AdmMateriaPrima.SelectMateriaPrima().ToList();
         }
 
         public Entidades.MateriaPrima SelectId(int id)

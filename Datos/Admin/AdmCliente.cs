@@ -69,5 +69,11 @@ namespace Datos
                          }).ToList();
             return query;
         }
+        public static Entidades.Cliente SelectId(int id)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var cliente = rubicatDB.Clientes.Find(id);
+            return cliente;
+        }
     }
 }

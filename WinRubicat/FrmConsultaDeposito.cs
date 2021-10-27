@@ -49,24 +49,21 @@ namespace WinRubicat
                 case "btnModificar":
                     //Crear instancia de producto y cargar datos del registro seleccionado
                     Deposito depositoMod = new Deposito();
-
                     depositoMod.IdDeposito = Convert.ToInt32(dgvDepositos.CurrentRow.Cells[0].Value);
-                    depositoMod = objDep.SelectId(depositoMod.IdDeposito);
+                    depositoMod = objDep.TraerPorId(depositoMod.IdDeposito);
 
                     // Mostrar formulario modificacion
                     FrmDepositos frmDepositoMod = new FrmDepositos(depositoMod);
                     frmDepositoMod.StartPosition = FormStartPosition.CenterScreen;
                     frmDepositoMod.FormClosing += ActualizarGrid;
                     frmDepositoMod.Show();
-
-                    
                     break;
                 case "btnSalir":
                     Close();
                     break;
              
             }
-            TraerDepositos();
+            
         }
 
         private void ActualizarGrid(object sender, FormClosingEventArgs e)

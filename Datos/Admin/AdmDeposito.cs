@@ -36,14 +36,20 @@ namespace Datos
             rubicatDB.SaveChanges();
 
         }
-        public static List<Entidades.Deposito> SelectDepositos()
+        public static IEnumerable<object> SelectDepositos()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
-            var productos = (from p in rubicatDB.Depositos
-                             select p).ToList();
-            return productos;
-        }
+            var deposito = (from d in rubicatDB.Depositos
 
+                             select new
+                             {
+                                 Id_de_Deposito= d.IdDeposito,
+                                 d.Nombre,
+                                 d.Descripcion,
+                                 d.Espacio
+                             }).ToList();
+            return deposito;
+        }
         public static Entidades.Deposito SelectId(int id)
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();

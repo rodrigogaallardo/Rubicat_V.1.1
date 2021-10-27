@@ -43,12 +43,33 @@ namespace Datos
             rubicatDB.IngresosStock.Remove(mIngreso);
             rubicatDB.SaveChanges();
         }
-        public static List<Entidades.IngresoStock> SelectIngresos()
+        //public static List<Entidades.IngresoStock> SelectIngresos()
+        //{
+        //    DBRubicatContext rubicatDB = new DBRubicatContext();
+        //    var ingresos = (from p in rubicatDB.IngresosStock
+        //                     select p).ToList();
+        //    return ingresos;
+        //}
+
+        public static IEnumerable<object> SelectIngresos()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
-            var ingresos = (from p in rubicatDB.IngresosStock
-                             select p).ToList();
-            return ingresos;
+            var query = (from i in rubicatDB.IngresosStock
+
+                         join m in rubicatDB.MateriaPrimas on i.MateriaPrimaId equals m.IdMateriaPrima
+                         join d in rubicatDB.Depositos on i.DepositoId equals d.IdDeposito
+
+                         select new
+                         {
+                             Registro_de_Ingreso = i.IdIngreso,
+                             Fecha_de_Ingreso = i.FechaIngreso,
+                             Numero_de_Remito= i.NumeroRemito,
+                             i.Responsable,
+                             Materia_Prima = m.NombreMateriaPrima,
+                             Deposito = d.Nombre,
+                             i.Cantidad
+                         }).ToList();
+            return query;
         }
     }
 }

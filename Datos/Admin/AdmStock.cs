@@ -40,11 +40,28 @@ namespace Datos
         //    rubicatDB.SaveChanges();
         //}
 
-        public static List<Entidades.Stock> SelectStock()
+        //public static List<Entidades.Stock> SelectStock()
+        //{
+        //    DBRubicatContext rubicatDB = new DBRubicatContext();
+        //    var stock = (from p in rubicatDB.Stocks
+        //                     select p).ToList();
+        //    return stock;
+        //}
+
+        public static IEnumerable<object> SelectStock()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
-            var stock = (from p in rubicatDB.Stocks
-                             select p).ToList();
+            var stock = (from s in rubicatDB.Stocks
+                         join d in rubicatDB.Depositos on s.DepositoID equals d.IdDeposito
+                         join m in rubicatDB.MateriaPrimas on s.MateriaPrimaID equals m.IdMateriaPrima
+                         select new
+                         {
+                             Id_Stock=s.IdStockTotal,
+                             Articulo=m.NombreMateriaPrima,
+                             Deposito=d.Nombre,
+                             Cantidad = s.Cantidad
+                         }
+                             ).ToList();
             return stock;
         }
     }
