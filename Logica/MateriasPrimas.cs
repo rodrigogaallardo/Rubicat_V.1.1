@@ -10,7 +10,6 @@ namespace Logica
 {
     public class MateriasPrimas
     {
-        
 
         public void AgregarMateriaPrima(Entidades.MateriaPrima materiasPrimas)
         {

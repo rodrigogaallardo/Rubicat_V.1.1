@@ -12,9 +12,14 @@ namespace Entidades
         public string NombreMateriaPrima { get; set; }
         public decimal CostoMateriaPrima { get; set; }
 
+        public string FamiliaMateriaPrima { get; set; }
+        public string ArquetipoMateriaPrima { get; set; }
+        public string DescripcionMateriaPrima { get; set; }
+        public int CantidadMateriaPrima { get; set; }
+        public double PesoMateriaPrima { get; set; }
+
         public List<IngresoStock> IngresosStock { get; set; }
         public List<Stock> Stock { get; set; }
 
-        
     }
 }

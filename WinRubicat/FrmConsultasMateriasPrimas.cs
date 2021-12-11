@@ -17,13 +17,7 @@ namespace WinRubicat
         {
             InitializeComponent();
             btnSalir.Click += botones;
-
-            btnAgregarPackaging.Click += botones;
-            btnAgregarEtiquetas.Click += botones;
             btnAgregarMateriaPrima.Click += botones;
-            btnAgregarTapas.Click += botones;
-            btnAgregarAroma.Click += botones;
-
             btnBorrar.Click += botones;
             btnModificar.Click += botones;
             TraerMateriasPrimas();
@@ -44,30 +38,6 @@ namespace WinRubicat
                     frmMateriasPrimas.StartPosition = FormStartPosition.CenterScreen;
                     frmMateriasPrimas.FormClosing += ActualizarGrid;
                     frmMateriasPrimas.Show();
-                    break;
-                case "btnAgregarPackaging":
-                    FrmPackaging frmPackaging = new FrmPackaging();
-                    frmPackaging.StartPosition = FormStartPosition.CenterScreen;
-                    frmPackaging.FormClosing += ActualizarGrid;
-                    frmPackaging.Show();
-                    break;
-                case "btnAgregarEtiquetas":
-                    FrmEtiqueta frmEtiqueta = new FrmEtiqueta();
-                    frmEtiqueta.StartPosition = FormStartPosition.CenterScreen;
-                    frmEtiqueta.FormClosing += ActualizarGrid;
-                    frmEtiqueta.Show();
-                    break;
-                case "btnAgregarTapas":
-                    FrmTapas frmtapa = new FrmTapas();
-                    frmtapa.StartPosition = FormStartPosition.CenterScreen;
-                    frmtapa.FormClosing += ActualizarGrid;
-                    frmtapa.Show();
-                    break;
-                case "btnAgregarAroma":
-                    FrmAromas frmAroma = new FrmAromas();
-                    frmAroma.StartPosition = FormStartPosition.CenterScreen;
-                    frmAroma.FormClosing += ActualizarGrid;
-                    frmAroma.Show();
                     break;
                 case "btnBorrar":
                     int id = Convert.ToInt32(dgvStockMateriasPrimas.CurrentRow.Cells[0].Value);

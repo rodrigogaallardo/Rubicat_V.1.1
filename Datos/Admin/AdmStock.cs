@@ -57,8 +57,11 @@ namespace Datos
                          select new
                          {
                              Id_Stock=s.IdStockTotal,
-                             Articulo=m.NombreMateriaPrima,
-                             Deposito=d.Nombre,
+                             Familia = m.FamiliaMateriaPrima,
+                             Arquetipo = m.ArquetipoMateriaPrima,
+                             Descripcion = m.DescripcionMateriaPrima,
+                             Costo = m.CostoMateriaPrima,
+                             Deposito =d.Nombre,
                              Cantidad = s.Cantidad
                          }
                              ).ToList();

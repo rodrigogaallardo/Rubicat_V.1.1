@@ -61,7 +61,6 @@ namespace WinRubicat
                 case "btnSalir":
                     Close();
                     break;
-             
             }
             
         }

@@ -18,6 +18,9 @@ namespace Entidades
         public int VendedorId { get; set; }
         public DateTime Fecha { get; set; }
 
+        public string Transporte { get; set; }
+        public DateTime FechaDeEntrega { get; set; }
+
         #region propiedades de navegacion
         public List<DetalleVenta> DetalleVentas { get; set; }
         public List<Producto> Productos { get; set; }

@@ -65,10 +65,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.cboTransporte = new System.Windows.Forms.ComboBox();
             this.tlpDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.tlpProductos.SuspendLayout();
             this.tlpDescuentos.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregarProd
@@ -114,7 +120,7 @@
             this.cboVendedor.Items.AddRange(new object[] {
             "Jorge",
             "Andres"});
-            this.cboVendedor.Location = new System.Drawing.Point(94, 51);
+            this.cboVendedor.Location = new System.Drawing.Point(94, 47);
             this.cboVendedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboVendedor.Name = "cboVendedor";
             this.cboVendedor.Size = new System.Drawing.Size(208, 28);
@@ -130,7 +136,7 @@
             "Oh my Dog",
             "Tiendas del Sur",
             "Marynor"});
-            this.cboCliente.Location = new System.Drawing.Point(94, 10);
+            this.cboCliente.Location = new System.Drawing.Point(94, 6);
             this.cboCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(208, 28);
@@ -176,7 +182,7 @@
             "Rubicat Classic",
             "Rubicat Premium",
             "Rubicat Super Premium"});
-            this.cboProducto.Location = new System.Drawing.Point(94, 14);
+            this.cboProducto.Location = new System.Drawing.Point(94, 10);
             this.cboProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(209, 29);
@@ -509,11 +515,83 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "$";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.92723F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.07278F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dtpFechaEntrega, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cboTransporte, 1, 0);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(454, 35);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 0, 5);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.8F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.2F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(425, 125);
+            this.tableLayoutPanel1.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(4, 20);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Transporte";
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 82);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 20);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Fecha de Entrega";
+            // 
+            // dtpFechaEntrega
+            // 
+            this.dtpFechaEntrega.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(160, 79);
+            this.dtpFechaEntrega.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpFechaEntrega.MaxDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaEntrega.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.dtpFechaEntrega.Name = "dtpFechaEntrega";
+            this.dtpFechaEntrega.Size = new System.Drawing.Size(208, 27);
+            this.dtpFechaEntrega.TabIndex = 3;
+            this.dtpFechaEntrega.Value = new System.DateTime(2021, 4, 10, 0, 0, 0, 0);
+            // 
+            // cboTransporte
+            // 
+            this.cboTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboTransporte.FormattingEnabled = true;
+            this.cboTransporte.Items.AddRange(new object[] {
+            "Agra",
+            "Oh my Dog",
+            "Tiendas del Sur",
+            "Marynor"});
+            this.cboTransporte.Location = new System.Drawing.Point(160, 16);
+            this.cboTransporte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboTransporte.Name = "cboTransporte";
+            this.cboTransporte.Size = new System.Drawing.Size(208, 28);
+            this.cboTransporte.TabIndex = 1;
+            this.cboTransporte.Text = "Elegir";
+            // 
             // FrmVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(946, 646);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -546,6 +624,8 @@
             this.tlpProductos.PerformLayout();
             this.tlpDescuentos.ResumeLayout(false);
             this.tlpDescuentos.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -589,5 +669,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox cboTransporte;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
     }
 }

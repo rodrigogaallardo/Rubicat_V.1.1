@@ -23,7 +23,7 @@ namespace Datos
                          select new
                          {
                              Cod_Vta=v.VentaId,
-                             Producto=p.Nombre,
+                             Producto_Terminado=p.Arquetipo,
                              v.Cantidad,
                              Precio_Un=v.Precio,
                              Costo_Un=v.Costo,
@@ -86,7 +86,7 @@ namespace Datos
                             join p in rubicatDB.Productos on gp.FirstOrDefault().ProductoId equals p.IdProducto
                             select new
                             {
-                                Producto = p.Nombre,
+                                Producto = p.Arquetipo,
                                 Cantidad = gp.Sum(v => v.Cantidad),
                                 CVM = gp.Sum(v=>v.Venta.Cvm),//Math.Round(gp.Sum(v => v.Costo),2),
                                 Importe_Tot = gp.Sum(v => v.Venta.Importe),//Math.Round(gp.Sum(v => v.Precio),2),

@@ -21,6 +21,7 @@ namespace WinRubicat
         Logica.DetalleVenta objLogDet = new Logica.DetalleVenta();
         public FrmVenta()
         {
+            
             InitializeComponent();
             btnAgregarVta.Click += Botones;
             btnCancelar.Click += Botones;
@@ -134,7 +135,7 @@ namespace WinRubicat
             {
                 DataRow fila = dtProductos.NewRow();
                 fila["IdProducto"] = venta.ProductoId; ;
-                fila["Nombre"] = objLogProd.TraerPorId(venta.ProductoId).Nombre;
+                fila["Nombre"] = objLogProd.TraerPorId(venta.ProductoId).Arquetipo;
                 fila["Cantidad"] = venta.Cantidad;
                 fila["Costo unidad"] = Math.Round(venta.Costo, 2);
                 fila["Precio unidad"] = Math.Round(venta.Precio, 2);
@@ -179,8 +180,13 @@ namespace WinRubicat
         /// </summary>
         void LlenarCombos()
         {
+            //Transportes
+            cboTransporte.DisplayMember = "DireccionTransporte";
+            cboTransporte.ValueMember = "IdTransporte";
+            Logica.Transporte objLogicaTransporte = new Logica.Transporte();
+            cboTransporte.DataSource = objLogicaTransporte.TraerTransporte();
             //Productos
-            cboProducto.DisplayMember = "Nombre";
+            cboProducto.DisplayMember = "Arquetipo";
             cboProducto.ValueMember = "IdProducto";
             Logica.Producto objLogicaProd = new Logica.Producto();
             cboProducto.DataSource = objLogicaProd.TraerProductos();

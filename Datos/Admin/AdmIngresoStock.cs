@@ -65,7 +65,7 @@ namespace Datos
                              Fecha_de_Ingreso = i.FechaIngreso,
                              Numero_de_Remito= i.NumeroRemito,
                              i.Responsable,
-                             Materia_Prima = m.NombreMateriaPrima,
+                             Materia_Prima = m.ArquetipoMateriaPrima,
                              Deposito = d.Nombre,
                              i.Cantidad
                          }).ToList();

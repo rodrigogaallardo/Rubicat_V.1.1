@@ -56,6 +56,7 @@
     <Compile Include="Admin\AdmIngresoStock.cs" />
     <Compile Include="Admin\AdmMateriaPrima.cs" />
     <Compile Include="Admin\AdmStock.cs" />
+    <Compile Include="Admin\AdmTransporte.cs" />
     <Compile Include="Data\DBRubicatContext.cs" />
     <Compile Include="Admin\AdmProducto.cs" />
     <Compile Include="Migrations\202106052159215_init.cs" />
@@ -69,6 +70,26 @@
     <Compile Include="Migrations\202110131905193_CambioStockTotal.cs" />
     <Compile Include="Migrations\202110131905193_CambioStockTotal.Designer.cs">
       <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.cs" />
+    <Compile Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.Designer.cs">
+      <DependentUpon>202111222001560_ModificacionEnMAteriaPrimas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs" />
+    <Compile Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.Designer.cs">
+      <DependentUpon>202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111230001577_ModProdcto.cs" />
+    <Compile Include="Migrations\202111230001577_ModProdcto.Designer.cs">
+      <DependentUpon>202111230001577_ModProdcto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112022337459_AgregarTranspote.cs" />
+    <Compile Include="Migrations\202112022337459_AgregarTranspote.Designer.cs">
+      <DependentUpon>202112022337459_AgregarTranspote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202112030331486_AgrearTransporteDBA.cs" />
+    <Compile Include="Migrations\202112030331486_AgrearTransporteDBA.Designer.cs">
+      <DependentUpon>202112030331486_AgrearTransporteDBA.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +125,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202110131905193_CambioStockTotal.resx">
       <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.resx">
+      <DependentUpon>202111222001560_ModificacionEnMAteriaPrimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.resx">
+      <DependentUpon>202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111230001577_ModProdcto.resx">
+      <DependentUpon>202111230001577_ModProdcto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112022337459_AgregarTranspote.resx">
+      <DependentUpon>202112022337459_AgregarTranspote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112030331486_AgrearTransporteDBA.resx">
+      <DependentUpon>202112030331486_AgrearTransporteDBA.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

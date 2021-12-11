@@ -25,8 +25,8 @@ namespace WinRubicat
         {
             Logica.MateriasPrimas objLogicaMateriasPrimas = new Logica.MateriasPrimas();
             cmbIngresosMateriasPrimas1.DataSource = objLogicaMateriasPrimas.TraerMateriaPrimas();
-            cmbIngresosMateriasPrimas1.DisplayMember = "Nombre_de_Articulo";
-            cmbIngresosMateriasPrimas1.ValueMember = "Id_de_Articulo";
+            cmbIngresosMateriasPrimas1.DisplayMember = "Arquetipo";
+            cmbIngresosMateriasPrimas1.ValueMember = "Id_de_MateriaPrima";
             
         }
 

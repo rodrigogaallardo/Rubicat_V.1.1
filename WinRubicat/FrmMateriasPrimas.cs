@@ -33,8 +33,12 @@ namespace WinRubicat
                     Logica.MateriasPrimas objLogica = new Logica.MateriasPrimas();
 
                     Entidades.MateriaPrima objEntidad = new Entidades.MateriaPrima();
-                    objEntidad.NombreMateriaPrima = cmbMateriasPrimas.SelectedItem.ToString();
-                    objEntidad.CostoMateriaPrima = Convert.ToDecimal(txtCostos.Text);
+                    objEntidad.FamiliaMateriaPrima = txtFamilia.Text;
+                    objEntidad.ArquetipoMateriaPrima = txtArquetipo.Text;
+                    objEntidad.DescripcionMateriaPrima = txtDescripcion.Text;
+                    objEntidad.CostoMateriaPrima = Convert.ToDecimal(txtCosto.Text);
+                    objEntidad.CantidadMateriaPrima = Convert.ToInt32(txtCantidad.Text);
+                    objEntidad.PesoMateriaPrima = Convert.ToInt32(txtPeso.Text);
 
                     objLogica.AgregarMateriaPrima(objEntidad);
                     MessageBox.Show("Producto agregado a la base de datos!");
@@ -42,5 +46,9 @@ namespace WinRubicat
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

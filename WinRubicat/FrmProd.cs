@@ -37,11 +37,15 @@ namespace WinRubicat
             lblTitulo.Text = "Modificar Producto";
             btnAgregar.Text = "Modificar";
 
-            txtNombre.Text = producto.Nombre;
+            //txtNombre.Text = producto.Nombre;
+            txtFamilia.Text = producto.Familia.ToString();
+            txtArquetipo.Text = producto.Arquetipo.ToString();
+            txtDescripcion.Text = producto.Descripcion.ToString();
+            txtCantidad.Text = producto.Cantidad.ToString();
             txtPeso.Text = producto.Peso.ToString();
             txtCosto.Text = producto.Costo.ToString();
-            txtPrecio.Text = producto.Precio.ToString();
-            txtEan.Text = producto.Ean.ToString();
+            //txtPrecio.Text = producto.Precio.ToString();
+            //txtEan.Text = producto.Ean.ToString();
 
             Estado = Operacion.Modificacion;
         }
@@ -57,11 +61,15 @@ namespace WinRubicat
             switch (boton.Name)
             {
                 case "btnAgregar":
-                    modelProd.Nombre = txtNombre.Text;
+                    //modelProd.Nombre = txtNombre.Text;
+                    modelProd.Familia = txtFamilia.Text;
+                    modelProd.Arquetipo = txtArquetipo.Text;
+                    modelProd.Descripcion = txtDescripcion.Text;
+                    modelProd.Cantidad = Convert.ToInt32(txtCantidad.Text);
                     modelProd.Peso = Convert.ToDouble(txtPeso.Text);
                     modelProd.Costo = Convert.ToDecimal(txtCosto.Text);
-                    modelProd.Precio = Convert.ToDecimal(txtPrecio.Text);
-                    modelProd.Ean = Convert.ToInt32(txtEan.Text);
+                    //modelProd.Precio = Convert.ToDecimal(txtPrecio.Text);
+                    //modelProd.Ean = Convert.ToInt32(txtEan.Text);
                     switch (Estado)
                     {
                         case Operacion.Alta:

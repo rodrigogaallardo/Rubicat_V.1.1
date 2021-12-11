@@ -28,36 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNombre = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblCosto = new System.Windows.Forms.Label();
-            this.lblPrecio = new System.Windows.Forms.Label();
-            this.lblEan = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.txtEan = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblCod = new System.Windows.Forms.Label();
+            this.lblArquetipo = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblFamilia = new System.Windows.Forms.Label();
+            this.txtArquetipo = new System.Windows.Forms.TextBox();
+            this.txtFamilia = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(51, 78);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 21);
-            this.lblNombre.TabIndex = 0;
-            this.lblNombre.Text = "Nombre";
             // 
             // lblPeso
             // 
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(51, 120);
+            this.lblPeso.Location = new System.Drawing.Point(41, 192);
             this.lblPeso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(42, 21);
@@ -67,76 +59,32 @@
             // lblCosto
             // 
             this.lblCosto.AutoSize = true;
-            this.lblCosto.Location = new System.Drawing.Point(51, 162);
+            this.lblCosto.Location = new System.Drawing.Point(41, 234);
             this.lblCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(50, 21);
             this.lblCosto.TabIndex = 2;
             this.lblCosto.Text = "Costo";
             // 
-            // lblPrecio
-            // 
-            this.lblPrecio.AutoSize = true;
-            this.lblPrecio.Location = new System.Drawing.Point(51, 204);
-            this.lblPrecio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPrecio.Name = "lblPrecio";
-            this.lblPrecio.Size = new System.Drawing.Size(53, 21);
-            this.lblPrecio.TabIndex = 3;
-            this.lblPrecio.Text = "Precio";
-            // 
-            // lblEan
-            // 
-            this.lblEan.AutoSize = true;
-            this.lblEan.Location = new System.Drawing.Point(51, 246);
-            this.lblEan.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEan.Name = "lblEan";
-            this.lblEan.Size = new System.Drawing.Size(40, 21);
-            this.lblEan.TabIndex = 4;
-            this.lblEan.Text = "EAN";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(144, 74);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(148, 29);
-            this.txtNombre.TabIndex = 5;
-            // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(144, 116);
+            this.txtPeso.Location = new System.Drawing.Point(218, 189);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(148, 29);
+            this.txtPeso.Size = new System.Drawing.Size(96, 29);
             this.txtPeso.TabIndex = 6;
             // 
             // txtCosto
             // 
-            this.txtCosto.Location = new System.Drawing.Point(144, 158);
+            this.txtCosto.Location = new System.Drawing.Point(218, 234);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(148, 29);
+            this.txtCosto.Size = new System.Drawing.Size(96, 29);
             this.txtCosto.TabIndex = 7;
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(144, 200);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(148, 29);
-            this.txtPrecio.TabIndex = 8;
-            // 
-            // txtEan
-            // 
-            this.txtEan.Location = new System.Drawing.Point(144, 242);
-            this.txtEan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtEan.Name = "txtEan";
-            this.txtEan.Size = new System.Drawing.Size(148, 29);
-            this.txtEan.TabIndex = 9;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(55, 296);
+            this.btnAgregar.Location = new System.Drawing.Point(57, 329);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 35);
             this.btnAgregar.TabIndex = 10;
@@ -145,7 +93,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(192, 296);
+            this.btnCancelar.Location = new System.Drawing.Point(194, 329);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 35);
             this.btnCancelar.TabIndex = 11;
@@ -172,26 +120,96 @@
             this.lblCod.TabIndex = 13;
             this.lblCod.Text = "Cod";
             // 
+            // lblArquetipo
+            // 
+            this.lblArquetipo.AutoSize = true;
+            this.lblArquetipo.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblArquetipo.Location = new System.Drawing.Point(41, 109);
+            this.lblArquetipo.Name = "lblArquetipo";
+            this.lblArquetipo.Size = new System.Drawing.Size(79, 21);
+            this.lblArquetipo.TabIndex = 28;
+            this.lblArquetipo.Text = "Arquetipo";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblDescripcion.Location = new System.Drawing.Point(41, 149);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(91, 21);
+            this.lblDescripcion.TabIndex = 27;
+            this.lblDescripcion.Text = "Descripción";
+            // 
+            // lblFamilia
+            // 
+            this.lblFamilia.AutoSize = true;
+            this.lblFamilia.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblFamilia.Location = new System.Drawing.Point(41, 69);
+            this.lblFamilia.Name = "lblFamilia";
+            this.lblFamilia.Size = new System.Drawing.Size(59, 21);
+            this.lblFamilia.TabIndex = 26;
+            this.lblFamilia.Text = "Familia";
+            // 
+            // txtArquetipo
+            // 
+            this.txtArquetipo.Location = new System.Drawing.Point(144, 112);
+            this.txtArquetipo.Name = "txtArquetipo";
+            this.txtArquetipo.Size = new System.Drawing.Size(170, 29);
+            this.txtArquetipo.TabIndex = 25;
+            // 
+            // txtFamilia
+            // 
+            this.txtFamilia.Location = new System.Drawing.Point(144, 72);
+            this.txtFamilia.Name = "txtFamilia";
+            this.txtFamilia.Size = new System.Drawing.Size(170, 29);
+            this.txtFamilia.TabIndex = 24;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(144, 152);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(170, 29);
+            this.txtDescripcion.TabIndex = 23;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(218, 283);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(96, 29);
+            this.txtCantidad.TabIndex = 30;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lblCantidad.Location = new System.Drawing.Point(41, 283);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(72, 21);
+            this.lblCantidad.TabIndex = 29;
+            this.lblCantidad.Text = "Cantidad";
+            // 
             // FrmProd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 379);
+            this.ClientSize = new System.Drawing.Size(343, 396);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.lblCantidad);
+            this.Controls.Add(this.lblArquetipo);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblFamilia);
+            this.Controls.Add(this.txtArquetipo);
+            this.Controls.Add(this.txtFamilia);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.lblCod);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtEan);
-            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtCosto);
             this.Controls.Add(this.txtPeso);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblEan);
-            this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.lblCosto);
             this.Controls.Add(this.lblPeso);
-            this.Controls.Add(this.lblNombre);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -203,20 +221,21 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.Label lblCosto;
-        private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.Label lblEan;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtCosto;
-        private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.TextBox txtEan;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblCod;
+        private System.Windows.Forms.Label lblArquetipo;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblFamilia;
+        private System.Windows.Forms.TextBox txtArquetipo;
+        private System.Windows.Forms.TextBox txtFamilia;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.Label lblCantidad;
     }
 }

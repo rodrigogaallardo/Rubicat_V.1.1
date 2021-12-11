@@ -29,9 +29,16 @@ namespace Datos.Data
         public DbSet<Entidades.IngresoStock> IngresosStock { get; set; }
         public DbSet<Entidades.MateriaPrima> MateriaPrimas { get; set; }
         public DbSet<Entidades.Stock> Stocks { get; set; }
+        public DbSet<Entidades.Transporte> Transportes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //TablaTransporte
+            modelBuilder.Entity<Entidades.Transporte>().HasKey(t => t.IdTransporte);
+            modelBuilder.Entity<Entidades.Transporte>().Property(t => t.NombreTransporte).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Transporte>().Property(t => t.DireccionTransporte).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Transporte>().Property(t => t.CaracterTransporte).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Transporte>().ToTable("Transportes");
             //TablaDeposito
             modelBuilder.Entity<Entidades.Deposito>().HasKey(d => d.IdDeposito);
             modelBuilder.Entity<Entidades.Deposito>().HasMany(d => d.IngresosStock).WithRequired().HasForeignKey(d => d.DepositoId);
@@ -56,7 +63,12 @@ namespace Datos.Data
             //MateriaPrimas
             modelBuilder.Entity<Entidades.MateriaPrima>().HasKey(m => m.IdMateriaPrima);
             modelBuilder.Entity<Entidades.MateriaPrima>().HasMany(m => m.IngresosStock).WithRequired().HasForeignKey(m => m.MateriaPrimaId);
-            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.NombreMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.FamiliaMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.ArquetipoMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.DescripcionMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            //modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.NombreMateriaPrima).IsRequired().HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.CantidadMateriaPrima).IsRequired().HasColumnType("int");
+            modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.PesoMateriaPrima).IsRequired().HasColumnType("float");
             modelBuilder.Entity<Entidades.MateriaPrima>().Property(m => m.CostoMateriaPrima).IsRequired().HasColumnType("money");
             modelBuilder.Entity<Entidades.MateriaPrima>().ToTable("MateriasPrimas");
 
@@ -90,11 +102,15 @@ namespace Datos.Data
             //TablaProducto
             modelBuilder.Entity<Entidades.Producto>().HasKey(p => p.IdProducto);
             modelBuilder.Entity<Entidades.Producto>().HasMany(p => p.DetalleVentas).WithRequired().HasForeignKey(p => p.ProductoId);
-            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Nombre).HasColumnType("varchar").HasMaxLength(50);
+            //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Nombre).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Familia).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Arquetipo).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Descripcion).HasColumnType("varchar").HasMaxLength(50);
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Cantidad).HasColumnType("int");
             modelBuilder.Entity<Entidades.Producto>().Property(p => p.Peso).HasColumnType("float");
             modelBuilder.Entity<Entidades.Producto>().Property(p => p.Costo).HasColumnType("money");
-            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Precio).HasColumnType("money");
-            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Ean).HasColumnType("int");
+            //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Precio).HasColumnType("money");
+            //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Ean).HasColumnType("int");
             modelBuilder.Entity<Entidades.Producto>().ToTable("Producto");
 
             //TablaVendedor

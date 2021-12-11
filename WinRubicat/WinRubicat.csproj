@@ -59,12 +59,6 @@
     <Compile Include="ConsultaVentas.Designer.cs">
       <DependentUpon>ConsultaVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAromas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAromas.Designer.cs">
-      <DependentUpon>FrmAromas.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +95,12 @@
     <Compile Include="FrmConsultasStock.Designer.cs">
       <DependentUpon>FrmConsultasStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmConsultaTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaTransporte.Designer.cs">
+      <DependentUpon>FrmConsultaTransporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmConsVend.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +112,6 @@
     </Compile>
     <Compile Include="FrmDepositos.Designer.cs">
       <DependentUpon>FrmDepositos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmEtiqueta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmEtiqueta.Designer.cs">
-      <DependentUpon>FrmEtiqueta.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmIngresosStock.cs">
       <SubType>Form</SubType>
@@ -137,12 +131,6 @@
     <Compile Include="FrmModificar.Designer.cs">
       <DependentUpon>FrmModificar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPackaging.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmPackaging.Designer.cs">
-      <DependentUpon>FrmPackaging.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmProd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +143,11 @@
     <Compile Include="FrmStockTotal.Designer.cs">
       <DependentUpon>FrmStockTotal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTapas.cs">
+    <Compile Include="FrmTransporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTapas.Designer.cs">
-      <DependentUpon>FrmTapas.cs</DependentUpon>
+    <Compile Include="FrmTransporte.Designer.cs">
+      <DependentUpon>FrmTransporte.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmVendedor.cs">
       <SubType>Form</SubType>
@@ -196,9 +184,6 @@
     <EmbeddedResource Include="ConsultaVentas.resx">
       <DependentUpon>ConsultaVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAromas.resx">
-      <DependentUpon>FrmAromas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultasMateriasPrimas.resx">
       <DependentUpon>FrmConsultasMateriasPrimas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaTransporte.resx">
+      <DependentUpon>FrmConsultaTransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsVend.resx">
       <DependentUpon>FrmConsVend.cs</DependentUpon>
@@ -228,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStockTotal.resx">
       <DependentUpon>FrmStockTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransporte.resx">
+      <DependentUpon>FrmTransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVendedor.resx">
       <DependentUpon>FrmVendedor.cs</DependentUpon>

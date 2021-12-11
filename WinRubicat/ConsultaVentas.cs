@@ -22,7 +22,7 @@ namespace WinRubicat
             btnVentas.Click += botones;
             btnDetalle.Click += botones;
             btnAplicar.Click += botones;
-            LlenarGridView();
+            //LlenarGridView();
         }
         Logica.DetalleVenta logDetalle;
         Logica.Venta logVenta;
@@ -43,7 +43,7 @@ namespace WinRubicat
                     break;
                 case "btnVentas":
                     logVenta = new Logica.Venta();
-                    LlenarGridView();
+                    //LlenarGridView();
                     break;
                 case "btnDetalle":
                     logDetalle = new Logica.DetalleVenta();
@@ -74,13 +74,13 @@ namespace WinRubicat
                     break;
             }
         }
-        void LlenarGridView()
-        {
-            logVenta = new Logica.Venta();
-            dgvDatos.DataSource = logVenta.TraerVentas();
-            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
-            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
-            dgvDatos.Columns[5].DefaultCellStyle.Format = "N2";
-        }
+        //void LlenarGridView()
+        //{
+        //    logVenta = new Logica.Venta();
+        //    dgvDatos.DataSource = logVenta.TraerVentas();
+        //    dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
+        //    dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
+        //    dgvDatos.Columns[5].DefaultCellStyle.Format = "N2";
+        //}
     }
 }

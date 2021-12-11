@@ -11,7 +11,7 @@ using Entidades;
 
 namespace WinRubicat
 {
-    public partial class FrmDepositos : Form
+    public partial class FrmTransporte : Form
     {
         public enum Operacion
         {
@@ -20,28 +20,29 @@ namespace WinRubicat
         }
         public Operacion Estado { get; set; }
 
-        public FrmDepositos()
+        public FrmTransporte()
         {
             InitializeComponent();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
-            lblTitulo.Text = "Agregar Deposito";
-            lblCodigo.Text = "";
-            lblId.Text = "";
+            lblTitulo.Text = "Agregar Transporte";
+            lblIdTransporte.Text = "";
+            lblIdT.Text = "";
             Estado = Operacion.Alta;
         }
-        public FrmDepositos(Entidades.Deposito deposito)
+
+        public FrmTransporte(Entidades.Transporte transporte)
         {
             InitializeComponent();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
-            lblCodigo.Text = deposito.IdDeposito.ToString();
+            lblIdT.Text = transporte.IdTransporte.ToString();
             lblTitulo.Text = "Modificar Deposito";
             btnAgregar.Text = "Modificar";
 
-            txtNombreDeposito.Text = deposito.Nombre;
-            txtDescDeposito.Text = deposito.Descripcion;
-            txtEspacioDeposito.Text = deposito.Espacio;
+            txtNombreTransporte.Text = transporte.NombreTransporte;
+            txtDireccionTransporte.Text = transporte.DireccionTransporte;
+            cmbCaracterTransporte.Text = transporte.CaracterTransporte;
 
             Estado = Operacion.Modificacion;
         }
@@ -50,8 +51,8 @@ namespace WinRubicat
         {
             Button boton = sender as Button;
 
-            Deposito depositoMod = new Deposito();
-            Logica.Depositos objLogDep = new Logica.Depositos();
+            Transporte transporteMod = new Transporte();
+            Logica.Transporte objTransporte = new Logica.Transporte();
 
             switch (boton.Name)
             {
@@ -59,20 +60,22 @@ namespace WinRubicat
                     Close();
                     break;
                 case "btnAgregar":
+
+                    transporteMod.NombreTransporte = txtNombreTransporte.Text;
+                    transporteMod.DireccionTransporte = txtDireccionTransporte.Text;
+                    transporteMod.CaracterTransporte = cmbCaracterTransporte.SelectedItem.ToString();
                     
-                    depositoMod.Nombre = txtNombreDeposito.Text;
-                    depositoMod.Descripcion = txtDescDeposito.Text;
-                    depositoMod.Espacio= txtEspacioDeposito.Text;
+
                     switch (Estado)
                     {
                         case Operacion.Alta:
-                            objLogDep.AgregarDeposito(depositoMod);
-                            MessageBox.Show("Deposito agregado correctamente.");
+                            objTransporte.AgregarTransporte(transporteMod);
+                            MessageBox.Show("Transporte agregado correctamente.");
                             Close();
                             break;
                         case Operacion.Modificacion:
-                            depositoMod.IdDeposito = Convert.ToInt32(lblCodigo.Text);
-                            objLogDep.ModificarDeposito(depositoMod);
+                            transporteMod.IdTransporte = Convert.ToInt32(lblIdT.Text);
+                            objTransporte.ModificarTransporte(transporteMod);
                             MessageBox.Show("Deposito modificado correctamente.");
                             Close();
                             break;
@@ -83,6 +86,21 @@ namespace WinRubicat
                     break;
             }
 
+
+        }
+
+        private void lblDeposito_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNombreDeposito_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

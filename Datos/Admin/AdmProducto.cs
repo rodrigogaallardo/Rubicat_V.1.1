@@ -21,11 +21,15 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var mProducto = rubicatDB.Productos.Find(producto.IdProducto);
-            mProducto.Nombre = producto.Nombre;
+            //mProducto.Nombre = producto.Nombre;
+            mProducto.Familia = producto.Familia;
+            mProducto.Arquetipo = producto.Arquetipo;
+            mProducto.Descripcion = producto.Descripcion;
+            mProducto.Cantidad = producto.Cantidad;
             mProducto.Peso = producto.Peso;
             mProducto.Costo = producto.Costo;
-            mProducto.Precio = producto.Precio;
-            mProducto.Ean = producto.Ean;
+            //mProducto.Precio = producto.Precio;
+            //mProducto.Ean = producto.Ean;
 
             rubicatDB.Entry(mProducto).State = EntityState.Modified;
 

@@ -39,25 +39,23 @@
             this.vendedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNuevoVendedor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaVendedores = new System.Windows.Forms.ToolStripMenuItem();
+            this.depositosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIngresarDepositos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConsultarDepositos = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNuevoProd = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaProd = new System.Windows.Forms.ToolStripMenuItem();
+            this.materiaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMateriaPrima = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConsultarMateriasPrimas = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.depositosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiIngresarDepositos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiVerDepositos = new System.Windows.Forms.ToolStripMenuItem();
-            this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresarArticulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPackaging = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEtiquetas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiAromas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTapas = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiArticulos = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresosDeStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiIngresarStock = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultarStock = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiStockTotal = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiMateriaPrima = new System.Windows.Forms.ToolStripMenuItem();
+            this.transporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiAltaTransporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConsultaTransporte = new System.Windows.Forms.ToolStripMenuItem();
             this.msVentas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,8 +66,11 @@
             this.ventasToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.vendedoresToolStripMenuItem,
+            this.depositosToolStripMenuItem1,
             this.productosToolStripMenuItem,
-            this.stockToolStripMenuItem});
+            this.materiaPrimaToolStripMenuItem,
+            this.stockToolStripMenuItem,
+            this.transporteToolStripMenuItem});
             this.msVentas.Name = "msVentas";
             // 
             // ventasToolStripMenuItem
@@ -126,6 +127,24 @@
             this.tsmiConsultaVendedores.Name = "tsmiConsultaVendedores";
             resources.ApplyResources(this.tsmiConsultaVendedores, "tsmiConsultaVendedores");
             // 
+            // depositosToolStripMenuItem1
+            // 
+            this.depositosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiIngresarDepositos,
+            this.tsmiConsultarDepositos});
+            this.depositosToolStripMenuItem1.Name = "depositosToolStripMenuItem1";
+            resources.ApplyResources(this.depositosToolStripMenuItem1, "depositosToolStripMenuItem1");
+            // 
+            // tsmiIngresarDepositos
+            // 
+            this.tsmiIngresarDepositos.Name = "tsmiIngresarDepositos";
+            resources.ApplyResources(this.tsmiIngresarDepositos, "tsmiIngresarDepositos");
+            // 
+            // tsmiConsultarDepositos
+            // 
+            this.tsmiConsultarDepositos.Name = "tsmiConsultarDepositos";
+            resources.ApplyResources(this.tsmiConsultarDepositos, "tsmiConsultarDepositos");
+            // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -144,77 +163,31 @@
             this.tsmiConsultaProd.Name = "tsmiConsultaProd";
             resources.ApplyResources(this.tsmiConsultaProd, "tsmiConsultaProd");
             // 
+            // materiaPrimaToolStripMenuItem
+            // 
+            this.materiaPrimaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiMateriaPrima,
+            this.tsmiConsultarMateriasPrimas});
+            this.materiaPrimaToolStripMenuItem.Name = "materiaPrimaToolStripMenuItem";
+            resources.ApplyResources(this.materiaPrimaToolStripMenuItem, "materiaPrimaToolStripMenuItem");
+            // 
+            // tsmiMateriaPrima
+            // 
+            this.tsmiMateriaPrima.Name = "tsmiMateriaPrima";
+            resources.ApplyResources(this.tsmiMateriaPrima, "tsmiMateriaPrima");
+            // 
+            // tsmiConsultarMateriasPrimas
+            // 
+            this.tsmiConsultarMateriasPrimas.Name = "tsmiConsultarMateriasPrimas";
+            resources.ApplyResources(this.tsmiConsultarMateriasPrimas, "tsmiConsultarMateriasPrimas");
+            // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.depositosToolStripMenuItem,
-            this.articulosToolStripMenuItem,
             this.ingresosDeStockToolStripMenuItem,
             this.tsmiStockTotal});
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             resources.ApplyResources(this.stockToolStripMenuItem, "stockToolStripMenuItem");
-            // 
-            // depositosToolStripMenuItem
-            // 
-            this.depositosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiIngresarDepositos,
-            this.tsmiVerDepositos});
-            this.depositosToolStripMenuItem.Name = "depositosToolStripMenuItem";
-            resources.ApplyResources(this.depositosToolStripMenuItem, "depositosToolStripMenuItem");
-            // 
-            // tsmiIngresarDepositos
-            // 
-            this.tsmiIngresarDepositos.Name = "tsmiIngresarDepositos";
-            resources.ApplyResources(this.tsmiIngresarDepositos, "tsmiIngresarDepositos");
-            // 
-            // tsmiVerDepositos
-            // 
-            this.tsmiVerDepositos.Name = "tsmiVerDepositos";
-            resources.ApplyResources(this.tsmiVerDepositos, "tsmiVerDepositos");
-            // 
-            // articulosToolStripMenuItem
-            // 
-            this.articulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ingresarArticulosToolStripMenuItem,
-            this.tsmiArticulos});
-            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            resources.ApplyResources(this.articulosToolStripMenuItem, "articulosToolStripMenuItem");
-            // 
-            // ingresarArticulosToolStripMenuItem
-            // 
-            this.ingresarArticulosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiPackaging,
-            this.tsmiEtiquetas,
-            this.tsmiAromas,
-            this.tsmiTapas,
-            this.tsmiMateriaPrima});
-            this.ingresarArticulosToolStripMenuItem.Name = "ingresarArticulosToolStripMenuItem";
-            resources.ApplyResources(this.ingresarArticulosToolStripMenuItem, "ingresarArticulosToolStripMenuItem");
-            // 
-            // tsmiPackaging
-            // 
-            this.tsmiPackaging.Name = "tsmiPackaging";
-            resources.ApplyResources(this.tsmiPackaging, "tsmiPackaging");
-            // 
-            // tsmiEtiquetas
-            // 
-            this.tsmiEtiquetas.Name = "tsmiEtiquetas";
-            resources.ApplyResources(this.tsmiEtiquetas, "tsmiEtiquetas");
-            // 
-            // tsmiAromas
-            // 
-            this.tsmiAromas.Name = "tsmiAromas";
-            resources.ApplyResources(this.tsmiAromas, "tsmiAromas");
-            // 
-            // tsmiTapas
-            // 
-            this.tsmiTapas.Name = "tsmiTapas";
-            resources.ApplyResources(this.tsmiTapas, "tsmiTapas");
-            // 
-            // tsmiArticulos
-            // 
-            this.tsmiArticulos.Name = "tsmiArticulos";
-            resources.ApplyResources(this.tsmiArticulos, "tsmiArticulos");
             // 
             // ingresosDeStockToolStripMenuItem
             // 
@@ -239,10 +212,23 @@
             this.tsmiStockTotal.Name = "tsmiStockTotal";
             resources.ApplyResources(this.tsmiStockTotal, "tsmiStockTotal");
             // 
-            // tsmiMateriaPrima
+            // transporteToolStripMenuItem
             // 
-            this.tsmiMateriaPrima.Name = "tsmiMateriaPrima";
-            resources.ApplyResources(this.tsmiMateriaPrima, "tsmiMateriaPrima");
+            this.transporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiAltaTransporte,
+            this.tsmiConsultaTransporte});
+            this.transporteToolStripMenuItem.Name = "transporteToolStripMenuItem";
+            resources.ApplyResources(this.transporteToolStripMenuItem, "transporteToolStripMenuItem");
+            // 
+            // tsmiAltaTransporte
+            // 
+            this.tsmiAltaTransporte.Name = "tsmiAltaTransporte";
+            resources.ApplyResources(this.tsmiAltaTransporte, "tsmiAltaTransporte");
+            // 
+            // tsmiConsultaTransporte
+            // 
+            this.tsmiConsultaTransporte.Name = "tsmiConsultaTransporte";
+            resources.ApplyResources(this.tsmiConsultaTransporte, "tsmiConsultaTransporte");
             // 
             // MenuPrincipal
             // 
@@ -278,21 +264,19 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiNuevoProd;
         private System.Windows.Forms.ToolStripMenuItem tsmiConsultaProd;
         private System.Windows.Forms.ToolStripMenuItem stockToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem depositosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiIngresarDepositos;
-        private System.Windows.Forms.ToolStripMenuItem tsmiVerDepositos;
-        private System.Windows.Forms.ToolStripMenuItem articulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ingresarArticulosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiPackaging;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEtiquetas;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAromas;
-        private System.Windows.Forms.ToolStripMenuItem tsmiTapas;
-        private System.Windows.Forms.ToolStripMenuItem tsmiArticulos;
         private System.Windows.Forms.ToolStripMenuItem ingresosDeStockToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiIngresarStock;
         private System.Windows.Forms.ToolStripMenuItem tsmiConsultarStock;
         private System.Windows.Forms.ToolStripMenuItem tsmiStockTotal;
+        private System.Windows.Forms.ToolStripMenuItem depositosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiIngresarDepositos;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConsultarDepositos;
+        private System.Windows.Forms.ToolStripMenuItem materiaPrimaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiMateriaPrima;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConsultarMateriasPrimas;
+        private System.Windows.Forms.ToolStripMenuItem transporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAltaTransporte;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConsultaTransporte;
     }
 }
 
