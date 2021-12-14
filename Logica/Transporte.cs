@@ -23,9 +23,9 @@ namespace Logica
             AdmTransporte.DeleteTransporte(id);
         }
 
-        public List<object> TraerTransporte()
+        public List<Entidades.Transporte> TraerTransporte()
         {
-            return AdmTransporte.SelectTransporte().ToList();
+            return AdmTransporte.SelectTransporte();
         }
 
         public Entidades.Transporte TraerPorId(int id)

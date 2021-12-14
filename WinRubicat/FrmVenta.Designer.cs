@@ -120,7 +120,7 @@
             this.cboVendedor.Items.AddRange(new object[] {
             "Jorge",
             "Andres"});
-            this.cboVendedor.Location = new System.Drawing.Point(94, 47);
+            this.cboVendedor.Location = new System.Drawing.Point(94, 51);
             this.cboVendedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboVendedor.Name = "cboVendedor";
             this.cboVendedor.Size = new System.Drawing.Size(208, 28);
@@ -136,7 +136,7 @@
             "Oh my Dog",
             "Tiendas del Sur",
             "Marynor"});
-            this.cboCliente.Location = new System.Drawing.Point(94, 6);
+            this.cboCliente.Location = new System.Drawing.Point(94, 10);
             this.cboCliente.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(208, 28);
@@ -182,7 +182,7 @@
             "Rubicat Classic",
             "Rubicat Premium",
             "Rubicat Super Premium"});
-            this.cboProducto.Location = new System.Drawing.Point(94, 10);
+            this.cboProducto.Location = new System.Drawing.Point(94, 14);
             this.cboProducto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboProducto.Name = "cboProducto";
             this.cboProducto.Size = new System.Drawing.Size(209, 29);
@@ -579,7 +579,7 @@
             "Oh my Dog",
             "Tiendas del Sur",
             "Marynor"});
-            this.cboTransporte.Location = new System.Drawing.Point(160, 16);
+            this.cboTransporte.Location = new System.Drawing.Point(160, 19);
             this.cboTransporte.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboTransporte.Name = "cboTransporte";
             this.cboTransporte.Size = new System.Drawing.Size(208, 28);

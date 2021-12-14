@@ -19,6 +19,8 @@ namespace WinRubicat
         Logica.Venta objLogicaVenta = new Logica.Venta();
         Logica.Producto objLogProd = new Logica.Producto();
         Logica.DetalleVenta objLogDet = new Logica.DetalleVenta();
+        Logica.Transporte objLogicaTransporte = new Logica.Transporte();
+
         public FrmVenta()
         {
             
@@ -181,7 +183,7 @@ namespace WinRubicat
         void LlenarCombos()
         {
             //Transportes
-            cboTransporte.DisplayMember = "DireccionTransporte";
+            cboTransporte.DisplayMember = "NombreTransporte";
             cboTransporte.ValueMember = "IdTransporte";
             Logica.Transporte objLogicaTransporte = new Logica.Transporte();
             cboTransporte.DataSource = objLogicaTransporte.TraerTransporte();

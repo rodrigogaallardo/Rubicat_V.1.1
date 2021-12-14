@@ -36,17 +36,12 @@ namespace Datos.Admin
             rubicatDB.Transportes.Remove(mTransporte);
             rubicatDB.SaveChanges();
         }
-        public static IEnumerable<object> SelectTransporte()
+        public static List<Entidades.Transporte> SelectTransporte()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var transporte = (from t in rubicatDB.Transportes
-                            select new
-                            {
-                                Id_de_Transporte = t.IdTransporte,
-                                Nombre = t.NombreTransporte,
-                                Direccion = t.DireccionTransporte,
-                                Caracter = t.CaracterTransporte
-                            }
+                              select t
+                           
                              ).ToList();
             return transporte;
         }
