@@ -35,8 +35,7 @@ namespace Datos
             var vendedor = rubicatDB.Vendedores.Find(id);
             rubicatDB.Vendedores.Remove(vendedor);
             rubicatDB.SaveChanges();
-        }
-        
+        }        
         public static IEnumerable<object> SelectVendedores()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
@@ -52,6 +51,12 @@ namespace Datos
 
                          }).ToList();
             return query;
+        }
+        public static Entidades.Vendedor SelectId(int id)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var vendedor = rubicatDB.Vendedores.Find(id);
+            return vendedor;
         }
     }
 }

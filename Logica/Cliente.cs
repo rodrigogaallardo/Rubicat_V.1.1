@@ -49,5 +49,9 @@ namespace Logica
         {
             return AdmCliente.SelectId(id);
         }
+        public List<Entidades.Cliente> SelectCliente(string letra)
+        {
+            return AdmCliente.SelectClientes(letra);
+        }
     }
 }

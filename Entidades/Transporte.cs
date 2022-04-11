@@ -12,5 +12,12 @@ namespace Entidades
         public string NombreTransporte { get; set; }
         public string DireccionTransporte { get; set; }
         public string CaracterTransporte { get; set; }
+        public long TelefonoTransporte { get; set; }
+        public string HorarioDeTransporte { get; set; }
+
+        #region propiedades de navegación
+        public List<Cliente> Clientes { get; set; }
+        public List<Pedido> Pedidos { get; set; }
+        #endregion
     }
 }

@@ -7,13 +7,13 @@ namespace Datos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AgrearTransporteDBA : IMigrationMetadata
+    public sealed partial class InicioNuevo : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AgrearTransporteDBA));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InicioNuevo));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112030331486_AgrearTransporteDBA"; }
+            get { return "202203292312469_InicioNuevo"; }
         }
         
         string IMigrationMetadata.Source

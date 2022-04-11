@@ -25,6 +25,8 @@ namespace Datos.Admin
             mtransporte.NombreTransporte = transporte.NombreTransporte;
             mtransporte.DireccionTransporte = transporte.DireccionTransporte;
             mtransporte.CaracterTransporte = transporte.CaracterTransporte;
+            mtransporte.TelefonoTransporte = transporte.TelefonoTransporte;
+            mtransporte.HorarioDeTransporte = transporte.HorarioDeTransporte;
 
             rubicatDB.Entry(mtransporte).State = EntityState.Modified;
             rubicatDB.SaveChanges();
@@ -49,6 +51,16 @@ namespace Datos.Admin
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var transporte = rubicatDB.Transportes.Find(id);
+            return transporte;
+        }
+        //Sobrecargando el metdo SelecTransporte
+        public static List<Entidades.Transporte> SelectTransporte(string letra) 
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var transporte = (from t in rubicatDB.Transportes
+                            where t.NombreTransporte.StartsWith(letra)
+
+                            select t).ToList();
             return transporte;
         }
     }

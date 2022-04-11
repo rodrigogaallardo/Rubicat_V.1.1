@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos.Data;
 using System.Data.Entity;
+using NHibernate.Linq;
 
 namespace Datos
 {
@@ -29,6 +30,11 @@ namespace Datos
             mCliente.Telefono = cliente.Telefono;
             mCliente.VendedorId = cliente.VendedorId;
             mCliente.ZonaId = cliente.ZonaId;
+            mCliente.TransporteId = cliente.TransporteId;
+            mCliente.Mail = cliente.Mail;
+            mCliente.Localidad = cliente.Localidad;
+            mCliente.CondicionVenta = cliente.CondicionVenta;
+            mCliente.HorarioAtencion = cliente.HorarioAtencion;
 
             rubicatDB.Entry(mCliente).State = EntityState.Modified;
 
@@ -54,6 +60,7 @@ namespace Datos
             var query = (from c in rubicatDB.Clientes
                          join v in rubicatDB.Vendedores on c.VendedorId equals v.IdVendedor
                          join z in rubicatDB.Zonas on c.ZonaId equals z.IdZona
+                         join t in rubicatDB.Transportes on c.TransporteId equals t.IdTransporte
                          select new
                          {
                              Id = c.IdCliente,
@@ -65,7 +72,12 @@ namespace Datos
                              Domicilio=c.DomicilioFiscal,
                              c.Telefono,
                              Vendedor=v.Nombre,
-                             Zona=z.Nombre
+                             Zona=z.Nombre,
+                             Transporte= t.NombreTransporte,
+                             c.Localidad,
+                             c.Mail,
+                             c.HorarioAtencion,
+                             Cond_de_Venta = c.CondicionVenta
                          }).ToList();
             return query;
         }
@@ -75,5 +87,15 @@ namespace Datos
             var cliente = rubicatDB.Clientes.Find(id);
             return cliente;
         }
+        public static List<Entidades.Cliente> SelectClientes(string letra)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var cliente = (from c in rubicatDB.Clientes
+                              where c.Nombre.StartsWith(letra)
+
+                              select c).ToList();
+            return cliente;
+        }
+
     }
 }

@@ -19,6 +19,7 @@ namespace WinRubicat
             Modificacion
         }
         public Operacion Estado { get; set; }
+        public FormBorderStyle BorderStyle { get; internal set; }
 
         public FrmTransporte()
         {
@@ -43,6 +44,8 @@ namespace WinRubicat
             txtNombreTransporte.Text = transporte.NombreTransporte;
             txtDireccionTransporte.Text = transporte.DireccionTransporte;
             cmbCaracterTransporte.Text = transporte.CaracterTransporte;
+            txtHorario.Text = transporte.HorarioDeTransporte;
+            txtTelefono.Text = transporte.TelefonoTransporte.ToString(); // captura el valor 
 
             Estado = Operacion.Modificacion;
         }
@@ -61,22 +64,66 @@ namespace WinRubicat
                     break;
                 case "btnAgregar":
 
+                    ///////////////////////////////////////VERIFICACIÓN DE CAMPOS//////////////////////////////////////////////////////////
+
                     transporteMod.NombreTransporte = txtNombreTransporte.Text;
+                    if (transporteMod.NombreTransporte == "")
+                    {
+                        MessageBox.Show("No puede dejar vacío el área Nombre de Trasnporte","Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
                     transporteMod.DireccionTransporte = txtDireccionTransporte.Text;
+                    if (transporteMod.DireccionTransporte == "")
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Dirección de Transporte'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
+
+                    try {
+                        transporteMod.TelefonoTransporte = Convert.ToInt64(txtTelefono.Text);
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Solo esta permitido números en el area Teléfono", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
+                    catch (Exception) {
+                        //este seria para un campo nulo o cualquier otro error
+                        MessageBox.Show("Error en el campo teléfono", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
+                    transporteMod.HorarioDeTransporte = txtHorario.Text;
+
+                    try
+                    {
+                        _ = cmbCaracterTransporte.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Caracter'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                                       
                     transporteMod.CaracterTransporte = cmbCaracterTransporte.SelectedItem.ToString();
-                    
+
+                    ////////////////////////////////////////////////FIN DE VERIFICACIÓN DE CAMPOS/////////////////////////////////////////////////
 
                     switch (Estado)
                     {
                         case Operacion.Alta:
+                           
                             objTransporte.AgregarTransporte(transporteMod);
-                            MessageBox.Show("Transporte agregado correctamente.");
+                            MessageBox.Show("Transporte agregado correctamente.","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             Close();
                             break;
                         case Operacion.Modificacion:
                             transporteMod.IdTransporte = Convert.ToInt32(lblIdT.Text);
                             objTransporte.ModificarTransporte(transporteMod);
-                            MessageBox.Show("Deposito modificado correctamente.");
+                            MessageBox.Show("Transporte modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Close();
                             break;
                         default:
@@ -88,6 +135,8 @@ namespace WinRubicat
 
 
         }
+
+        
 
         private void lblDeposito_Click(object sender, EventArgs e)
         {

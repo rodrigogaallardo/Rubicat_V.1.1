@@ -49,5 +49,9 @@ namespace Logica
         {
             return AdmVendedor.SelectVendedores().ToList();
         }
+        public Entidades.Vendedor TraerPorId(int id)
+        {
+            return AdmVendedor.SelectId(id);
+        }
     }
 }

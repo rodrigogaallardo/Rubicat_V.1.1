@@ -9,23 +9,31 @@ using Entidades;
 
 namespace WinRubicat
 {
-    public partial class FrmConsProd : WinRubicat.FrmConsultas
+    public partial class FrmConsultaProducto : Form
     {
-        public FrmConsProd()
+        public FrmConsultaProducto()
         {
             InitializeComponent();
             lblTipo.Text = "Productos";
             btnNuevo.Click += botones;
             btnModificar.Click += botones;
             btnBorrar.Click += botones;
-
+            btnSalir.Click += botones;
             TraerProductos();
         }
+
         Logica.Producto objLogProd = new Logica.Producto();
 
         private void ActualizarGrid(object sender, FormClosingEventArgs e)
         {
             TraerProductos();
+        }
+
+        void TraerProductos()
+        {
+            dgvDatos.DataSource = objLogProd.TraerProductos();
+            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
+            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
         }
         private void botones(object sender, EventArgs e)
         {
@@ -54,6 +62,9 @@ namespace WinRubicat
                     objLogProd.BorrarProducto(id);
                     TraerProductos();
                     break;
+                case "btnSalir":
+                    Close();
+                    break;
                 default:
                     break;
             }
@@ -61,11 +72,10 @@ namespace WinRubicat
             dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
             dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
         }
-        void TraerProductos()
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            dgvDatos.DataSource = objLogProd.TraerProductos();
-            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
-            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
+
         }
     }
 }

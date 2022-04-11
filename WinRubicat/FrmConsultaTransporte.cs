@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
 
@@ -13,6 +6,7 @@ using Entidades;
 namespace WinRubicat
 {
     public partial class FrmConsultaTransporte : Form
+
     {
         void TraerTransporte()
         {
@@ -37,12 +31,14 @@ namespace WinRubicat
 
         public void botones(object sender, EventArgs e)
         {
-            Button boton = sender as Button;
+            
+              Button boton = sender as Button;
             switch (boton.Name)
             {
                 case "btnAgregarTransporte":
                     FrmTransporte frmTransporte = new FrmTransporte();
                     frmTransporte.StartPosition = FormStartPosition.CenterScreen;
+                    frmTransporte.FormBorderStyle = FormBorderStyle.FixedSingle;
                     frmTransporte.FormClosing += ActualizarGrid;
                     frmTransporte.Show();
                     break;
@@ -59,7 +55,8 @@ namespace WinRubicat
 
                     // Mostrar formulario modificacion
                     FrmTransporte frmTransporteMod = new FrmTransporte(transporteMod);
-                    frmTransporteMod.StartPosition = FormStartPosition.CenterScreen;
+                    frmTransporteMod.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    frmTransporteMod.StartPosition = FormStartPosition.CenterScreen;           
                     frmTransporteMod.FormClosing += ActualizarGrid;
                     frmTransporteMod.Show();
                     break;
@@ -67,6 +64,11 @@ namespace WinRubicat
                     Close();
                     break;
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

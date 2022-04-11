@@ -25,6 +25,8 @@ namespace WinRubicat
             tsmiConsultaClientes.Click += OpcionesMenu;
             tsmiNuevoProd.Click += OpcionesMenu;
             tsmiConsultaProd.Click += OpcionesMenu;
+            tsmiPedido.Click += OpcionesMenu;
+
             //******************************************//
             //********Ingresar Productos a Stock********//
             //******************************************//
@@ -32,7 +34,6 @@ namespace WinRubicat
             tsmiMateriaPrima.Click += OpcionesMenu;
             tsmiIngresarDepositos.Click += OpcionesMenu;
             tsmiIngresarStock.Click += OpcionesMenu;
-
             tsmiAltaTransporte.Click += OpcionesMenu;
             //******************************************//
             //****Consultar el stock de los productos***//
@@ -43,6 +44,7 @@ namespace WinRubicat
             tsmiConsultarStock.Click += OpcionesMenu;
             tsmiStockTotal.Click += OpcionesMenu;
             tsmiConsultaTransporte.Click += OpcionesMenu;
+            tsmiConsultaDePedidos.Click += OpcionesMenu;
             //*****************************************//
         }
 
@@ -68,7 +70,23 @@ namespace WinRubicat
                 //******************************************//
                 //********Consultar Productos a Stock********//
                 //******************************************//
-                
+                case "tsmiConsultaDePedidos":
+                    FrmConsultaDePedidos FrmPedido = new FrmConsultaDePedidos();
+                    FrmPedido.MdiParent = this;
+                    FrmPedido.StartPosition = FormStartPosition.CenterScreen;
+                    FrmPedido.Dock = DockStyle.Fill;
+                    FrmPedido.Show();
+
+                    break;
+                case "tsmiPedido":
+                    FrmPedido FrmRemito = new FrmPedido();
+                    FrmRemito.MdiParent = this;
+                    FrmRemito.StartPosition = FormStartPosition.CenterScreen;
+                    FrmRemito.Dock = DockStyle.Fill;
+                    FrmRemito.Show();
+                    break;
+
+
                 case "tsmiConsultaTransporte":
                     FrmConsultaTransporte FrmConsultasTransporte = new FrmConsultaTransporte();
                     FrmConsultasTransporte.MdiParent = this;
@@ -178,7 +196,7 @@ namespace WinRubicat
                     FrmNuevoCli.Show();
                     break;
                 case "tsmiConsultaClientes":
-                    FrmConsCli frmConsCliente = new FrmConsCli();
+                    FrmConsultaClientes frmConsCliente = new FrmConsultaClientes();
                     frmConsCliente.MdiParent = this;
                     frmConsCliente.StartPosition = FormStartPosition.CenterScreen;
                     frmConsCliente.Dock = DockStyle.Fill;
@@ -192,7 +210,7 @@ namespace WinRubicat
                     frmNuevoProd.Show();
                     break;
                 case "tsmiConsultaProd":
-                    FrmConsProd frmConsProducto = new FrmConsProd();
+                    FrmConsultaProducto frmConsProducto = new FrmConsultaProducto();
                     frmConsProducto.MdiParent = this;
                     frmConsProducto.StartPosition = FormStartPosition.CenterScreen;
                     frmConsProducto.Dock = DockStyle.Fill;

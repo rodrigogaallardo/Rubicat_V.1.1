@@ -7,13 +7,13 @@ namespace Datos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AgregarTranspote : IMigrationMetadata
+    public sealed partial class ModificacionCuitCliente : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AgregarTranspote));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModificacionCuitCliente));
         
         string IMigrationMetadata.Id
         {
-            get { return "202112022337459_AgregarTranspote"; }
+            get { return "202203292352451_ModificacionCuitCliente"; }
         }
         
         string IMigrationMetadata.Source

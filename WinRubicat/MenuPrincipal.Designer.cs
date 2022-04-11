@@ -33,6 +33,8 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNuevaVenta = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaVentas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPedido = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConsultaDePedidos = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNuevoCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaClientes = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +63,7 @@
             // 
             // msVentas
             // 
+            this.msVentas.BackColor = System.Drawing.SystemColors.InactiveCaption;
             resources.ApplyResources(this.msVentas, "msVentas");
             this.msVentas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventasToolStripMenuItem,
@@ -77,7 +80,9 @@
             // 
             this.ventasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiNuevaVenta,
-            this.tsmiConsultaVentas});
+            this.tsmiConsultaVentas,
+            this.tsmiPedido,
+            this.tsmiConsultaDePedidos});
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             resources.ApplyResources(this.ventasToolStripMenuItem, "ventasToolStripMenuItem");
             // 
@@ -90,6 +95,16 @@
             // 
             this.tsmiConsultaVentas.Name = "tsmiConsultaVentas";
             resources.ApplyResources(this.tsmiConsultaVentas, "tsmiConsultaVentas");
+            // 
+            // tsmiPedido
+            // 
+            this.tsmiPedido.Name = "tsmiPedido";
+            resources.ApplyResources(this.tsmiPedido, "tsmiPedido");
+            // 
+            // tsmiConsultaDePedidos
+            // 
+            this.tsmiConsultaDePedidos.Name = "tsmiConsultaDePedidos";
+            resources.ApplyResources(this.tsmiConsultaDePedidos, "tsmiConsultaDePedidos");
             // 
             // clientesToolStripMenuItem
             // 
@@ -234,8 +249,10 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Controls.Add(this.msVentas);
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msVentas;
             this.Name = "MenuPrincipal";
@@ -277,6 +294,8 @@
         private System.Windows.Forms.ToolStripMenuItem transporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiAltaTransporte;
         private System.Windows.Forms.ToolStripMenuItem tsmiConsultaTransporte;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPedido;
+        private System.Windows.Forms.ToolStripMenuItem tsmiConsultaDePedidos;
     }
 }
 

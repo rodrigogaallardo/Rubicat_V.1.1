@@ -33,15 +33,36 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.3.11\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,46 +71,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdmAprobado.cs" />
     <Compile Include="Admin\AdmCliente.cs" />
     <Compile Include="Admin\AdmDeposito.cs" />
     <Compile Include="Admin\AdmDetalleVenta.cs" />
+    <Compile Include="Admin\AdmPedido.cs" />
     <Compile Include="Admin\AdmIngresoStock.cs" />
     <Compile Include="Admin\AdmMateriaPrima.cs" />
     <Compile Include="Admin\AdmStock.cs" />
     <Compile Include="Admin\AdmTransporte.cs" />
     <Compile Include="Data\DBRubicatContext.cs" />
     <Compile Include="Admin\AdmProducto.cs" />
-    <Compile Include="Migrations\202106052159215_init.cs" />
-    <Compile Include="Migrations\202106052159215_init.Designer.cs">
-      <DependentUpon>202106052159215_init.cs</DependentUpon>
+    <Compile Include="Migrations\202203292312469_InicioNuevo.cs" />
+    <Compile Include="Migrations\202203292312469_InicioNuevo.Designer.cs">
+      <DependentUpon>202203292312469_InicioNuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs" />
-    <Compile Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.Designer.cs">
-      <DependentUpon>202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs</DependentUpon>
+    <Compile Include="Migrations\202203292339517_InicioNuevo+NombreProducto.cs" />
+    <Compile Include="Migrations\202203292339517_InicioNuevo+NombreProducto.Designer.cs">
+      <DependentUpon>202203292339517_InicioNuevo+NombreProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202110131905193_CambioStockTotal.cs" />
-    <Compile Include="Migrations\202110131905193_CambioStockTotal.Designer.cs">
-      <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
+    <Compile Include="Migrations\202203292352451_ModificacionCuitCliente.cs" />
+    <Compile Include="Migrations\202203292352451_ModificacionCuitCliente.Designer.cs">
+      <DependentUpon>202203292352451_ModificacionCuitCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.cs" />
-    <Compile Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.Designer.cs">
-      <DependentUpon>202111222001560_ModificacionEnMAteriaPrimas.cs</DependentUpon>
+    <Compile Include="Migrations\202203292355299_ModificacionTelefonoCliente.cs" />
+    <Compile Include="Migrations\202203292355299_ModificacionTelefonoCliente.Designer.cs">
+      <DependentUpon>202203292355299_ModificacionTelefonoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs" />
-    <Compile Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.Designer.cs">
-      <DependentUpon>202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111230001577_ModProdcto.cs" />
-    <Compile Include="Migrations\202111230001577_ModProdcto.Designer.cs">
-      <DependentUpon>202111230001577_ModProdcto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112022337459_AgregarTranspote.cs" />
-    <Compile Include="Migrations\202112022337459_AgregarTranspote.Designer.cs">
-      <DependentUpon>202112022337459_AgregarTranspote.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202112030331486_AgrearTransporteDBA.cs" />
-    <Compile Include="Migrations\202112030331486_AgrearTransporteDBA.Designer.cs">
-      <DependentUpon>202112030331486_AgrearTransporteDBA.cs</DependentUpon>
+    <Compile Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.cs" />
+    <Compile Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.Designer.cs">
+      <DependentUpon>202203300413355_ModTelefonoTransporteVendedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,29 +128,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106052159215_init.resx">
-      <DependentUpon>202106052159215_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203292312469_InicioNuevo.resx">
+      <DependentUpon>202203292312469_InicioNuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.resx">
-      <DependentUpon>202110050158567_Stock-Ingresos-Depositos-MateriasPrimas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203292339517_InicioNuevo+NombreProducto.resx">
+      <DependentUpon>202203292339517_InicioNuevo+NombreProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202110131905193_CambioStockTotal.resx">
-      <DependentUpon>202110131905193_CambioStockTotal.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203292352451_ModificacionCuitCliente.resx">
+      <DependentUpon>202203292352451_ModificacionCuitCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111222001560_ModificacionEnMAteriaPrimas.resx">
-      <DependentUpon>202111222001560_ModificacionEnMAteriaPrimas.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203292355299_ModificacionTelefonoCliente.resx">
+      <DependentUpon>202203292355299_ModificacionTelefonoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111222009011_ModificacionEnMAteriaPrimasSinNombre.resx">
-      <DependentUpon>202111222009011_ModificacionEnMAteriaPrimasSinNombre.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111230001577_ModProdcto.resx">
-      <DependentUpon>202111230001577_ModProdcto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112022337459_AgregarTranspote.resx">
-      <DependentUpon>202112022337459_AgregarTranspote.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202112030331486_AgrearTransporteDBA.resx">
-      <DependentUpon>202112030331486_AgrearTransporteDBA.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.resx">
+      <DependentUpon>202203300413355_ModTelefonoTransporteVendedor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

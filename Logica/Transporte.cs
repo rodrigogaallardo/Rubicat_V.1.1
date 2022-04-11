@@ -22,15 +22,17 @@ namespace Logica
         {
             AdmTransporte.DeleteTransporte(id);
         }
-
         public List<Entidades.Transporte> TraerTransporte()
         {
             return AdmTransporte.SelectTransporte();
         }
-
         public Entidades.Transporte TraerPorId(int id)
         {
             return AdmTransporte.SelectId(id);
+        }
+        public List<Entidades.Transporte> SelectTransporte(string letra)
+        {
+            return AdmTransporte.SelectTransporte(letra);
         }
     }
 }

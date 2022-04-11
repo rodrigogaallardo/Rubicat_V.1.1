@@ -56,7 +56,7 @@ namespace WinRubicat
             {
                 case "btnAgregar":
                     modelVendedor.Nombre = txtNombre.Text;
-                    modelVendedor.Telefono = Convert.ToInt32(txtTelefono.Text);
+                    modelVendedor.Telefono = Convert.ToInt64(txtTelefono.Text);
                     modelVendedor.ZonaId = Convert.ToInt32(cboZona.SelectedValue); ;
                     switch (Estado)
                     {
@@ -94,6 +94,11 @@ namespace WinRubicat
             cboZona.DataSource = objLogZona.TraerZonas();
             cboZona.DisplayMember = "Nombre";
             cboZona.ValueMember = "IdZona";
+        }
+
+        private void FrmVendedor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

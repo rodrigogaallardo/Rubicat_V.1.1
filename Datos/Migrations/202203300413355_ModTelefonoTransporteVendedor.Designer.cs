@@ -7,13 +7,13 @@ namespace Datos.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class ModificacionEnMAteriaPrimasSinNombre : IMigrationMetadata
+    public sealed partial class ModTelefonoTransporteVendedor : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ModificacionEnMAteriaPrimasSinNombre));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ModTelefonoTransporteVendedor));
         
         string IMigrationMetadata.Id
         {
-            get { return "202111222009011_ModificacionEnMAteriaPrimasSinNombre"; }
+            get { return "202203300413355_ModTelefonoTransporteVendedor"; }
         }
         
         string IMigrationMetadata.Source

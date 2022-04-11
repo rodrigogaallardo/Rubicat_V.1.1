@@ -10,7 +10,7 @@ namespace Entidades
     {
         public int IdVendedor { get; set; }
         public string Nombre { get; set; }
-        public int Telefono { get; set; }
+        public long Telefono { get; set; }
         public int ZonaId { get; set; }
 
         #region propiedades de navegacion

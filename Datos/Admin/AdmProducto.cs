@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Datos.Data;
 using System.Data.Entity;
-
+using NHibernate.Linq;
 
 namespace Datos
 {
@@ -21,7 +21,7 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var mProducto = rubicatDB.Productos.Find(producto.IdProducto);
-            //mProducto.Nombre = producto.Nombre;
+            mProducto.Nombre = producto.Nombre;
             mProducto.Familia = producto.Familia;
             mProducto.Arquetipo = producto.Arquetipo;
             mProducto.Descripcion = producto.Descripcion;
@@ -53,6 +53,16 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var producto = rubicatDB.Productos.Find(id);
+            return producto;
+        }
+
+        public static List<Entidades.Producto> SelectProducto(string letra)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var producto = (from p in rubicatDB.Productos
+                            where p.Nombre.StartsWith(letra) 
+                            
+                            select p).ToList();
             return producto;
         }
     }

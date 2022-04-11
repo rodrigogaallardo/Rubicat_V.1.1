@@ -88,6 +88,7 @@ namespace WinRubicat
                     DetalleVenta nItem = new DetalleVenta();
                     Producto prod;
                     prod = objLogProd.TraerPorId(Convert.ToInt32(cboProducto.SelectedValue));
+
                     decimal precio = Convert.ToDecimal(txtPrecio.Text);
                     nItem.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
                     nItem.Cantidad = Convert.ToInt32(txtCantidad.Text);
@@ -206,5 +207,9 @@ namespace WinRubicat
             cboVendedor.DataSource = objLogicaVend.TraerVendedores();
         }
 
+        private void FrmVenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

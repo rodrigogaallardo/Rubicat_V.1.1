@@ -230,12 +230,12 @@
             this.tlpDatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.67183F));
             this.tlpDatos.Controls.Add(this.btnNuevoCliente, 2, 0);
             this.tlpDatos.Controls.Add(this.cboCliente, 1, 0);
-            this.tlpDatos.Controls.Add(this.lblCliente, 0, 0);
             this.tlpDatos.Controls.Add(this.lblVendedor, 0, 1);
             this.tlpDatos.Controls.Add(this.cboVendedor, 1, 1);
             this.tlpDatos.Controls.Add(this.btnNuevoVendedor, 2, 1);
             this.tlpDatos.Controls.Add(this.lblFecha, 0, 2);
             this.tlpDatos.Controls.Add(this.dtpFecha, 1, 2);
+            this.tlpDatos.Controls.Add(this.lblCliente, 0, 0);
             this.tlpDatos.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tlpDatos.Location = new System.Drawing.Point(13, 35);
             this.tlpDatos.Margin = new System.Windows.Forms.Padding(4, 5, 0, 5);
@@ -617,6 +617,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmVenta";
             this.Text = "NUEVO PEDIDO";
+            this.Load += new System.EventHandler(this.FrmVenta_Load);
             this.tlpDatos.ResumeLayout(false);
             this.tlpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

@@ -11,8 +11,9 @@ namespace Entidades
         public int IdProducto { get; set; }
         public string Familia { get; set; }
         public string Arquetipo { get; set; }
+        
         public string Descripcion { get; set; }
-        //public string Nombre { get; set; }
+        public string Nombre { get; set; }
         public double Peso { get; set; }
         public decimal Costo { get; set; }
         public int Cantidad { get; set; }
@@ -22,6 +23,7 @@ namespace Entidades
         #region propiedades de navegacion
         public List<Venta> Ventas { get; set; }
         public List<DetalleVenta> DetalleVentas { get; set; }
+        public List<Pedido> Pedidos { get; set; }
         #endregion
     }
 }

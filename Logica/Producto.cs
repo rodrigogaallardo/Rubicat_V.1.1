@@ -57,5 +57,11 @@ namespace Logica
         {
             return AdmProducto.SelectId(id);
         }
+
+        public List<Entidades.Producto> SelectProducto(string letra)
+        {
+            return AdmProducto.SelectProducto(letra);
+        }
+
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3DD30164-57CD-415E-8F68-2D53796AF500}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WinRubicat</RootNamespace>
-    <AssemblyName>WinRubicat</AssemblyName>
+    <RootNamespace>RubicatDemo</RootNamespace>
+    <AssemblyName>RubicatDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,12 +32,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Rubicat.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SpreadsheetLight, Version=3.4.9.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.4.9\lib\SpreadsheetLight.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -51,6 +61,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsultaVentas.cs">
@@ -65,23 +76,29 @@
     <Compile Include="FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsCli.cs">
+    <Compile Include="FrmConsultaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsCli.Designer.cs">
-      <DependentUpon>FrmConsCli.cs</DependentUpon>
+    <Compile Include="FrmConsultaClientes.Designer.cs">
+      <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsProd.cs">
+    <Compile Include="FrmConsultaDePedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsProd.Designer.cs">
-      <DependentUpon>FrmConsProd.cs</DependentUpon>
+    <Compile Include="FrmConsultaDePedidos.Designer.cs">
+      <DependentUpon>FrmConsultaDePedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConsultaDeposito.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmConsultaDeposito.Designer.cs">
       <DependentUpon>FrmConsultaDeposito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultaProducto.Designer.cs">
+      <DependentUpon>FrmConsultaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConsultasMateriasPrimas.cs">
       <SubType>Form</SubType>
@@ -137,6 +154,12 @@
     <Compile Include="FrmProd.Designer.cs">
       <DependentUpon>FrmProd.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPedido.Designer.cs">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStockTotal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,11 +210,17 @@
     <EmbeddedResource Include="FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsProd.resx">
-      <DependentUpon>FrmConsProd.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultaClientes.resx">
+      <DependentUpon>FrmConsultaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaDePedidos.resx">
+      <DependentUpon>FrmConsultaDePedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultaDeposito.resx">
       <DependentUpon>FrmConsultaDeposito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultaProducto.resx">
+      <DependentUpon>FrmConsultaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConsultasMateriasPrimas.resx">
       <DependentUpon>FrmConsultasMateriasPrimas.cs</DependentUpon>
@@ -213,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmProd.resx">
       <DependentUpon>FrmProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPedido.resx">
+      <DependentUpon>FrmPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStockTotal.resx">
       <DependentUpon>FrmStockTotal.cs</DependentUpon>
@@ -246,6 +278,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
@@ -273,6 +306,12 @@
       <Project>{925619e8-13e7-4c95-9e4b-bf3c26aab946}</Project>
       <Name>Logica</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Rubicat.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

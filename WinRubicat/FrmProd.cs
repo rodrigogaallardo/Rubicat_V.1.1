@@ -37,7 +37,7 @@ namespace WinRubicat
             lblTitulo.Text = "Modificar Producto";
             btnAgregar.Text = "Modificar";
 
-            //txtNombre.Text = producto.Nombre;
+            txtNombre.Text = producto.Nombre;
             txtFamilia.Text = producto.Familia.ToString();
             txtArquetipo.Text = producto.Arquetipo.ToString();
             txtDescripcion.Text = producto.Descripcion.ToString();
@@ -61,7 +61,7 @@ namespace WinRubicat
             switch (boton.Name)
             {
                 case "btnAgregar":
-                    //modelProd.Nombre = txtNombre.Text;
+                    modelProd.Nombre = txtNombre.Text;
                     modelProd.Familia = txtFamilia.Text;
                     modelProd.Arquetipo = txtArquetipo.Text;
                     modelProd.Descripcion = txtDescripcion.Text;

@@ -17,7 +17,6 @@ namespace Entidades
         public int ClienteId { get; set; }
         public int VendedorId { get; set; }
         public DateTime Fecha { get; set; }
-
         public string Transporte { get; set; }
         public DateTime FechaDeEntrega { get; set; }
 
