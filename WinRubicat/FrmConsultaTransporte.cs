@@ -10,7 +10,6 @@ namespace WinRubicat
     {
         void TraerTransporte()
         {
-            //traer transporte
             Logica.Transporte objTransporte = new Logica.Transporte();
             dgvTransporte.DataSource = objTransporte.TraerTransporte();
 
