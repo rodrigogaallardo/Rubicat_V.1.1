@@ -69,7 +69,7 @@ namespace WinRubicat
                     transporteMod.NombreTransporte = txtNombreTransporte.Text;
                     if (transporteMod.NombreTransporte == "")
                     {
-                        MessageBox.Show("No puede dejar vacío el área Nombre de Trasnporte","Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("No puede dejar vacío el área: 'Nombre de Transporte'","Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         break;
                     }
 
@@ -81,21 +81,30 @@ namespace WinRubicat
                     }
 
 
-                    try {
+                    try
+                    {
                         transporteMod.TelefonoTransporte = Convert.ToInt64(txtTelefono.Text);
                     }
                     catch (FormatException)
                     {
-                        MessageBox.Show("Solo esta permitido números en el area Teléfono", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //Aca entra cuando es null y cuando ingreso caracteres 
+                        MessageBox.Show("Ingresar un valor numérico en el area: 'Teléfono'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         break;
                     }
-                    catch (Exception) {
-                        //este seria para un campo nulo o cualquier otro error
-                        MessageBox.Show("Error en el campo teléfono", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Número fuera de rango en el area: 'Teléfono'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         break;
                     }
+                    
 
                     transporteMod.HorarioDeTransporte = txtHorario.Text;
+
+                    if (transporteMod.HorarioDeTransporte == "")
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Horario de transporte'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
 
                     try
                     {
@@ -118,8 +127,12 @@ namespace WinRubicat
                            
                             objTransporte.AgregarTransporte(transporteMod);
                             MessageBox.Show("Transporte agregado correctamente.","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                            Close();
+                            txtNombreTransporte.Clear();
+                            txtDireccionTransporte.Clear();
+                            txtTelefono.Clear();
+                            txtHorario.Clear();
                             break;
+
                         case Operacion.Modificacion:
                             transporteMod.IdTransporte = Convert.ToInt32(lblIdT.Text);
                             objTransporte.ModificarTransporte(transporteMod);

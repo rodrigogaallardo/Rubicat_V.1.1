@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RubicatDemo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,9 @@ namespace WinRubicat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal());
+            Application.Run(new MenuPrincipal()); 
+            //Application.Run(new MenuPrincipal_V()); 
+
         }
     }
 }

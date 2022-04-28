@@ -57,6 +57,8 @@ namespace Datos.Data
             modelBuilder.Entity<Entidades.Pedido>().Property(p => p.ValorFinal).IsRequired().HasPrecision(14, 2);
             modelBuilder.Entity<Entidades.Pedido>().ToTable("Pedidos");
 
+            
+
             //TablaTransporte
             modelBuilder.Entity<Entidades.Transporte>().HasKey(t => t.IdTransporte);
             modelBuilder.Entity<Entidades.Transporte>().HasMany(t => t.Clientes).WithRequired().HasForeignKey(t => t.TransporteId);
@@ -118,8 +120,9 @@ namespace Datos.Data
             modelBuilder.Entity<Entidades.Producto>().Property(p => p.Arquetipo).HasColumnType("varchar").HasMaxLength(50);
             modelBuilder.Entity<Entidades.Producto>().Property(p => p.Descripcion).HasColumnType("varchar").HasMaxLength(50);
             modelBuilder.Entity<Entidades.Producto>().Property(p => p.Cantidad).HasColumnType("int");
-            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Peso).HasColumnType("float");
-            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Costo).HasPrecision(14, 2);
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Peso).IsRequired().HasPrecision(30, 2); 
+            modelBuilder.Entity<Entidades.Producto>().Property(p => p.Costo).IsRequired().HasPrecision(30, 2); 
+            //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Costo).HasPrecision(6, 2);
             //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Precio).HasColumnType("money");
             //modelBuilder.Entity<Entidades.Producto>().Property(p => p.Ean).HasColumnType("int");
             modelBuilder.Entity<Entidades.Producto>().ToTable("Producto");

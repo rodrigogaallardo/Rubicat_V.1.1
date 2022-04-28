@@ -38,5 +38,14 @@ namespace Datos
                          select z).ToList();
             return zonas;
         }
+        public static List<Entidades.Zona> SelectZonas(string letra)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var zona = (from z in rubicatDB.Zonas
+                            where z.Nombre.StartsWith(letra)
+
+                            select z).ToList();
+            return zona;
+        }
     }
 }

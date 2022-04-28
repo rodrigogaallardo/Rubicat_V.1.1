@@ -54,6 +54,7 @@ namespace WinRubicat
                     // Mostrar formulario modificacion
                     FrmProd modifProd = new FrmProd(modelProd);
                     modifProd.StartPosition = FormStartPosition.CenterScreen;
+                    modifProd.FormBorderStyle = FormBorderStyle.FixedSingle;
                     modifProd.FormClosing += ActualizarGrid;
                     modifProd.Show();
                     break;

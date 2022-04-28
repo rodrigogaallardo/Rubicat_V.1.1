@@ -14,7 +14,7 @@ namespace Entidades
         
         public string Descripcion { get; set; }
         public string Nombre { get; set; }
-        public double Peso { get; set; }
+        public decimal Peso { get; set; }
         public decimal Costo { get; set; }
         public int Cantidad { get; set; }
         //public decimal Precio { get; set; }

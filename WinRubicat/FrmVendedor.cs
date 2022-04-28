@@ -20,7 +20,7 @@ namespace WinRubicat
         public FrmVendedor()
         {
             InitializeComponent();
-            LlenarCombos();
+            //LlenarCombos();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
             btnNuevaZona.Click += botones;
@@ -31,7 +31,7 @@ namespace WinRubicat
         public FrmVendedor(Entidades.Vendedor vendedor)
         {
             InitializeComponent();
-            LlenarCombos();
+            //LlenarCombos();
             this.Text = "Modificar Vendedor";
             btnAgregar.Text = "Modificar";
             btnAgregar.Click += botones;
@@ -55,26 +55,66 @@ namespace WinRubicat
             switch (boton.Name)
             {
                 case "btnAgregar":
+
+                    ///////////////////////////////////////VERIFICACIÓN DE CAMPOS//////////////////////////////////////////////////////////
+
                     modelVendedor.Nombre = txtNombre.Text;
-                    modelVendedor.Telefono = Convert.ToInt64(txtTelefono.Text);
-                    modelVendedor.ZonaId = Convert.ToInt32(cboZona.SelectedValue); ;
+
+                    if (modelVendedor.Nombre == "")
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Nombre de Vendedor'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
+                    try
+                    {
+                        modelVendedor.Telefono = Convert.ToInt64(txtTelefono.Text);
+                    }
+                    catch (FormatException)
+                    {
+                        //Aca entra cuando es null y cuando ingreso caracteres 
+                        MessageBox.Show("Ingresar un valor numérico en el área: 'Teléfono de Vendedor'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Número fuera de rango en el área: 'Teléfono de Vendedor'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
+
+                    try
+                    {
+                        _ = cboZona.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Zona'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+
+                    modelVendedor.ZonaId = Convert.ToInt32(cboZona.SelectedValue);
+                    ////////////////////////////////////////////////FIN DE VERIFICACIÓN DE CAMPOS/////////////////////////////////////////////////
+
                     switch (Estado)
                     {
                         case Operacion.Alta:
                             objLogica.AgregarVendedor(modelVendedor);
-                            MessageBox.Show("Vendedor agregado correctamente.");
-                            Close();
+                            MessageBox.Show("Vendedor agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtNombre.Clear();
+                            txtTelefono.Clear();
                             break;
                         case Operacion.Modificacion:
                             modelVendedor.IdVendedor = Convert.ToInt32(lblId.Text);
                             objLogica.ModificarVendedor(modelVendedor);
-                            MessageBox.Show("Vendedor agregado correctamente.");
+                            MessageBox.Show("Vendedor modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Close();
                             break;
                         default:
                             break;
                     }
                     break;
+
                 case "btnNuevaZona":
                     FrmZona frmZona = new FrmZona();
                     frmZona.StartPosition = FormStartPosition.CenterScreen;
@@ -99,6 +139,14 @@ namespace WinRubicat
         private void FrmVendedor_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboZona_TextChanged(object sender, EventArgs e)
+        {
+            Logica.Zona objLogicaCliente = new Logica.Zona();
+            cboZona.DataSource = objLogicaCliente.SelectZona(cboZona.Text);
+            cboZona.DisplayMember = "Nombre";
+            cboZona.ValueMember = "IdZona";
         }
     }
 }

@@ -117,45 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="msVentas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="msVentas.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Century Gothic, 12pt</value>
-  </data>
-  <data name="tsmiNuevaVenta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
-  </data>
-  <data name="tsmiNuevaVenta.Text" xml:space="preserve">
-    <value>Nuevo pedido</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tsmiNuevaVenta.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmiConsultaVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
-  </data>
-  <data name="tsmiConsultaVentas.Text" xml:space="preserve">
-    <value>Consulta de pedidos</value>
-  </data>
-  <data name="tsmiConsultaVentas.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmiPedido.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
-  </data>
-  <data name="tsmiPedido.Text" xml:space="preserve">
-    <value>Pedido</value>
-  </data>
-  <data name="tsmiConsultaDePedidos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>241, 26</value>
-  </data>
-  <data name="tsmiConsultaDePedidos.Text" xml:space="preserve">
-    <value>Consulta de Pedidos</value>
-  </data>
-  <data name="ventasToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pedidosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAATVJREFUSEvt
         1r1Kw1AYh/EMLroqWEfBO3BycnCxCJ1F0Ek3FxcXewHSmxCcvAN3Hbq5ufs1KzgIil/PPyQ0ynvMe04k
@@ -165,24 +131,6 @@
         etxjGkktQY/8BdZwyzP0A2MR46Jag/673KKrhUDe89xpUPn56UddKO957v7swnpsGqphq1oI5D1vXBtl
         2ScKQzrFu/wtMgAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="ventasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 25</value>
-  </data>
-  <data name="ventasToolStripMenuItem.Text" xml:space="preserve">
-    <value>Pedidos</value>
-  </data>
-  <data name="tsmiNuevoCliente.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 26</value>
-  </data>
-  <data name="tsmiNuevoCliente.Text" xml:space="preserve">
-    <value>Nuevo cliente</value>
-  </data>
-  <data name="tsmiConsultaClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>238, 26</value>
-  </data>
-  <data name="tsmiConsultaClientes.Text" xml:space="preserve">
-    <value>Consulta de clientes</value>
   </data>
   <data name="clientesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -198,24 +146,6 @@
         jqA9yyaUzkW4G0YqvYjuhpuRoqlTOwrnPNyNcjCMwqnyvKpqem8Lxy1YuVC3QtFs5W6Qk6TZq5lm/s/U
         an8AcIpis+uTQpEAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 25</value>
-  </data>
-  <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
-    <value>Clientes</value>
-  </data>
-  <data name="tsmiNuevoVendedor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 26</value>
-  </data>
-  <data name="tsmiNuevoVendedor.Text" xml:space="preserve">
-    <value>Nuevo Vendedor</value>
-  </data>
-  <data name="tsmiConsultaVendedores.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 26</value>
-  </data>
-  <data name="tsmiConsultaVendedores.Text" xml:space="preserve">
-    <value>Consultar vendedores</value>
   </data>
   <data name="vendedoresToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -237,25 +167,7 @@
         tjT0Dwipd6SSSipRSqVfgLbeKASy1GYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="vendedoresToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 25</value>
-  </data>
-  <data name="vendedoresToolStripMenuItem.Text" xml:space="preserve">
-    <value>Vendedores</value>
-  </data>
-  <data name="tsmiNuevoProd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 26</value>
-  </data>
-  <data name="tsmiNuevoProd.Text" xml:space="preserve">
-    <value>Nuevo Producto</value>
-  </data>
-  <data name="tsmiConsultaProd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 26</value>
-  </data>
-  <data name="tsmiConsultaProd.Text" xml:space="preserve">
-    <value>Consultar Productos</value>
-  </data>
-  <data name="productosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiNuevoProd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAUZJREFUaEPt
         1jFKBEEUhOGJNFj0IgZeafUcolcx2otooAcw8CBiqNVBwwT/Uv16BqzAH77oUbPg7oDLYAd5l58JPbo5
@@ -265,45 +177,6 @@
         yEajRDYaJbLRKJGNRolsNEpko1EiG40S2WiUyEajRDYaJbLRKJGNRolsNEpko1EiG40S2WiUyEajRDYa
         JbLRKJGNRolsr0LDJC+yall+ASardLrM39mNAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="productosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 25</value>
-  </data>
-  <data name="productosToolStripMenuItem.Text" xml:space="preserve">
-    <value>Productos</value>
-  </data>
-  <data name="tsmiIngresarDepositos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 26</value>
-  </data>
-  <data name="tsmiIngresarDepositos.Text" xml:space="preserve">
-    <value>Dar de alta deposito</value>
-  </data>
-  <data name="tsmiConsultarDepositos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>243, 26</value>
-  </data>
-  <data name="tsmiConsultarDepositos.Text" xml:space="preserve">
-    <value>Depositos disponibles</value>
-  </data>
-  <data name="depositosToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 25</value>
-  </data>
-  <data name="depositosToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Depositos</value>
-  </data>
-  <data name="depositosToolStripMenuItem1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmiAltaTransporte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 26</value>
-  </data>
-  <data name="tsmiAltaTransporte.Text" xml:space="preserve">
-    <value>Dar de Alta Transporte</value>
-  </data>
-  <data name="tsmiConsultaTransporte.Size" type="System.Drawing.Size, System.Drawing">
-    <value>258, 26</value>
-  </data>
-  <data name="tsmiConsultaTransporte.Text" xml:space="preserve">
-    <value>Consultar Transportes</value>
   </data>
   <data name="transporteToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -319,103 +192,6 @@
         VTc+wYn2uQk5mZ8auUP4AXLMdQYduQcn2mcavoVcgLeRB47PKuU7pMXfQI7tCh8zrdXU5zXs3Ocs1Gac
         3MQsHJfz8B10PSj7nIFjcQTyMXsFt/Z8CW9A1vriKLwFC/sMBv8AsAT1lkXe5eMAAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="transporteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 25</value>
-  </data>
-  <data name="transporteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Transporte</value>
-  </data>
-  <data name="tsmiMateriaPrima.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 26</value>
-  </data>
-  <data name="tsmiMateriaPrima.Text" xml:space="preserve">
-    <value>Ingresar materia prima</value>
-  </data>
-  <data name="tsmiConsultarMateriasPrimas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 26</value>
-  </data>
-  <data name="tsmiConsultarMateriasPrimas.Text" xml:space="preserve">
-    <value>Consultar materias primas</value>
-  </data>
-  <data name="materiaPrimaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 25</value>
-  </data>
-  <data name="materiaPrimaToolStripMenuItem.Text" xml:space="preserve">
-    <value>Materias Primas</value>
-  </data>
-  <data name="materiaPrimaToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tsmiIngresarStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 26</value>
-  </data>
-  <data name="tsmiIngresarStock.Text" xml:space="preserve">
-    <value>Ingresar Materia Prima</value>
-  </data>
-  <data name="tsmiConsultarStock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>256, 26</value>
-  </data>
-  <data name="tsmiConsultarStock.Text" xml:space="preserve">
-    <value>Registros de Ingresos</value>
-  </data>
-  <data name="ingresosDeStockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 26</value>
-  </data>
-  <data name="ingresosDeStockToolStripMenuItem.Text" xml:space="preserve">
-    <value>Ingresos de Stock</value>
-  </data>
-  <data name="tsmiStockTotal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 26</value>
-  </data>
-  <data name="tsmiStockTotal.Text" xml:space="preserve">
-    <value>Stock Total</value>
-  </data>
-  <data name="stockToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 25</value>
-  </data>
-  <data name="stockToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stock</value>
-  </data>
-  <data name="stockToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="msVentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="msVentas.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>22, 2, 0, 2</value>
-  </data>
-  <data name="msVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 29</value>
-  </data>
-  <data name="msVentas.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="msVentas.Text" xml:space="preserve">
-    <value>menuStrip1</value>
-  </data>
-  <data name="&gt;&gt;msVentas.Name" xml:space="preserve">
-    <value>msVentas</value>
-  </data>
-  <data name="&gt;&gt;msVentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;msVentas.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;msVentas.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>27</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 20</value>
   </data>
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3246,15 +3022,6 @@
         t1p+72oooA//2Q==
 </value>
   </data>
-  <data name="$this.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1008, 729</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 11.25pt</value>
-  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEANkIAAAEAIADoOQAAFgAAACgAAAA2AAAAhAAAAAEAIAAAAAAAwDkAACMuAAAjLgAAAAAAAAAA
@@ -3506,188 +3273,5 @@
         +AAAP/y6///+AAD//Lz////wD//8O/////////w8/////////Dv////////8PP////////w8////////
         /Dz////////8vP////////w8/////////Dw=
 </value>
-  </data>
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 5, 3, 5</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Rubicat</value>
-  </data>
-  <data name="&gt;&gt;ventasToolStripMenuItem.Name" xml:space="preserve">
-    <value>ventasToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ventasToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevaVenta.Name" xml:space="preserve">
-    <value>tsmiNuevaVenta</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevaVenta.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaVentas.Name" xml:space="preserve">
-    <value>tsmiConsultaVentas</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaVentas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiPedido.Name" xml:space="preserve">
-    <value>tsmiPedido</value>
-  </data>
-  <data name="&gt;&gt;tsmiPedido.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaDePedidos.Name" xml:space="preserve">
-    <value>tsmiConsultaDePedidos</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaDePedidos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;clientesToolStripMenuItem.Name" xml:space="preserve">
-    <value>clientesToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;clientesToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoCliente.Name" xml:space="preserve">
-    <value>tsmiNuevoCliente</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoCliente.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaClientes.Name" xml:space="preserve">
-    <value>tsmiConsultaClientes</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaClientes.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;vendedoresToolStripMenuItem.Name" xml:space="preserve">
-    <value>vendedoresToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;vendedoresToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoVendedor.Name" xml:space="preserve">
-    <value>tsmiNuevoVendedor</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoVendedor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaVendedores.Name" xml:space="preserve">
-    <value>tsmiConsultaVendedores</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaVendedores.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;productosToolStripMenuItem.Name" xml:space="preserve">
-    <value>productosToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;productosToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoProd.Name" xml:space="preserve">
-    <value>tsmiNuevoProd</value>
-  </data>
-  <data name="&gt;&gt;tsmiNuevoProd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaProd.Name" xml:space="preserve">
-    <value>tsmiConsultaProd</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaProd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;depositosToolStripMenuItem1.Name" xml:space="preserve">
-    <value>depositosToolStripMenuItem1</value>
-  </data>
-  <data name="&gt;&gt;depositosToolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiIngresarDepositos.Name" xml:space="preserve">
-    <value>tsmiIngresarDepositos</value>
-  </data>
-  <data name="&gt;&gt;tsmiIngresarDepositos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarDepositos.Name" xml:space="preserve">
-    <value>tsmiConsultarDepositos</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarDepositos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;transporteToolStripMenuItem.Name" xml:space="preserve">
-    <value>transporteToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;transporteToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiAltaTransporte.Name" xml:space="preserve">
-    <value>tsmiAltaTransporte</value>
-  </data>
-  <data name="&gt;&gt;tsmiAltaTransporte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaTransporte.Name" xml:space="preserve">
-    <value>tsmiConsultaTransporte</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultaTransporte.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;materiaPrimaToolStripMenuItem.Name" xml:space="preserve">
-    <value>materiaPrimaToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;materiaPrimaToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiMateriaPrima.Name" xml:space="preserve">
-    <value>tsmiMateriaPrima</value>
-  </data>
-  <data name="&gt;&gt;tsmiMateriaPrima.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarMateriasPrimas.Name" xml:space="preserve">
-    <value>tsmiConsultarMateriasPrimas</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarMateriasPrimas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;stockToolStripMenuItem.Name" xml:space="preserve">
-    <value>stockToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;stockToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ingresosDeStockToolStripMenuItem.Name" xml:space="preserve">
-    <value>ingresosDeStockToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;ingresosDeStockToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiIngresarStock.Name" xml:space="preserve">
-    <value>tsmiIngresarStock</value>
-  </data>
-  <data name="&gt;&gt;tsmiIngresarStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarStock.Name" xml:space="preserve">
-    <value>tsmiConsultarStock</value>
-  </data>
-  <data name="&gt;&gt;tsmiConsultarStock.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmiStockTotal.Name" xml:space="preserve">
-    <value>tsmiStockTotal</value>
-  </data>
-  <data name="&gt;&gt;tsmiStockTotal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MenuPrincipal</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

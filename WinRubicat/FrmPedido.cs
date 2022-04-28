@@ -23,7 +23,6 @@ namespace WinRubicat
         {
             InitializeComponent();
             btnCancelar.Click += botones;
-            btnActualizar.Click += botones;
             btnParcialPedido.Click += botones;
             btnAplicarDescuento.Click += botones;
             btnAgregarPedido.Click += botones;
@@ -41,7 +40,6 @@ namespace WinRubicat
         {
             InitializeComponent();
             btnCancelar.Click += botones;
-            btnActualizar.Click += botones;
             btnParcialPedido.Click += botones;
             btnAplicarDescuento.Click += botones;
             btnAgregarPedido.Click += botones;
@@ -51,13 +49,12 @@ namespace WinRubicat
             //LlenarTxtBoxTransporte();
             //LlenarTxtBoxProducto();
             lblCodigo.Text = pedido.IdPedido.ToString();
-            lblTitulo.Text = "Modificar Deposito";
+            lblTitulo.Text = "Modificar Pedido";
             txtNumeroDeRemito.Text = pedido.NumeroDeRemito.ToString();
             Estado = Operacion.Modificacion;
         }
 
         List<Pedido> ListaPedido = new List<Pedido>();
-
         Logica.Aprobado objLogAprobado = new Logica.Aprobado();
         Logica.Pedido objLogicaPedido = new Logica.Pedido();
         Logica.Producto objLogProd = new Logica.Producto();
@@ -68,37 +65,81 @@ namespace WinRubicat
         private void botones(object sender, EventArgs e)
         {
             Button boton = sender as Button;
+            Pedido objPedido = new Pedido();
 
             switch (boton.Name)
             {
-                case "btnBuscar":
-
-                    break;
+                
+               
                 case "btnAgregarPedido":
 
-                    Pedido objPedido = new Pedido();
-                    objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
+                    
+                    try
+                    {
+                        objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
+
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Ingrese un peso en el area: 'Número de remito'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Ingreso un peso fuera de los limites permitidos", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        break;
+                    }
                     objPedido.FechaDeEntrega = dtpFechaDeEntrega.Value;
                     objPedido.FechaDePedido = dtpFechaDePedido.Value;
-                    objPedido.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
-                    objPedido.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
-                    objPedido.TransporteId = Convert.ToInt32(cboTransporte.SelectedValue);
-                    objPedido.ValorFinal = AplicarDescuento();
+                    try
+                    {
+                        _ = cboCliente.SelectedItem.ToString() != null;
 
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Cliente'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    objPedido.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
+                    try
+                    {
+                        _ = cboTransporte.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Transporte'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    objPedido.TransporteId = Convert.ToInt32(cboTransporte.SelectedValue);
+                    try
+                    {
+                        _ = cboProducto.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Producto'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
+                    objPedido.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
+                    objPedido.ValorFinal = AplicarDescuento();
 
                     switch (Estado)
                     {
                         case Operacion.Alta:
                             objLogicaPedido.AgregarPedido(objPedido);
                             //objLogAprobado.AgregarAprobado(objAprobado);
-                            MessageBox.Show("Pedido agregado correctamente.");
+                            MessageBox.Show("Pedido agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dgvPedidoParcial.Columns.Clear();
                             break;
 
                         case Operacion.Modificacion:
                             objPedido.IdPedido = Convert.ToInt32(lblCodigo.Text);
                             objLogicaPedido.ModificarPedido(objPedido);
-                            MessageBox.Show("Pedido modificado correctamente.");
+                            MessageBox.Show("Pedido modificado correctamente.","Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Close();
                             dgvPedidoParcial.Columns.Clear();
                             break;
 
@@ -113,18 +154,78 @@ namespace WinRubicat
                     break;
 
                 case "btnParcialPedido":
-                    ActualizarPedidoParcial();
-                    break;
+                    try
+                    {
+                        objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
 
-                case "btnActualizar":
-                    ActualizarDatos();
-                    break;
+                    }
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Ingrese un peso en el area: 'Número de remito'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    catch (OverflowException)
+                    {
+                        MessageBox.Show("Ingreso un peso fuera de los limites permitidos", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    objPedido.FechaDeEntrega = dtpFechaDeEntrega.Value;
+                    objPedido.FechaDePedido = dtpFechaDePedido.Value;
+                    try
+                    {
+                        _ = cboCliente.SelectedItem.ToString() != null;
+
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Cliente'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    objPedido.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
+                    try
+                    {
+                        _ = cboTransporte.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("No puede dejar vacío el área: 'Transporte'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    objPedido.TransporteId = Convert.ToInt32(cboTransporte.SelectedValue);
+                    try
+                    {
+                        _ = cboProducto.SelectedItem.ToString() != null;
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Producto'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    objPedido.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
+
+                    //Descuento
+
+                    objPedido.ValorFinal = AplicarDescuento();
+                    txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text));
+                    txtTotal.Text = Convert.ToString(objPedido.ValorFinal);
+                    TraerPedidoParcial();
+
+                    //ActualizarPedidoParcial();
+                    break;                                    
 
                 case "btnCancelar":
                     this.Close();
                     break;
             }
         }
+
+        private void TraerPedidoParcial()
+        {
+            dgvPedidoParcial.DataSource = objLogicaPedido.TraerPedidos();
+        }
+
         void ActualizarPedidoParcial()
         {
             //if (Convert.ToInt32(dgvPedidoParcial.CurrentRow.Cells[0].Value))
@@ -133,50 +234,104 @@ namespace WinRubicat
             //}
             dgvPedidoParcial.DataSource = null;
             Pedido objPedido = new Pedido();
-            objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
+            try
+            {
+                objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese un peso en el area: 'Número de remito'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Ingreso un peso fuera de los limites permitidos", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             objPedido.FechaDeEntrega = dtpFechaDeEntrega.Value;
             objPedido.FechaDePedido = dtpFechaDePedido.Value;
-            objPedido.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
-            objPedido.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
-            objPedido.TransporteId = Convert.ToInt32(cboTransporte.SelectedValue);
+            try
+            {
+                _ = cboCliente.SelectedItem.ToString() != null;
 
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No puede dejar vacío el área: 'Cliente'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            objPedido.ClienteId = Convert.ToInt32(cboCliente.SelectedValue);
+            try
+            {
+                _ = cboTransporte.SelectedItem.ToString() != null;
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("No puede dejar vacío el área: 'Transporte'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            objPedido.TransporteId = Convert.ToInt32(cboTransporte.SelectedValue);
+            try
+            {
+                _ = cboProducto.SelectedItem.ToString() != null;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No puede dejar vacío el área: 'Producto'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            objPedido.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
+            
             //Descuento
 
             objPedido.ValorFinal = AplicarDescuento();
             txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text));
             txtTotal.Text = Convert.ToString(objPedido.ValorFinal);
-            ListaPedido.Add(objPedido);
 
-            
+            ListaPedido.Add(objPedido);
             dgvPedidoParcial.DataSource = ListaPedido;
+            
         }
 
         private decimal AplicarDescuento()
         {
-            decimal ValorInicial = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
-            decimal ValorFinal;
-            decimal Descuento;
-            
-            if (rbEfectivo.Checked == true)
+            try
             {
-                Descuento = Convert.ToDecimal(txtDescuento.Text);
-                ValorFinal = ValorInicial - Descuento;
-                txtVerDesc.Text = Convert.ToString(Descuento);
-                return ValorFinal;
+                decimal ValorInicial = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                decimal ValorFinal;
+                decimal Descuento;
 
+                if (rbEfectivo.Checked == true)
+                {
+                    Descuento = Convert.ToDecimal(txtDescuento.Text);
+                    ValorFinal = ValorInicial - Descuento;
+                    txtVerDesc.Text = Convert.ToString(Descuento);
+                    return ValorFinal;
+
+                }
+                else if (rbPorcentaje.Checked == true)
+                {
+                    Descuento = (ValorInicial * (Convert.ToDecimal(txtDescuento.Text) / 100));
+                    ValorFinal = ValorInicial - Descuento;
+                    txtVerDesc.Text = Convert.ToString(Descuento);
+                    return ValorFinal;
+                }
+                else
+                {
+                    txtVerDesc.Text = Convert.ToString(0);
+                    return ValorFinal = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                }
             }
-            else if (rbPorcentaje.Checked == true)
+            catch (Exception)
             {
-                Descuento = (ValorInicial * (Convert.ToDecimal(txtDescuento.Text) / 100));
-                ValorFinal = ValorInicial - Descuento;
-                txtVerDesc.Text = Convert.ToString(Descuento);
-                return ValorFinal;
+
+                return 0;
             }
-            else
-            {
-                txtVerDesc.Text = Convert.ToString(0);
-                return ValorFinal = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
-            }    
+
+            
             
 
 
@@ -273,7 +428,7 @@ namespace WinRubicat
         }
 
 
-
+        //Segun la primer letra trae los productos de la base de datos
         private void cboProducto_TextChanged(object sender, EventArgs e)
         {
             Logica.Producto objLogicaProd = new Logica.Producto();
@@ -281,9 +436,7 @@ namespace WinRubicat
             cboProducto.DisplayMember = "Nombre";
             cboProducto.ValueMember = "IdProducto";
         }
-
-       
-
+        //Carga los textbox con los valores del elemento seleecionado 
         private void cboTransporte_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Cuando cambio un item llena los textboxs

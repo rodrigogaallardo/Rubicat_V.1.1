@@ -31,7 +31,13 @@ namespace WinRubicat
             {
                 case "btnAgregarZona":
                     modelZona.Nombre = txtNombre.Text;
+                    if (modelZona.Nombre == "")
+                    {
+                        MessageBox.Show("No puede dejar vacío el área: 'Zona'", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        break;
+                    }
                     objLogZona.AgregarZona(modelZona);
+                    MessageBox.Show("Zona agregada correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                     break;
                 case "btnCancelar":
@@ -40,6 +46,11 @@ namespace WinRubicat
                 default:
                     break;
             }
+        }
+
+        private void btnAgregarZona_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

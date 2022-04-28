@@ -57,7 +57,7 @@ namespace WinRubicat
         {
             throw new NotImplementedException();
         }
-
+        
         private void OpcionesMenu(object sender, EventArgs e)
         {
             ToolStripMenuItem opcion = sender as ToolStripMenuItem;
@@ -67,16 +67,78 @@ namespace WinRubicat
             }
             switch (opcion.Name)
             {
-                //******************************************//
-                //********Consultar Productos a Stock********//
-                //******************************************//
+
+                //********Transporte********//
+                case "tsmiAltaTransporte":
+                    FrmTransporte FrmIngresosTransporte = new FrmTransporte();
+                    FrmIngresosTransporte.MdiParent = this;
+                    FrmIngresosTransporte.StartPosition = FormStartPosition.CenterScreen;
+                    FrmIngresosTransporte.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //FrmIngresosTransporte.Dock = DockStyle.Fill;
+                    FrmIngresosTransporte.Show();
+                    break;
+                case "tsmiConsultaTransporte":
+                    FrmConsultaTransporte FrmConsultasTransporte = new FrmConsultaTransporte();
+                    FrmConsultasTransporte.MdiParent = this;
+                    FrmConsultasTransporte.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultasTransporte.Dock = DockStyle.Fill;
+                    FrmConsultasTransporte.Show();
+                    break;
+                //********Producto********//
+                case "tsmiNuevoProd":
+                    FrmProd frmNuevoProd = new FrmProd();
+                    frmNuevoProd.MdiParent = this;
+                    frmNuevoProd.StartPosition = FormStartPosition.CenterScreen;
+                    frmNuevoProd.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //frmNuevoProd.Dock = DockStyle.Fill;
+                    frmNuevoProd.Show();
+                    break;
+                case "tsmiConsultaProd":
+                    FrmConsultaProducto frmConsProducto = new FrmConsultaProducto();
+                    frmConsProducto.MdiParent = this;
+                    frmConsProducto.StartPosition = FormStartPosition.CenterScreen;
+                    frmConsProducto.Dock = DockStyle.Fill;
+                    frmConsProducto.Show();
+                    break;
+                //********Vendedor********//
+                case "tsmiNuevoVendedor":
+                    FrmVendedor FrmNuevoVend = new FrmVendedor();
+                    FrmNuevoVend.MdiParent = this;
+                    FrmNuevoVend.StartPosition = FormStartPosition.CenterScreen;
+                    FrmNuevoVend.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //FrmNuevoVend.Dock = DockStyle.Fill;
+                    FrmNuevoVend.Show();
+                    break;
+                case "tsmiConsultaVendedores":
+                    FrmConsVend frmConsVend = new FrmConsVend();
+                    frmConsVend.MdiParent = this;
+                    frmConsVend.StartPosition = FormStartPosition.CenterScreen;
+                    frmConsVend.Dock = DockStyle.Fill;
+                    frmConsVend.Show();
+                    break;
+                //********Cliente********//
+                case "tsmiNuevoCliente":
+                    FrmCliente FrmNuevoCli = new FrmCliente();
+                    FrmNuevoCli.MdiParent = this;
+                    FrmNuevoCli.StartPosition = FormStartPosition.CenterScreen;
+                    FrmNuevoCli.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //FrmNuevoCli.Dock = DockStyle.Fill;
+                    FrmNuevoCli.Show();
+                    break;
+                case "tsmiConsultaClientes":
+                    FrmConsultaClientes frmConsCliente = new FrmConsultaClientes();
+                    frmConsCliente.MdiParent = this;
+                    frmConsCliente.StartPosition = FormStartPosition.CenterScreen;
+                    frmConsCliente.Dock = DockStyle.Fill;
+                    frmConsCliente.Show();
+                    break;
+                //********Pedido********//
                 case "tsmiConsultaDePedidos":
                     FrmConsultaDePedidos FrmPedido = new FrmConsultaDePedidos();
                     FrmPedido.MdiParent = this;
                     FrmPedido.StartPosition = FormStartPosition.CenterScreen;
                     FrmPedido.Dock = DockStyle.Fill;
                     FrmPedido.Show();
-
                     break;
                 case "tsmiPedido":
                     FrmPedido FrmRemito = new FrmPedido();
@@ -85,15 +147,23 @@ namespace WinRubicat
                     FrmRemito.Dock = DockStyle.Fill;
                     FrmRemito.Show();
                     break;
+                //******************************************//
 
-
-                case "tsmiConsultaTransporte":
-                    FrmConsultaTransporte FrmConsultasTransporte = new FrmConsultaTransporte();
-                    FrmConsultasTransporte.MdiParent = this;
-                    FrmConsultasTransporte.StartPosition = FormStartPosition.CenterScreen;
-                    FrmConsultasTransporte.Dock = DockStyle.Fill;
-                    FrmConsultasTransporte.Show();
+                case "tsmiNuevaVenta":
+                    FrmVenta FrmNuevaVent = new FrmVenta();
+                    FrmNuevaVent.MdiParent = this;
+                    FrmNuevaVent.StartPosition = FormStartPosition.CenterScreen;
+                    FrmNuevaVent.Dock = DockStyle.Fill;
+                    FrmNuevaVent.Show();
                     break;
+                case "tsmiConsultaVentas":
+                    ConsultaVentas FrmConsultaVent = new ConsultaVentas();
+                    FrmConsultaVent.MdiParent = this;
+                    FrmConsultaVent.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultaVent.Dock = DockStyle.Fill;
+                    FrmConsultaVent.Show();
+                    break;
+
                 case "tsmiConsultarStock":
                     FrmConsultasStock FrmConsultasStockPri = new FrmConsultasStock();
                     FrmConsultasStockPri.MdiParent = this;
@@ -123,17 +193,7 @@ namespace WinRubicat
                     FrmStockTotalPri.Show();
                     break;
 
-                //******************************************//
-                //********Ingresar Productos a Stock********//
-                //******************************************//
-
-                case "tsmiAltaTransporte":
-                    FrmTransporte FrmIngresosTransporte = new FrmTransporte();
-                    FrmIngresosTransporte.MdiParent = this;
-                    FrmIngresosTransporte.StartPosition = FormStartPosition.CenterScreen;
-                    FrmIngresosTransporte.Dock = DockStyle.Fill;
-                    FrmIngresosTransporte.Show();
-                    break;
+                
                 case "tsmiIngresarStock":
                     FrmIngresosStock FrmIngresosStockPri = new FrmIngresosStock();
                     FrmIngresosStockPri.MdiParent = this;
@@ -158,77 +218,33 @@ namespace WinRubicat
                     FrmMateriasPrimasPri.Show();
                     break;
 
-                //******************************************//
-
-                case "tsmiNuevaVenta":
-                    FrmVenta FrmNuevaVent = new FrmVenta();
-                    FrmNuevaVent.MdiParent = this;
-                    FrmNuevaVent.StartPosition = FormStartPosition.CenterScreen;
-                    FrmNuevaVent.Dock = DockStyle.Fill;
-                    FrmNuevaVent.Show();
-                    break;
-                case "tsmiConsultaVentas":
-                    ConsultaVentas FrmConsultaVent = new ConsultaVentas();
-                    FrmConsultaVent.MdiParent = this;
-                    FrmConsultaVent.StartPosition = FormStartPosition.CenterScreen;
-                    FrmConsultaVent.Dock = DockStyle.Fill;
-                    FrmConsultaVent.Show();
-                    break;
-                case "tsmiNuevoVendedor":
-                    FrmVendedor FrmNuevoVend = new FrmVendedor();
-                    FrmNuevoVend.MdiParent = this;
-                    FrmNuevoVend.StartPosition = FormStartPosition.CenterScreen;
-                    FrmNuevoVend.Dock = DockStyle.Fill;
-                    FrmNuevoVend.Show();
-                    break;
-                case "tsmiConsultaVendedores":
-                    FrmConsVend frmConsVend = new FrmConsVend();
-                    frmConsVend.MdiParent = this;
-                    frmConsVend.StartPosition = FormStartPosition.CenterScreen;
-                    frmConsVend.Dock = DockStyle.Fill;
-                    frmConsVend.Show();
-                    break;
-                case "tsmiNuevoCliente":
-                    FrmCliente FrmNuevoCli = new FrmCliente();
-                    FrmNuevoCli.MdiParent = this;
-                    FrmNuevoCli.StartPosition = FormStartPosition.CenterScreen;
-                    FrmNuevoCli.Dock = DockStyle.Fill;
-                    FrmNuevoCli.Show();
-                    break;
-                case "tsmiConsultaClientes":
-                    FrmConsultaClientes frmConsCliente = new FrmConsultaClientes();
-                    frmConsCliente.MdiParent = this;
-                    frmConsCliente.StartPosition = FormStartPosition.CenterScreen;
-                    frmConsCliente.Dock = DockStyle.Fill;
-                    frmConsCliente.Show();
-                    break;
-                case "tsmiNuevoProd":
-                    FrmProd frmNuevoProd = new FrmProd();
-                    frmNuevoProd.MdiParent = this;
-                    frmNuevoProd.StartPosition = FormStartPosition.CenterScreen;
-                    frmNuevoProd.Dock = DockStyle.Fill;
-                    frmNuevoProd.Show();
-                    break;
-                case "tsmiConsultaProd":
-                    FrmConsultaProducto frmConsProducto = new FrmConsultaProducto();
-                    frmConsProducto.MdiParent = this;
-                    frmConsProducto.StartPosition = FormStartPosition.CenterScreen;
-                    frmConsProducto.Dock = DockStyle.Fill;
-                    frmConsProducto.Show();
-                    break;
                 default:
                     break;
             }
         }
 
-        private void sectorBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            SetBackGroundColorOfMDIForm();
+        }
+        private void SetBackGroundColorOfMDIForm()
+        {
+            foreach (Control ctl in this.Controls)
+            {
+                if ((ctl) is MdiClient)
+
+                // If the control is the correct type,
+                // change the color.
+                {
+                    ctl.BackColor = System.Drawing.Color.FromArgb(37,37,37);
+                }
+            }
         }
 
-        private void ingresarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+       
 
-        }
+        
     }
+
 }

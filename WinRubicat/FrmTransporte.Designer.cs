@@ -117,7 +117,7 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.Location = new System.Drawing.Point(102, 62);
+            this.lblTitulo.Location = new System.Drawing.Point(87, 62);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(181, 19);
             this.lblTitulo.TabIndex = 39;
@@ -198,7 +198,7 @@
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCancelar.Location = new System.Drawing.Point(196, 439);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 63);
+            this.btnCancelar.Size = new System.Drawing.Size(145, 53);
             this.btnCancelar.TabIndex = 47;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -220,7 +220,7 @@
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAgregar.Location = new System.Drawing.Point(14, 439);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(145, 63);
+            this.btnAgregar.Size = new System.Drawing.Size(145, 53);
             this.btnAgregar.TabIndex = 46;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -244,7 +244,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(365, 533);
+            this.ClientSize = new System.Drawing.Size(354, 511);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);

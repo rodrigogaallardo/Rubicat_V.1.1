@@ -202,7 +202,7 @@
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnCancelar.Location = new System.Drawing.Point(197, 432);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(145, 63);
+            this.btnCancelar.Size = new System.Drawing.Size(145, 53);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -225,7 +225,7 @@
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnAgregar.Location = new System.Drawing.Point(16, 432);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(145, 63);
+            this.btnAgregar.Size = new System.Drawing.Size(145, 53);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

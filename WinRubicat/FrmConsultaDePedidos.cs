@@ -96,6 +96,7 @@ namespace WinRubicat
                     // Mostrar formulario modificacion
                     FrmPedido frmPedidoMod = new FrmPedido(objPed);
                     frmPedidoMod.StartPosition = FormStartPosition.CenterScreen;
+                    frmPedidoMod.FormBorderStyle = FormBorderStyle.FixedSingle;
                     frmPedidoMod.FormClosing += ActualizarGrid;
                     frmPedidoMod.Show();
                     break;
@@ -226,7 +227,7 @@ namespace WinRubicat
                 try
                 {
                     sl.SaveAs(saveFileDialog1.FileName);
-                    MessageBox.Show("Archivo exportado con éxito");
+                    MessageBox.Show("Archivo exportado con éxito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {

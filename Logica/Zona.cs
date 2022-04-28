@@ -48,5 +48,9 @@ namespace Logica
         {
             return AdmZona.SelectZonas();
         }
+        public List<Entidades.Zona> SelectZona(string letra)
+        {
+            return AdmZona.SelectZonas(letra);
+        }
     }
 }

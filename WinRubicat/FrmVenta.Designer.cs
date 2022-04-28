@@ -617,7 +617,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmVenta";
             this.Text = "NUEVO PEDIDO";
-            this.Load += new System.EventHandler(this.FrmVenta_Load);
+            //this.Load += new System.EventHandler(this.FrmVenta_Load);
             this.tlpDatos.ResumeLayout(false);
             this.tlpDatos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();

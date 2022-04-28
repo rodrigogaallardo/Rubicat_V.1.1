@@ -58,5 +58,15 @@ namespace Datos
             var vendedor = rubicatDB.Vendedores.Find(id);
             return vendedor;
         }
+
+        public static List<Entidades.Vendedor> SelectVendedor(string letra)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var vendedor = (from c in rubicatDB.Vendedores
+                           where c.Nombre.StartsWith(letra)
+
+                           select c).ToList();
+            return vendedor;
+        }
     }
 }

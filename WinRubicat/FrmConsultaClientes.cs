@@ -42,6 +42,7 @@ namespace WinRubicat
                 case "btnAgregarCliente":
                     FrmCliente frmCli = new FrmCliente();
                     frmCli.StartPosition = FormStartPosition.CenterScreen;
+                    frmCli.FormBorderStyle = FormBorderStyle.FixedSingle;
                     frmCli.FormClosing += ActualizarGrid;
                     frmCli.Show();
                     TraerClientes();
@@ -54,6 +55,7 @@ namespace WinRubicat
 
                     FrmCliente modCli = new FrmCliente(modelCliente);
                     modCli.StartPosition = FormStartPosition.CenterScreen;
+                    modCli.FormBorderStyle = FormBorderStyle.FixedSingle;
                     modCli.FormClosing += ActualizarGrid;
                     modCli.Show();
                     TraerClientes();

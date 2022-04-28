@@ -43,6 +43,7 @@ namespace WinRubicat
             {
                 case "btnNuevoVend":
                     FrmVendedor frmVendedor = new FrmVendedor();
+                    frmVendedor.FormBorderStyle = FormBorderStyle.FixedSingle;
                     frmVendedor.StartPosition = FormStartPosition.CenterScreen;
                     frmVendedor.FormClosing += ActualizarGrid;
                     frmVendedor.Show();
@@ -61,6 +62,7 @@ namespace WinRubicat
                     vendedorMod = objLogVend.TraerPorId(vendedorMod.IdVendedor);
                     // Mostrar formulario modificacion
                     FrmVendedor frmVendedorMod = new FrmVendedor(vendedorMod);
+                    frmVendedorMod.FormBorderStyle = FormBorderStyle.FixedSingle;
                     frmVendedorMod.StartPosition = FormStartPosition.CenterScreen;
                     frmVendedorMod.FormClosing += ActualizarGrid;
                     frmVendedorMod.Show();
