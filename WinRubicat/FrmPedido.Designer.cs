@@ -34,15 +34,7 @@ namespace WinRubicat
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedido));
             this.btnAplicarDescuento = new System.Windows.Forms.Button();
-            this.txtCondicion = new System.Windows.Forms.TextBox();
-            this.txtIva = new System.Windows.Forms.TextBox();
-            this.txtLocalidad = new System.Windows.Forms.TextBox();
             this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtCuit = new System.Windows.Forms.TextBox();
-            this.txtHorarioTransporte = new System.Windows.Forms.TextBox();
-            this.txtTelefonoTransporte = new System.Windows.Forms.TextBox();
-            this.txtDireccionTransporte = new System.Windows.Forms.TextBox();
             this.txtDescuento = new System.Windows.Forms.TextBox();
             this.rbPorcentaje = new System.Windows.Forms.RadioButton();
             this.rbEfectivo = new System.Windows.Forms.RadioButton();
@@ -56,7 +48,7 @@ namespace WinRubicat
             this.lblSubTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblDatosLocalidad = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,20 +56,15 @@ namespace WinRubicat
             this.dtpFechaDePedido = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtCantidadProducto = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtPrecioProducto = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.lblFechaDeEntrega = new System.Windows.Forms.Label();
-            this.cboProducto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.cboTransporte = new System.Windows.Forms.ComboBox();
-            this.dtpFechaDeEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblDatosCliente = new System.Windows.Forms.Label();
+            this.lblDatosIVA = new System.Windows.Forms.Label();
+            this.lblDatosCondicion = new System.Windows.Forms.Label();
+            this.lblDatosCUIT = new System.Windows.Forms.Label();
+            this.lblDatosDomicilio = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblLocalidad = new System.Windows.Forms.Label();
+            this.lblDatosTelefono = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNumeroDeRemito = new System.Windows.Forms.Label();
             this.txtNumeroDeRemito = new System.Windows.Forms.TextBox();
@@ -90,12 +77,33 @@ namespace WinRubicat
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.btnParcialPedido = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCantidadProducto = new System.Windows.Forms.TextBox();
+            this.lblDatosProductoCosto = new System.Windows.Forms.Label();
+            this.lblDatosProducto = new System.Windows.Forms.Label();
+            this.lblDatosTransporteHorario = new System.Windows.Forms.Label();
+            this.lblDatosTransporteTelefono = new System.Windows.Forms.Label();
+            this.lblDatosTransporte = new System.Windows.Forms.Label();
+            this.lblFechaDeEntrega = new System.Windows.Forms.Label();
+            this.dtpFechaDeEntrega = new System.Windows.Forms.DateTimePicker();
+            this.cboTransporte = new System.Windows.Forms.ComboBox();
+            this.lblTransporte = new System.Windows.Forms.Label();
+            this.lblDireccionTransporte = new System.Windows.Forms.Label();
+            this.lblTelefonoTransporte = new System.Windows.Forms.Label();
+            this.lblCantidadDeProducto = new System.Windows.Forms.Label();
+            this.lblPrecioProducto = new System.Windows.Forms.Label();
+            this.lblNombreDeProducto = new System.Windows.Forms.Label();
+            this.lblProducto = new System.Windows.Forms.Label();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
+            this.lblHorarioTransporte = new System.Windows.Forms.Label();
+            this.lblDatosCantidadMinima = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoParcial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAplicarDescuento
@@ -107,96 +115,24 @@ namespace WinRubicat
             this.btnAplicarDescuento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
             this.btnAplicarDescuento.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAplicarDescuento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAplicarDescuento.Location = new System.Drawing.Point(96, 45);
+            this.btnAplicarDescuento.Location = new System.Drawing.Point(104, 45);
             this.btnAplicarDescuento.Name = "btnAplicarDescuento";
-            this.btnAplicarDescuento.Size = new System.Drawing.Size(106, 36);
+            this.btnAplicarDescuento.Size = new System.Drawing.Size(116, 36);
             this.btnAplicarDescuento.TabIndex = 0;
             this.btnAplicarDescuento.Text = "Aplicar";
             this.btnAplicarDescuento.UseVisualStyleBackColor = true;
-            // 
-            // txtCondicion
-            // 
-            this.txtCondicion.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCondicion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCondicion.Location = new System.Drawing.Point(182, 166);
-            this.txtCondicion.Name = "txtCondicion";
-            this.txtCondicion.Size = new System.Drawing.Size(120, 27);
-            this.txtCondicion.TabIndex = 9;
-            // 
-            // txtIva
-            // 
-            this.txtIva.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtIva.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtIva.Location = new System.Drawing.Point(182, 126);
-            this.txtIva.Name = "txtIva";
-            this.txtIva.Size = new System.Drawing.Size(120, 27);
-            this.txtIva.TabIndex = 8;
-            // 
-            // txtLocalidad
-            // 
-            this.txtLocalidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtLocalidad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtLocalidad.Location = new System.Drawing.Point(182, 86);
-            this.txtLocalidad.Name = "txtLocalidad";
-            this.txtLocalidad.Size = new System.Drawing.Size(120, 27);
-            this.txtLocalidad.TabIndex = 7;
             // 
             // cboCliente
             // 
             this.cboCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cboCliente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(182, 45);
+            this.cboCliente.Location = new System.Drawing.Point(182, 37);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(120, 29);
             this.cboCliente.TabIndex = 5;
             this.cboCliente.SelectedIndexChanged += new System.EventHandler(this.cboCliente_SelectedIndexChanged);
             this.cboCliente.TextChanged += new System.EventHandler(this.cboCliente_TextChanged);
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDomicilio.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtDomicilio.Location = new System.Drawing.Point(182, 246);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(120, 27);
-            this.txtDomicilio.TabIndex = 6;
-            // 
-            // txtCuit
-            // 
-            this.txtCuit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCuit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCuit.Location = new System.Drawing.Point(182, 206);
-            this.txtCuit.Name = "txtCuit";
-            this.txtCuit.Size = new System.Drawing.Size(120, 27);
-            this.txtCuit.TabIndex = 11;
-            // 
-            // txtHorarioTransporte
-            // 
-            this.txtHorarioTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtHorarioTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtHorarioTransporte.Location = new System.Drawing.Point(164, 105);
-            this.txtHorarioTransporte.Name = "txtHorarioTransporte";
-            this.txtHorarioTransporte.Size = new System.Drawing.Size(143, 27);
-            this.txtHorarioTransporte.TabIndex = 8;
-            // 
-            // txtTelefonoTransporte
-            // 
-            this.txtTelefonoTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTelefonoTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtTelefonoTransporte.Location = new System.Drawing.Point(164, 71);
-            this.txtTelefonoTransporte.Name = "txtTelefonoTransporte";
-            this.txtTelefonoTransporte.Size = new System.Drawing.Size(143, 27);
-            this.txtTelefonoTransporte.TabIndex = 7;
-            // 
-            // txtDireccionTransporte
-            // 
-            this.txtDireccionTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDireccionTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtDireccionTransporte.Location = new System.Drawing.Point(164, 139);
-            this.txtDireccionTransporte.Name = "txtDireccionTransporte";
-            this.txtDireccionTransporte.Size = new System.Drawing.Size(143, 27);
-            this.txtDireccionTransporte.TabIndex = 6;
             // 
             // txtDescuento
             // 
@@ -204,7 +140,7 @@ namespace WinRubicat
             this.txtDescuento.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtDescuento.Location = new System.Drawing.Point(3, 51);
             this.txtDescuento.Name = "txtDescuento";
-            this.txtDescuento.Size = new System.Drawing.Size(87, 23);
+            this.txtDescuento.Size = new System.Drawing.Size(95, 23);
             this.txtDescuento.TabIndex = 9;
             this.txtDescuento.Text = "0";
             // 
@@ -214,7 +150,7 @@ namespace WinRubicat
             this.rbPorcentaje.AutoSize = true;
             this.rbPorcentaje.Location = new System.Drawing.Point(3, 10);
             this.rbPorcentaje.Name = "rbPorcentaje";
-            this.rbPorcentaje.Size = new System.Drawing.Size(87, 21);
+            this.rbPorcentaje.Size = new System.Drawing.Size(95, 21);
             this.rbPorcentaje.TabIndex = 11;
             this.rbPorcentaje.TabStop = true;
             this.rbPorcentaje.Text = "Porcentaje";
@@ -224,7 +160,7 @@ namespace WinRubicat
             // 
             this.rbEfectivo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbEfectivo.AutoSize = true;
-            this.rbEfectivo.Location = new System.Drawing.Point(110, 10);
+            this.rbEfectivo.Location = new System.Drawing.Point(123, 10);
             this.rbEfectivo.Name = "rbEfectivo";
             this.rbEfectivo.Size = new System.Drawing.Size(78, 21);
             this.rbEfectivo.TabIndex = 12;
@@ -236,7 +172,7 @@ namespace WinRubicat
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(772, 337);
+            this.label3.Location = new System.Drawing.Point(743, 337);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(19, 21);
             this.label3.TabIndex = 42;
@@ -246,7 +182,7 @@ namespace WinRubicat
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(772, 373);
+            this.label2.Location = new System.Drawing.Point(743, 373);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 21);
             this.label2.TabIndex = 41;
@@ -256,7 +192,7 @@ namespace WinRubicat
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(772, 407);
+            this.label7.Location = new System.Drawing.Point(743, 407);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(19, 21);
             this.label7.TabIndex = 40;
@@ -266,7 +202,7 @@ namespace WinRubicat
             // 
             this.txtVerDesc.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtVerDesc.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVerDesc.Location = new System.Drawing.Point(797, 367);
+            this.txtVerDesc.Location = new System.Drawing.Point(768, 367);
             this.txtVerDesc.Name = "txtVerDesc";
             this.txtVerDesc.ReadOnly = true;
             this.txtVerDesc.Size = new System.Drawing.Size(100, 27);
@@ -277,7 +213,7 @@ namespace WinRubicat
             // 
             this.txtTotal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(797, 404);
+            this.txtTotal.Location = new System.Drawing.Point(768, 404);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(100, 27);
@@ -288,7 +224,7 @@ namespace WinRubicat
             // 
             this.txtSubTotal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.txtSubTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubTotal.Location = new System.Drawing.Point(797, 334);
+            this.txtSubTotal.Location = new System.Drawing.Point(768, 334);
             this.txtSubTotal.Name = "txtSubTotal";
             this.txtSubTotal.ReadOnly = true;
             this.txtSubTotal.Size = new System.Drawing.Size(100, 27);
@@ -299,7 +235,7 @@ namespace WinRubicat
             // 
             this.lblDescuento.AutoSize = true;
             this.lblDescuento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescuento.Location = new System.Drawing.Point(668, 372);
+            this.lblDescuento.Location = new System.Drawing.Point(639, 372);
             this.lblDescuento.Name = "lblDescuento";
             this.lblDescuento.Size = new System.Drawing.Size(101, 21);
             this.lblDescuento.TabIndex = 36;
@@ -309,7 +245,7 @@ namespace WinRubicat
             // 
             this.lblSubTotal.AutoSize = true;
             this.lblSubTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubTotal.Location = new System.Drawing.Point(691, 337);
+            this.lblSubTotal.Location = new System.Drawing.Point(662, 337);
             this.lblSubTotal.Name = "lblSubTotal";
             this.lblSubTotal.Size = new System.Drawing.Size(77, 21);
             this.lblSubTotal.TabIndex = 35;
@@ -319,7 +255,7 @@ namespace WinRubicat
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(706, 404);
+            this.lblTotal.Location = new System.Drawing.Point(677, 404);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(49, 21);
             this.lblTotal.TabIndex = 34;
@@ -331,11 +267,7 @@ namespace WinRubicat
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.01639F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.98361F));
-            this.tableLayoutPanel4.Controls.Add(this.txtCondicion, 1, 4);
-            this.tableLayoutPanel4.Controls.Add(this.txtIva, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.txtLocalidad, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtCuit, 1, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label10, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosLocalidad, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.label11, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.label12, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.label13, 0, 5);
@@ -343,38 +275,48 @@ namespace WinRubicat
             this.tableLayoutPanel4.Controls.Add(this.dtpFechaDePedido, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.label8, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.txtDomicilio, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.cboCliente, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosCliente, 1, 2);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosIVA, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosCondicion, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosCUIT, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosDomicilio, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.lblTelefono, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.lblLocalidad, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.lblDatosTelefono, 1, 8);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(18, 49);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 7;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 279);
+            this.tableLayoutPanel4.RowCount = 9;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 312);
             this.tableLayoutPanel4.TabIndex = 0;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
-            // label10
+            // lblDatosLocalidad
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 21);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Localidad:";
+            this.lblDatosLocalidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosLocalidad.AutoSize = true;
+            this.lblDatosLocalidad.Location = new System.Drawing.Point(182, 244);
+            this.lblDatosLocalidad.Name = "lblDatosLocalidad";
+            this.lblDatosLocalidad.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosLocalidad.TabIndex = 77;
+            this.lblDatosLocalidad.Text = "Cliente";
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 129);
+            this.label11.Location = new System.Drawing.Point(3, 108);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 21);
             this.label11.TabIndex = 3;
@@ -384,7 +326,7 @@ namespace WinRubicat
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 169);
+            this.label12.Location = new System.Drawing.Point(3, 142);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(171, 21);
             this.label12.TabIndex = 4;
@@ -394,7 +336,7 @@ namespace WinRubicat
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 209);
+            this.label13.Location = new System.Drawing.Point(3, 176);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(67, 21);
             this.label13.TabIndex = 5;
@@ -405,7 +347,7 @@ namespace WinRubicat
             this.lblFechaDePedido.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFechaDePedido.AutoSize = true;
             this.lblFechaDePedido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaDePedido.Location = new System.Drawing.Point(3, 9);
+            this.lblFechaDePedido.Location = new System.Drawing.Point(3, 6);
             this.lblFechaDePedido.Name = "lblFechaDePedido";
             this.lblFechaDePedido.Size = new System.Drawing.Size(146, 21);
             this.lblFechaDePedido.TabIndex = 51;
@@ -414,7 +356,7 @@ namespace WinRubicat
             // dtpFechaDePedido
             // 
             this.dtpFechaDePedido.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFechaDePedido.Location = new System.Drawing.Point(182, 6);
+            this.dtpFechaDePedido.Location = new System.Drawing.Point(182, 3);
             this.dtpFechaDePedido.Name = "dtpFechaDePedido";
             this.dtpFechaDePedido.Size = new System.Drawing.Size(120, 27);
             this.dtpFechaDePedido.TabIndex = 49;
@@ -423,7 +365,7 @@ namespace WinRubicat
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 249);
+            this.label9.Location = new System.Drawing.Point(3, 210);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 21);
             this.label9.TabIndex = 1;
@@ -433,180 +375,102 @@ namespace WinRubicat
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 49);
+            this.label8.Location = new System.Drawing.Point(3, 40);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 21);
+            this.label8.Size = new System.Drawing.Size(108, 21);
             this.label8.TabIndex = 0;
-            this.label8.Text = "Clientes:";
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.25806F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.74194F));
-            this.tableLayoutPanel5.Controls.Add(this.label19, 0, 6);
-            this.tableLayoutPanel5.Controls.Add(this.txtHorarioTransporte, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.txtCantidadProducto, 1, 7);
-            this.tableLayoutPanel5.Controls.Add(this.label18, 0, 7);
-            this.tableLayoutPanel5.Controls.Add(this.txtTelefonoTransporte, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label15, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.txtPrecioProducto, 1, 6);
-            this.tableLayoutPanel5.Controls.Add(this.label16, 0, 3);
-            this.tableLayoutPanel5.Controls.Add(this.lblFechaDeEntrega, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.cboProducto, 1, 5);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.txtDireccionTransporte, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.label17, 0, 5);
-            this.tableLayoutPanel5.Controls.Add(this.cboTransporte, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.dtpFechaDeEntrega, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label14, 0, 4);
-            this.tableLayoutPanel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(360, 49);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 8;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(310, 279);
-            this.tableLayoutPanel5.TabIndex = 45;
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(3, 210);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(61, 21);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Precio:";
-            // 
-            // txtCantidadProducto
-            // 
-            this.txtCantidadProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCantidadProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCantidadProducto.Location = new System.Drawing.Point(164, 245);
-            this.txtCantidadProducto.Name = "txtCantidadProducto";
-            this.txtCantidadProducto.Size = new System.Drawing.Size(143, 27);
-            this.txtCantidadProducto.TabIndex = 6;
-            // 
-            // label18
-            // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 248);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(91, 21);
-            this.label18.TabIndex = 1;
-            this.label18.Text = "Cantidad:";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(80, 21);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Teléfono:";
-            // 
-            // txtPrecioProducto
-            // 
-            this.txtPrecioProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPrecioProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtPrecioProducto.Location = new System.Drawing.Point(164, 207);
-            this.txtPrecioProducto.Name = "txtPrecioProducto";
-            this.txtPrecioProducto.Size = new System.Drawing.Size(143, 27);
-            this.txtPrecioProducto.TabIndex = 7;
-            // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 108);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 21);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Horario:";
-            // 
-            // lblFechaDeEntrega
-            // 
-            this.lblFechaDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFechaDeEntrega.AutoSize = true;
-            this.lblFechaDeEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaDeEntrega.Location = new System.Drawing.Point(3, 6);
-            this.lblFechaDeEntrega.Name = "lblFechaDeEntrega";
-            this.lblFechaDeEntrega.Size = new System.Drawing.Size(155, 21);
-            this.lblFechaDeEntrega.TabIndex = 52;
-            this.lblFechaDeEntrega.Text = "Fecha de Entrega:";
-            // 
-            // cboProducto
-            // 
-            this.cboProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.cboProducto.FormattingEnabled = true;
-            this.cboProducto.Location = new System.Drawing.Point(164, 176);
-            this.cboProducto.Name = "cboProducto";
-            this.cboProducto.Size = new System.Drawing.Size(143, 29);
-            this.cboProducto.TabIndex = 5;
-            this.cboProducto.SelectedIndexChanged += new System.EventHandler(this.cboProducto_SelectedIndexChanged);
-            this.cboProducto.TextChanged += new System.EventHandler(this.cboProducto_TextChanged);
+            this.label8.Text = "Cod. Cliente";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 40);
+            this.label1.Location = new System.Drawing.Point(3, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Transporte:";
+            this.label1.Size = new System.Drawing.Size(66, 21);
+            this.label1.TabIndex = 52;
+            this.label1.Text = "Cliente";
             // 
-            // label17
+            // lblDatosCliente
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(3, 176);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 21);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Producto:";
+            this.lblDatosCliente.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosCliente.AutoSize = true;
+            this.lblDatosCliente.Location = new System.Drawing.Point(182, 74);
+            this.lblDatosCliente.Name = "lblDatosCliente";
+            this.lblDatosCliente.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosCliente.TabIndex = 2;
+            this.lblDatosCliente.Text = "Cliente";
             // 
-            // cboTransporte
+            // lblDatosIVA
             // 
-            this.cboTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cboTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.cboTransporte.FormattingEnabled = true;
-            this.cboTransporte.Location = new System.Drawing.Point(164, 37);
-            this.cboTransporte.Name = "cboTransporte";
-            this.cboTransporte.Size = new System.Drawing.Size(143, 29);
-            this.cboTransporte.TabIndex = 48;
-            this.cboTransporte.SelectedIndexChanged += new System.EventHandler(this.cboTransporte_SelectedIndexChanged);
-            this.cboTransporte.TextChanged += new System.EventHandler(this.cboTransporte_TextChanged);
+            this.lblDatosIVA.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosIVA.AutoSize = true;
+            this.lblDatosIVA.Location = new System.Drawing.Point(182, 108);
+            this.lblDatosIVA.Name = "lblDatosIVA";
+            this.lblDatosIVA.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosIVA.TabIndex = 53;
+            this.lblDatosIVA.Text = "Cliente";
             // 
-            // dtpFechaDeEntrega
+            // lblDatosCondicion
             // 
-            this.dtpFechaDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFechaDeEntrega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dtpFechaDeEntrega.Location = new System.Drawing.Point(164, 3);
-            this.dtpFechaDeEntrega.Name = "dtpFechaDeEntrega";
-            this.dtpFechaDeEntrega.Size = new System.Drawing.Size(143, 27);
-            this.dtpFechaDeEntrega.TabIndex = 50;
-            this.dtpFechaDeEntrega.Value = new System.DateTime(2022, 2, 19, 0, 0, 0, 0);
+            this.lblDatosCondicion.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosCondicion.AutoSize = true;
+            this.lblDatosCondicion.Location = new System.Drawing.Point(182, 142);
+            this.lblDatosCondicion.Name = "lblDatosCondicion";
+            this.lblDatosCondicion.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosCondicion.TabIndex = 54;
+            this.lblDatosCondicion.Text = "Cliente";
             // 
-            // label14
+            // lblDatosCUIT
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 142);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 21);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Dirección:";
+            this.lblDatosCUIT.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosCUIT.AutoSize = true;
+            this.lblDatosCUIT.Location = new System.Drawing.Point(182, 176);
+            this.lblDatosCUIT.Name = "lblDatosCUIT";
+            this.lblDatosCUIT.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosCUIT.TabIndex = 55;
+            this.lblDatosCUIT.Text = "Cliente";
+            // 
+            // lblDatosDomicilio
+            // 
+            this.lblDatosDomicilio.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosDomicilio.AutoSize = true;
+            this.lblDatosDomicilio.Location = new System.Drawing.Point(182, 210);
+            this.lblDatosDomicilio.Name = "lblDatosDomicilio";
+            this.lblDatosDomicilio.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosDomicilio.TabIndex = 56;
+            this.lblDatosDomicilio.Text = "Cliente";
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(3, 281);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(76, 21);
+            this.lblTelefono.TabIndex = 58;
+            this.lblTelefono.Text = "Telefono";
+            // 
+            // lblLocalidad
+            // 
+            this.lblLocalidad.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblLocalidad.AutoSize = true;
+            this.lblLocalidad.Location = new System.Drawing.Point(3, 244);
+            this.lblLocalidad.Name = "lblLocalidad";
+            this.lblLocalidad.Size = new System.Drawing.Size(95, 21);
+            this.lblLocalidad.TabIndex = 59;
+            this.lblLocalidad.Text = "Localidad: ";
+            // 
+            // lblDatosTelefono
+            // 
+            this.lblDatosTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosTelefono.AutoSize = true;
+            this.lblDatosTelefono.Location = new System.Drawing.Point(182, 281);
+            this.lblDatosTelefono.Name = "lblDatosTelefono";
+            this.lblDatosTelefono.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosTelefono.TabIndex = 57;
+            this.lblDatosTelefono.Text = "Cliente";
             // 
             // tableLayoutPanel2
             // 
@@ -618,12 +482,12 @@ namespace WinRubicat
             this.tableLayoutPanel2.Controls.Add(this.rbEfectivo, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.rbPorcentaje, 0, 0);
             this.tableLayoutPanel2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(730, 115);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(645, 101);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(205, 84);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(223, 84);
             this.tableLayoutPanel2.TabIndex = 47;
             // 
             // lblNumeroDeRemito
@@ -632,7 +496,7 @@ namespace WinRubicat
             this.lblNumeroDeRemito.AutoSize = true;
             this.lblNumeroDeRemito.Location = new System.Drawing.Point(3, 2);
             this.lblNumeroDeRemito.Name = "lblNumeroDeRemito";
-            this.lblNumeroDeRemito.Size = new System.Drawing.Size(80, 42);
+            this.lblNumeroDeRemito.Size = new System.Drawing.Size(76, 42);
             this.lblNumeroDeRemito.TabIndex = 53;
             this.lblNumeroDeRemito.Text = "Núm. de Remito:";
             // 
@@ -640,9 +504,9 @@ namespace WinRubicat
             // 
             this.txtNumeroDeRemito.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtNumeroDeRemito.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtNumeroDeRemito.Location = new System.Drawing.Point(107, 9);
+            this.txtNumeroDeRemito.Location = new System.Drawing.Point(87, 9);
             this.txtNumeroDeRemito.Name = "txtNumeroDeRemito";
-            this.txtNumeroDeRemito.Size = new System.Drawing.Size(162, 27);
+            this.txtNumeroDeRemito.Size = new System.Drawing.Size(133, 27);
             this.txtNumeroDeRemito.TabIndex = 54;
             // 
             // tableLayoutPanel1
@@ -653,7 +517,7 @@ namespace WinRubicat
             this.tableLayoutPanel1.Controls.Add(this.lblNumeroDeRemito, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtNumeroDeRemito, 1, 0);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(693, 49);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(645, 49);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -661,7 +525,7 @@ namespace WinRubicat
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(273, 46);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(223, 46);
             this.tableLayoutPanel1.TabIndex = 46;
             // 
             // lblTitulo
@@ -721,7 +585,7 @@ namespace WinRubicat
             this.dgvPedidoParcial.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedidoParcial.EnableHeadersVisualStyles = false;
             this.dgvPedidoParcial.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvPedidoParcial.Location = new System.Drawing.Point(18, 334);
+            this.dgvPedidoParcial.Location = new System.Drawing.Point(18, 384);
             this.dgvPedidoParcial.Name = "dgvPedidoParcial";
             this.dgvPedidoParcial.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
@@ -731,7 +595,7 @@ namespace WinRubicat
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPedidoParcial.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPedidoParcial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPedidoParcial.Size = new System.Drawing.Size(638, 110);
+            this.dgvPedidoParcial.Size = new System.Drawing.Size(621, 41);
             this.dgvPedidoParcial.TabIndex = 70;
             // 
             // btnCancelar
@@ -748,9 +612,9 @@ namespace WinRubicat
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancelar.Location = new System.Drawing.Point(518, 461);
+            this.btnCancelar.Location = new System.Drawing.Point(523, 437);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 63);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 53);
             this.btnCancelar.TabIndex = 72;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -770,9 +634,9 @@ namespace WinRubicat
             this.btnAgregarPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarPedido.Image")));
             this.btnAgregarPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarPedido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAgregarPedido.Location = new System.Drawing.Point(237, 461);
+            this.btnAgregarPedido.Location = new System.Drawing.Point(225, 437);
             this.btnAgregarPedido.Name = "btnAgregarPedido";
-            this.btnAgregarPedido.Size = new System.Drawing.Size(98, 63);
+            this.btnAgregarPedido.Size = new System.Drawing.Size(98, 53);
             this.btnAgregarPedido.TabIndex = 73;
             this.btnAgregarPedido.Text = "Pedido";
             this.btnAgregarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -792,7 +656,7 @@ namespace WinRubicat
             this.btnParcialPedido.Image = ((System.Drawing.Image)(resources.GetObject("btnParcialPedido.Image")));
             this.btnParcialPedido.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnParcialPedido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnParcialPedido.Location = new System.Drawing.Point(776, 218);
+            this.btnParcialPedido.Location = new System.Drawing.Point(710, 191);
             this.btnParcialPedido.Name = "btnParcialPedido";
             this.btnParcialPedido.Size = new System.Drawing.Size(82, 45);
             this.btnParcialPedido.TabIndex = 74;
@@ -812,14 +676,273 @@ namespace WinRubicat
             this.pictureBox1.TabIndex = 75;
             this.pictureBox1.TabStop = false;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.83764F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.16236F));
+            this.tableLayoutPanel3.Controls.Add(this.txtCantidadProducto, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosProductoCosto, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosProducto, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosTransporteHorario, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosTransporteTelefono, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosTransporte, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblFechaDeEntrega, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dtpFechaDeEntrega, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.cboTransporte, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblTransporte, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.lblDireccionTransporte, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.lblTelefonoTransporte, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.lblCantidadDeProducto, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.lblPrecioProducto, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.lblNombreDeProducto, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.lblProducto, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.cboProducto, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.lblHorarioTransporte, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.lblDatosCantidadMinima, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(this.label4, 0, 9);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(350, 49);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 10;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(271, 329);
+            this.tableLayoutPanel3.TabIndex = 76;
+            // 
+            // txtCantidadProducto
+            // 
+            this.txtCantidadProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCantidadProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtCantidadProducto.Location = new System.Drawing.Point(176, 279);
+            this.txtCantidadProducto.Name = "txtCantidadProducto";
+            this.txtCantidadProducto.Size = new System.Drawing.Size(92, 20);
+            this.txtCantidadProducto.TabIndex = 77;
+            // 
+            // lblDatosProductoCosto
+            // 
+            this.lblDatosProductoCosto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosProductoCosto.AutoSize = true;
+            this.lblDatosProductoCosto.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosProductoCosto.Location = new System.Drawing.Point(176, 244);
+            this.lblDatosProductoCosto.Name = "lblDatosProductoCosto";
+            this.lblDatosProductoCosto.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosProductoCosto.TabIndex = 72;
+            this.lblDatosProductoCosto.Text = "Cliente";
+            // 
+            // lblDatosProducto
+            // 
+            this.lblDatosProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosProducto.AutoSize = true;
+            this.lblDatosProducto.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosProducto.Location = new System.Drawing.Point(176, 210);
+            this.lblDatosProducto.Name = "lblDatosProducto";
+            this.lblDatosProducto.Size = new System.Drawing.Size(82, 21);
+            this.lblDatosProducto.TabIndex = 71;
+            this.lblDatosProducto.Text = "Producto";
+            // 
+            // lblDatosTransporteHorario
+            // 
+            this.lblDatosTransporteHorario.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosTransporteHorario.AutoSize = true;
+            this.lblDatosTransporteHorario.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosTransporteHorario.Location = new System.Drawing.Point(176, 136);
+            this.lblDatosTransporteHorario.Name = "lblDatosTransporteHorario";
+            this.lblDatosTransporteHorario.Size = new System.Drawing.Size(83, 34);
+            this.lblDatosTransporteHorario.TabIndex = 70;
+            this.lblDatosTransporteHorario.Text = "Transporte";
+            // 
+            // lblDatosTransporteTelefono
+            // 
+            this.lblDatosTransporteTelefono.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosTransporteTelefono.AutoSize = true;
+            this.lblDatosTransporteTelefono.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosTransporteTelefono.Location = new System.Drawing.Point(176, 102);
+            this.lblDatosTransporteTelefono.Name = "lblDatosTransporteTelefono";
+            this.lblDatosTransporteTelefono.Size = new System.Drawing.Size(83, 34);
+            this.lblDatosTransporteTelefono.TabIndex = 69;
+            this.lblDatosTransporteTelefono.Text = "Trasnporte";
+            // 
+            // lblDatosTransporte
+            // 
+            this.lblDatosTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosTransporte.AutoSize = true;
+            this.lblDatosTransporte.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosTransporte.Location = new System.Drawing.Point(176, 68);
+            this.lblDatosTransporte.Name = "lblDatosTransporte";
+            this.lblDatosTransporte.Size = new System.Drawing.Size(83, 34);
+            this.lblDatosTransporte.TabIndex = 68;
+            this.lblDatosTransporte.Text = "Transporte";
+            // 
+            // lblFechaDeEntrega
+            // 
+            this.lblFechaDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblFechaDeEntrega.AutoSize = true;
+            this.lblFechaDeEntrega.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaDeEntrega.Location = new System.Drawing.Point(3, 6);
+            this.lblFechaDeEntrega.Name = "lblFechaDeEntrega";
+            this.lblFechaDeEntrega.Size = new System.Drawing.Size(155, 21);
+            this.lblFechaDeEntrega.TabIndex = 52;
+            this.lblFechaDeEntrega.Text = "Fecha de Entrega:";
+            // 
+            // dtpFechaDeEntrega
+            // 
+            this.dtpFechaDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dtpFechaDeEntrega.Location = new System.Drawing.Point(176, 7);
+            this.dtpFechaDeEntrega.Name = "dtpFechaDeEntrega";
+            this.dtpFechaDeEntrega.Size = new System.Drawing.Size(92, 20);
+            this.dtpFechaDeEntrega.TabIndex = 53;
+            // 
+            // cboTransporte
+            // 
+            this.cboTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cboTransporte.FormattingEnabled = true;
+            this.cboTransporte.Location = new System.Drawing.Point(176, 40);
+            this.cboTransporte.Name = "cboTransporte";
+            this.cboTransporte.Size = new System.Drawing.Size(92, 21);
+            this.cboTransporte.TabIndex = 54;
+            this.cboTransporte.SelectedIndexChanged += new System.EventHandler(this.cboTransporte_SelectedIndexChanged);
+            this.cboTransporte.TextChanged += new System.EventHandler(this.cboTransporte_TextChanged);
+            // 
+            // lblTransporte
+            // 
+            this.lblTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTransporte.AutoSize = true;
+            this.lblTransporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransporte.Location = new System.Drawing.Point(3, 40);
+            this.lblTransporte.Name = "lblTransporte";
+            this.lblTransporte.Size = new System.Drawing.Size(97, 21);
+            this.lblTransporte.TabIndex = 55;
+            this.lblTransporte.Text = "Transporte:";
+            // 
+            // lblDireccionTransporte
+            // 
+            this.lblDireccionTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDireccionTransporte.AutoSize = true;
+            this.lblDireccionTransporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDireccionTransporte.Location = new System.Drawing.Point(3, 74);
+            this.lblDireccionTransporte.Name = "lblDireccionTransporte";
+            this.lblDireccionTransporte.Size = new System.Drawing.Size(87, 21);
+            this.lblDireccionTransporte.TabIndex = 65;
+            this.lblDireccionTransporte.Text = "Dirección;";
+            // 
+            // lblTelefonoTransporte
+            // 
+            this.lblTelefonoTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTelefonoTransporte.AutoSize = true;
+            this.lblTelefonoTransporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefonoTransporte.Location = new System.Drawing.Point(3, 108);
+            this.lblTelefonoTransporte.Name = "lblTelefonoTransporte";
+            this.lblTelefonoTransporte.Size = new System.Drawing.Size(80, 21);
+            this.lblTelefonoTransporte.TabIndex = 66;
+            this.lblTelefonoTransporte.Text = "Teléfono:";
+            // 
+            // lblCantidadDeProducto
+            // 
+            this.lblCantidadDeProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblCantidadDeProducto.AutoSize = true;
+            this.lblCantidadDeProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadDeProducto.Location = new System.Drawing.Point(3, 279);
+            this.lblCantidadDeProducto.Name = "lblCantidadDeProducto";
+            this.lblCantidadDeProducto.Size = new System.Drawing.Size(91, 21);
+            this.lblCantidadDeProducto.TabIndex = 64;
+            this.lblCantidadDeProducto.Text = "Cantidad:";
+            // 
+            // lblPrecioProducto
+            // 
+            this.lblPrecioProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblPrecioProducto.AutoSize = true;
+            this.lblPrecioProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioProducto.Location = new System.Drawing.Point(3, 244);
+            this.lblPrecioProducto.Name = "lblPrecioProducto";
+            this.lblPrecioProducto.Size = new System.Drawing.Size(60, 21);
+            this.lblPrecioProducto.TabIndex = 61;
+            this.lblPrecioProducto.Text = "Costo:";
+            // 
+            // lblNombreDeProducto
+            // 
+            this.lblNombreDeProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblNombreDeProducto.AutoSize = true;
+            this.lblNombreDeProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreDeProducto.Location = new System.Drawing.Point(3, 210);
+            this.lblNombreDeProducto.Name = "lblNombreDeProducto";
+            this.lblNombreDeProducto.Size = new System.Drawing.Size(86, 21);
+            this.lblNombreDeProducto.TabIndex = 59;
+            this.lblNombreDeProducto.Text = "Producto:";
+            // 
+            // lblProducto
+            // 
+            this.lblProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblProducto.AutoSize = true;
+            this.lblProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducto.Location = new System.Drawing.Point(3, 176);
+            this.lblProducto.Name = "lblProducto";
+            this.lblProducto.Size = new System.Drawing.Size(149, 21);
+            this.lblProducto.TabIndex = 58;
+            this.lblProducto.Text = "Cod. de Producto";
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(176, 176);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(92, 21);
+            this.cboProducto.TabIndex = 57;
+            this.cboProducto.SelectedIndexChanged += new System.EventHandler(this.cboProducto_SelectedIndexChanged);
+            this.cboProducto.TextChanged += new System.EventHandler(this.cboProducto_TextChanged);
+            // 
+            // lblHorarioTransporte
+            // 
+            this.lblHorarioTransporte.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblHorarioTransporte.AutoSize = true;
+            this.lblHorarioTransporte.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHorarioTransporte.Location = new System.Drawing.Point(3, 142);
+            this.lblHorarioTransporte.Name = "lblHorarioTransporte";
+            this.lblHorarioTransporte.Size = new System.Drawing.Size(69, 21);
+            this.lblHorarioTransporte.TabIndex = 67;
+            this.lblHorarioTransporte.Text = "Horario:";
+            // 
+            // lblDatosCantidadMinima
+            // 
+            this.lblDatosCantidadMinima.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblDatosCantidadMinima.AutoSize = true;
+            this.lblDatosCantidadMinima.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblDatosCantidadMinima.Location = new System.Drawing.Point(176, 307);
+            this.lblDatosCantidadMinima.Name = "lblDatosCantidadMinima";
+            this.lblDatosCantidadMinima.Size = new System.Drawing.Size(66, 21);
+            this.lblDatosCantidadMinima.TabIndex = 79;
+            this.lblDatosCantidadMinima.Text = "Cliente";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 307);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 21);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "Prod. en Stock";
+            // 
             // FrmPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(978, 544);
+            this.ClientSize = new System.Drawing.Size(882, 496);
             this.ControlBox = false;
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnParcialPedido);
             this.Controls.Add(this.btnAgregarPedido);
@@ -830,7 +953,6 @@ namespace WinRubicat
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.tableLayoutPanel5);
             this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -846,14 +968,14 @@ namespace WinRubicat
             this.Text = "Pedido";
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoParcial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -863,14 +985,6 @@ namespace WinRubicat
 
         private System.Windows.Forms.Button btnAplicarDescuento;
         private System.Windows.Forms.ComboBox cboCliente;
-        private System.Windows.Forms.TextBox txtCondicion;
-        private System.Windows.Forms.TextBox txtIva;
-        private System.Windows.Forms.TextBox txtLocalidad;
-        private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtCuit;
-        private System.Windows.Forms.TextBox txtHorarioTransporte;
-        private System.Windows.Forms.TextBox txtTelefonoTransporte;
-        private System.Windows.Forms.TextBox txtDireccionTransporte;
         private System.Windows.Forms.RadioButton rbPorcentaje;
         private System.Windows.Forms.RadioButton rbEfectivo;
         private System.Windows.Forms.TextBox txtDescuento;
@@ -886,29 +1000,15 @@ namespace WinRubicat
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDatosCliente;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.ComboBox cboTransporte;
         private System.Windows.Forms.DateTimePicker dtpFechaDePedido;
-        private System.Windows.Forms.DateTimePicker dtpFechaDeEntrega;
         private System.Windows.Forms.Label lblFechaDePedido;
-        private System.Windows.Forms.Label lblFechaDeEntrega;
         private System.Windows.Forms.Label lblNumeroDeRemito;
         private System.Windows.Forms.TextBox txtNumeroDeRemito;
-        private System.Windows.Forms.TextBox txtCantidadProducto;
-        private System.Windows.Forms.ComboBox cboProducto;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtPrecioProducto;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblId;
@@ -918,5 +1018,35 @@ namespace WinRubicat
         private System.Windows.Forms.Button btnAgregarPedido;
         private System.Windows.Forms.Button btnParcialPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Label lblFechaDeEntrega;
+        private System.Windows.Forms.DateTimePicker dtpFechaDeEntrega;
+        private System.Windows.Forms.ComboBox cboTransporte;
+        private System.Windows.Forms.ComboBox cboProducto;
+        private System.Windows.Forms.Label lblProducto;
+        private System.Windows.Forms.Label lblNombreDeProducto;
+        private System.Windows.Forms.Label lblCantidadDeProducto;
+        private System.Windows.Forms.Label lblTransporte;
+        private System.Windows.Forms.Label lblDireccionTransporte;
+        private System.Windows.Forms.Label lblTelefonoTransporte;
+        private System.Windows.Forms.Label lblHorarioTransporte;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDatosTelefono;
+        private System.Windows.Forms.Label lblDatosCondicion;
+        private System.Windows.Forms.Label lblDatosCUIT;
+        private System.Windows.Forms.Label lblDatosDomicilio;
+        private System.Windows.Forms.Label lblDatosIVA;
+        private System.Windows.Forms.TextBox txtCantidadProducto;
+        private System.Windows.Forms.Label lblDatosProductoCosto;
+        private System.Windows.Forms.Label lblDatosProducto;
+        private System.Windows.Forms.Label lblDatosTransporteHorario;
+        private System.Windows.Forms.Label lblDatosTransporteTelefono;
+        private System.Windows.Forms.Label lblDatosTransporte;
+        private System.Windows.Forms.Label lblDatosLocalidad;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblLocalidad;
+        private System.Windows.Forms.Label lblPrecioProducto;
+        private System.Windows.Forms.Label lblDatosCantidadMinima;
+        private System.Windows.Forms.Label label4;
     }
 }

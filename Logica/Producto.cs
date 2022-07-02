@@ -42,9 +42,9 @@ namespace Logica
         /// de la tabla Producto
         /// </summary>
         /// <returns></returns>
-        public List<Entidades.Producto> TraerProductos()
+        public List<object> TraerProductos()
         {
-            return AdmProducto.SelectProductos();
+            return AdmProducto.SelectProductos().ToList();
         }
         /// <summary>
         /// Recibe como parámetro una variable del tipo <typeparamref name="integer"/>

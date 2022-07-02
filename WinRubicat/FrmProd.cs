@@ -26,7 +26,7 @@ namespace WinRubicat
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
             lblTitulo.Text = "Agregar Producto";
-            lblCod.Text = "";
+            lblIdProducto.Text = "";
             Estado = Operacion.Alta;
         }
         //Form modifica producto
@@ -35,20 +35,19 @@ namespace WinRubicat
             InitializeComponent();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
-            lblCod.Text = producto.IdProducto.ToString();
             lblTitulo.Text = "Modificar Producto";
             btnAgregar.Text = "Modificar";
-
-            txtNombre.Text = producto.Nombre;
+            lblIdProducto.Text = producto.IdProducto.ToString();
+            txtCodigoProducto.Text = producto.CodProducto.ToString();
+            txtNombre.Text = producto.Nombre.ToString();
             txtFamilia.Text = producto.Familia.ToString();
             txtArquetipo.Text = producto.Arquetipo.ToString();
             txtDescripcion.Text = producto.Descripcion.ToString();
-            txtCantidad.Text = producto.Cantidad.ToString();
             txtPeso.Text = producto.Peso.ToString();
+            txtUnidadDeMedida.Text = producto.uniDeMedida.ToString();
             txtCosto.Text = producto.Costo.ToString();
             //txtPrecio.Text = producto.Precio.ToString();
             //txtEan.Text = producto.Ean.ToString();
-
             Estado = Operacion.Modificacion;
         }
 
@@ -65,7 +64,8 @@ namespace WinRubicat
                 case "btnAgregar":
 
                     ///////////////////////////////////////VERIFICACIÓN DE CAMPOS//////////////////////////////////////////////////////////
-
+                    modelProd.CodProducto = txtCodigoProducto.Text.ToUpper();                 
+                   
                     modelProd.Familia = txtFamilia.Text;
                     if (modelProd.Familia == "")
                     {
@@ -112,6 +112,8 @@ namespace WinRubicat
                         break;
                     }
 
+                    modelProd.uniDeMedida = txtUnidadDeMedida.Text;
+
                     try
                     {
                         modelProd.Costo = Convert.ToDecimal(txtCosto.Text);
@@ -134,47 +136,48 @@ namespace WinRubicat
                     }
 
 
-                    try
-                    {
-                        modelProd.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                    }
-                    catch (FormatException)
-                    {
-                        //Aca entra cuando es null y cuando ingreso caracteres 
-                        MessageBox.Show("Ingrese una cantidad en el area: 'Camtidad'", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        break;
-                    }
-                    catch (OverflowException)
-                    {
-                        MessageBox.Show("Ingreso una cantidad fuera de los limites permitidos", "Campo mal ingresado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        break;
-                    }
-                    
-
-                    //modelProd.Precio = Convert.ToDecimal(txtPrecio.Text);
-                    //modelProd.Ean = Convert.ToInt32(txtEan.Text);
 
                     ////////////////////////////////////////////////FIN DE VERIFICACIÓN DE CAMPOS/////////////////////////////////////////////////
                     switch (Estado)
                     {
                         case Operacion.Alta:
-                            objLogProd.AgregarProducto(modelProd);
-                            MessageBox.Show("Producto agregado correctamente.","Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtFamilia.Clear();
-                            txtArquetipo.Clear();
-                            txtNombre.Clear();
-                            txtDescripcion.Clear();
-                            txtPeso.Clear();
-                            txtCosto.Clear();
-                            txtCantidad.Clear();
-                            break;
+                            try
+                            {
+                                objLogProd.AgregarProducto(modelProd);
+                                MessageBox.Show("Producto agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtCodigoProducto.Clear();
+                                txtFamilia.Clear();
+                                txtArquetipo.Clear();
+                                txtNombre.Clear();
+                                txtDescripcion.Clear();
+                                txtPeso.Clear();
+                                txtUnidadDeMedida.Clear();
+                                txtCosto.Clear();
+                                break;
+                            }
+                            catch (Exception)
+                            {
+
+                                MessageBox.Show("No ingresar un Codigo repetido de producto en el area:'Cod. de Producto'", "Codigo repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+                           
                         case Operacion.Modificacion:
-                            modelProd.IdProducto = Convert.ToInt32(lblCod.Text);
-                            objLogProd.ModificarProducto(modelProd);
-                            MessageBox.Show("Producto modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Close();
+                            try
+                            {
+                                modelProd.IdProducto = Convert.ToInt32(lblIdProducto.Text);
+                                objLogProd.ModificarProducto(modelProd);
+                                MessageBox.Show("Producto modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Close();
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                            MessageBox.Show("No se puede modificar el codigo de producto", "Codigo repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             break;
-                        default:
+                            }
+
+                default:
                             break;
                     }
                     break;

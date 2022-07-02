@@ -21,6 +21,7 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var mCliente = rubicatDB.Clientes.Find(cliente.IdCliente);
+            mCliente.CodCliente = cliente.CodCliente;
             mCliente.Nombre = cliente.Nombre;
             mCliente.RazonSocial = cliente.RazonSocial;
             mCliente.Cuit = cliente.Cuit;
@@ -64,6 +65,7 @@ namespace Datos
                          select new
                          {
                              Id = c.IdCliente,
+                             Cod_Cliente = c.CodCliente,
                              c.Nombre,
                              Raz_Soc=c.RazonSocial,
                              CUIT=c.Cuit,
@@ -91,7 +93,7 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var cliente = (from c in rubicatDB.Clientes
-                              where c.Nombre.StartsWith(letra)
+                              where c.CodCliente.StartsWith(letra)
 
                               select c).ToList();
             return cliente;

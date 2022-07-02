@@ -44,12 +44,12 @@
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiNuevoProd = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaProd = new System.Windows.Forms.ToolStripMenuItem();
-            this.depositosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiIngresarDepositos = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiConsultarDepositos = new System.Windows.Forms.ToolStripMenuItem();
             this.transporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAltaTransporte = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultaTransporte = new System.Windows.Forms.ToolStripMenuItem();
+            this.depositosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiIngresarDepositos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiConsultarDepositos = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaPrimaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMateriaPrima = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiConsultarMateriasPrimas = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,8 +70,8 @@
             this.clientesToolStripMenuItem,
             this.vendedoresToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.depositosToolStripMenuItem1,
             this.transporteToolStripMenuItem,
+            this.depositosToolStripMenuItem1,
             this.materiaPrimaToolStripMenuItem,
             this.stockToolStripMenuItem});
             this.msVentas.Name = "msVentas";
@@ -160,24 +160,6 @@
             this.tsmiConsultaProd.Name = "tsmiConsultaProd";
             resources.ApplyResources(this.tsmiConsultaProd, "tsmiConsultaProd");
             // 
-            // depositosToolStripMenuItem1
-            // 
-            this.depositosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiIngresarDepositos,
-            this.tsmiConsultarDepositos});
-            this.depositosToolStripMenuItem1.Name = "depositosToolStripMenuItem1";
-            resources.ApplyResources(this.depositosToolStripMenuItem1, "depositosToolStripMenuItem1");
-            // 
-            // tsmiIngresarDepositos
-            // 
-            this.tsmiIngresarDepositos.Name = "tsmiIngresarDepositos";
-            resources.ApplyResources(this.tsmiIngresarDepositos, "tsmiIngresarDepositos");
-            // 
-            // tsmiConsultarDepositos
-            // 
-            this.tsmiConsultarDepositos.Name = "tsmiConsultarDepositos";
-            resources.ApplyResources(this.tsmiConsultarDepositos, "tsmiConsultarDepositos");
-            // 
             // transporteToolStripMenuItem
             // 
             this.transporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -195,6 +177,24 @@
             // 
             this.tsmiConsultaTransporte.Name = "tsmiConsultaTransporte";
             resources.ApplyResources(this.tsmiConsultaTransporte, "tsmiConsultaTransporte");
+            // 
+            // depositosToolStripMenuItem1
+            // 
+            this.depositosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiIngresarDepositos,
+            this.tsmiConsultarDepositos});
+            resources.ApplyResources(this.depositosToolStripMenuItem1, "depositosToolStripMenuItem1");
+            this.depositosToolStripMenuItem1.Name = "depositosToolStripMenuItem1";
+            // 
+            // tsmiIngresarDepositos
+            // 
+            this.tsmiIngresarDepositos.Name = "tsmiIngresarDepositos";
+            resources.ApplyResources(this.tsmiIngresarDepositos, "tsmiIngresarDepositos");
+            // 
+            // tsmiConsultarDepositos
+            // 
+            this.tsmiConsultarDepositos.Name = "tsmiConsultarDepositos";
+            resources.ApplyResources(this.tsmiConsultarDepositos, "tsmiConsultarDepositos");
             // 
             // materiaPrimaToolStripMenuItem
             // 
@@ -219,8 +219,8 @@
             this.stockToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresosDeStockToolStripMenuItem,
             this.tsmiStockTotal});
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             resources.ApplyResources(this.stockToolStripMenuItem, "stockToolStripMenuItem");
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
             // 
             // ingresosDeStockToolStripMenuItem
             // 
@@ -253,6 +253,7 @@
             this.Controls.Add(this.msVentas);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msVentas;
             this.Name = "MenuPrincipal";

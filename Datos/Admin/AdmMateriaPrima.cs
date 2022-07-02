@@ -22,12 +22,11 @@ namespace Datos
 
             var mMateriaPrima = rubicatDB.MateriaPrimas.Find(materiaPrima.IdMateriaPrima);
 
-            mMateriaPrima.FamiliaMateriaPrima = materiaPrima.FamiliaMateriaPrima;
-            mMateriaPrima.ArquetipoMateriaPrima = materiaPrima.ArquetipoMateriaPrima;
+            mMateriaPrima.CodigoMateriaPrima = materiaPrima.CodigoMateriaPrima;            
             mMateriaPrima.DescripcionMateriaPrima = materiaPrima.DescripcionMateriaPrima;
-            mMateriaPrima.CantidadMateriaPrima = materiaPrima.CantidadMateriaPrima;
+            mMateriaPrima.KgUniMateriaPrima = materiaPrima.KgUniMateriaPrima;
+            mMateriaPrima.UnidadMateriaPrima = materiaPrima.UnidadMateriaPrima;
             mMateriaPrima.CostoMateriaPrima = materiaPrima.CostoMateriaPrima;
-            mMateriaPrima.PesoMateriaPrima = materiaPrima.PesoMateriaPrima;
 
             rubicatDB.Entry(mMateriaPrima).State = EntityState.Modified;
             rubicatDB.SaveChanges();
@@ -45,12 +44,11 @@ namespace Datos
             var articulo = (from m in rubicatDB.MateriaPrimas
                              select new {
                                  Id_de_MateriaPrima = m.IdMateriaPrima,
-                                 Familia = m.FamiliaMateriaPrima,
-                                 Arquetipo = m.ArquetipoMateriaPrima,
+                                 Codigo = m.CodigoMateriaPrima,
                                  Descripcion = m.DescripcionMateriaPrima,
+                                 Kg_Uni = m.KgUniMateriaPrima,
                                  Costo = m.CostoMateriaPrima,
-                                 Cantidad = m.CantidadMateriaPrima,
-                                 Peso = m.PesoMateriaPrima
+                                 Unidad = m.UnidadMateriaPrima
                              }
                              ).ToList();
             return articulo;

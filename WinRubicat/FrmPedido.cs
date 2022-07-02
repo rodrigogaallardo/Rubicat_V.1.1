@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,14 +27,27 @@ namespace WinRubicat
             btnParcialPedido.Click += botones;
             btnAplicarDescuento.Click += botones;
             btnAgregarPedido.Click += botones;
-            
-            //LlenarCombos();
-            //LlenarTxtBoxClientes();
-            //LlenarTxtBoxTransporte();
-            //LlenarTxtBoxProducto();
             lblTitulo.Text = "Nuevo Pedido";
             lblCodigo.Text = "";
             lblId.Text = "";
+
+            lblDatosCliente.Text = "";
+            lblDatosIVA.Text = "";
+            lblDatosCondicion.Text = "";
+            lblDatosCUIT.Text = "";
+            lblDatosDomicilio.Text = "";
+            lblDatosLocalidad.Text = "";
+            lblDatosTelefono.Text = "";
+
+            lblDatosTransporte.Text = "";
+            lblDatosTransporteTelefono.Text = "";
+            lblDatosTransporteHorario.Text = "";
+
+            lblDatosProducto.Text = "";
+            lblDatosProductoCosto.Text = "";
+            lblDatosCantidadMinima.Text = "";
+
+
             Estado = Operacion.Alta;
         }
         public FrmPedido(Entidades.Pedido pedido)
@@ -42,38 +56,30 @@ namespace WinRubicat
             btnCancelar.Click += botones;
             btnParcialPedido.Click += botones;
             btnAplicarDescuento.Click += botones;
-            btnAgregarPedido.Click += botones;
-            
-            LlenarCombos();
-            //LlenarTxtBoxClientes();
-            //LlenarTxtBoxTransporte();
-            //LlenarTxtBoxProducto();
+            btnAgregarPedido.Click += botones;   
             lblCodigo.Text = pedido.IdPedido.ToString();
             lblTitulo.Text = "Modificar Pedido";
             txtNumeroDeRemito.Text = pedido.NumeroDeRemito.ToString();
             Estado = Operacion.Modificacion;
+            LlenarCombos();
         }
 
         List<Pedido> ListaPedido = new List<Pedido>();
         Logica.Aprobado objLogAprobado = new Logica.Aprobado();
         Logica.Pedido objLogicaPedido = new Logica.Pedido();
         Logica.Producto objLogProd = new Logica.Producto();
+        Logica.IngresosStock objIngresoStock = new Logica.IngresosStock();
         Logica.Transporte objLogicaTransporte = new Logica.Transporte();
         Logica.Cliente objCliente = new Logica.Cliente();
 
-       
         private void botones(object sender, EventArgs e)
         {
             Button boton = sender as Button;
             Pedido objPedido = new Pedido();
 
             switch (boton.Name)
-            {
-                
-               
+            {                
                 case "btnAgregarPedido":
-
-                    
                     try
                     {
                         objPedido.NumeroDeRemito = Convert.ToInt32(txtNumeroDeRemito.Text);
@@ -130,7 +136,6 @@ namespace WinRubicat
                     {
                         case Operacion.Alta:
                             objLogicaPedido.AgregarPedido(objPedido);
-                            //objLogAprobado.AgregarAprobado(objAprobado);
                             MessageBox.Show("Pedido agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dgvPedidoParcial.Columns.Clear();
                             break;
@@ -208,7 +213,7 @@ namespace WinRubicat
                     //Descuento
 
                     objPedido.ValorFinal = AplicarDescuento();
-                    txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text));
+                    txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(lblDatosProductoCosto.Text));
                     txtTotal.Text = Convert.ToString(objPedido.ValorFinal);
                     TraerPedidoParcial();
 
@@ -220,7 +225,6 @@ namespace WinRubicat
                     break;
             }
         }
-
         private void TraerPedidoParcial()
         {
             dgvPedidoParcial.DataSource = objLogicaPedido.TraerPedidos();
@@ -288,19 +292,18 @@ namespace WinRubicat
             //Descuento
 
             objPedido.ValorFinal = AplicarDescuento();
-            txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text));
+            txtSubTotal.Text = Convert.ToString(Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(lblDatosProductoCosto.Text));
             txtTotal.Text = Convert.ToString(objPedido.ValorFinal);
 
             ListaPedido.Add(objPedido);
             dgvPedidoParcial.DataSource = ListaPedido;
             
         }
-
         private decimal AplicarDescuento()
         {
             try
             {
-                decimal ValorInicial = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                decimal ValorInicial = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(lblDatosProductoCosto.Text);
                 decimal ValorFinal;
                 decimal Descuento;
 
@@ -322,7 +325,7 @@ namespace WinRubicat
                 else
                 {
                     txtVerDesc.Text = Convert.ToString(0);
-                    return ValorFinal = Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(txtPrecioProducto.Text);
+                    return ValorFinal = (Convert.ToInt32(txtCantidadProducto.Text) * Convert.ToDecimal(lblDatosProductoCosto.Text));
                 }
             }
             catch (Exception)
@@ -330,21 +333,16 @@ namespace WinRubicat
 
                 return 0;
             }
-
-            
-            
-
-
         }
-        void CargarTabla()
-        {
-            DataTable dtPedidoParcial = new DataTable();
-            dtPedidoParcial.Columns.Add("Fecha de pedido", typeof(DateTime));
-            dtPedidoParcial.Columns.Add("Fecha de entrega", typeof(DateTime));
-            dtPedidoParcial.Columns.Add("Numero de remito", typeof(int));
-            dtPedidoParcial.Columns.Add("Cliente", typeof(string));
-            dtPedidoParcial.Columns.Add("Producto", typeof(string));
-            dtPedidoParcial.Columns.Add("Precio unidad", typeof(decimal));
+        //void CargarTabla()
+        //{
+        //    DataTable dtPedidoParcial = new DataTable();
+        //    dtPedidoParcial.Columns.Add("Fecha de pedido", typeof(DateTime));
+        //    dtPedidoParcial.Columns.Add("Fecha de entrega", typeof(DateTime));
+        //    dtPedidoParcial.Columns.Add("Numero de remito", typeof(int));
+        //    dtPedidoParcial.Columns.Add("Cliente", typeof(string));
+        //    dtPedidoParcial.Columns.Add("Producto", typeof(string));
+        //    dtPedidoParcial.Columns.Add("Precio unidad", typeof(decimal));
 
             
 
@@ -362,48 +360,8 @@ namespace WinRubicat
 
             //    dtProductos.Rows.Add(fila);
             //}
-            dgvPedidoParcial.DataSource = dtPedidoParcial;
-        }
-
-        void ActualizarDatos()
-        {
-            //LlenarTxtBoxClientes();
-            //LlenarTxtBoxTransporte();
-            //LlenarTxtBoxProducto();
-        }
-        
-        void LlenarTxtBoxClientes()
-        {
-           
-
-            switch (cboCliente.SelectedIndex)
-            {
-                default:
-                    int id = Convert.ToInt32(cboCliente.SelectedValue);
-                    txtDomicilio.Text = objCliente.TraerPorId(id).DomicilioFiscal;
-                    txtLocalidad.Text = objCliente.TraerPorId(id).Localidad;
-                    txtIva.Text = objCliente.TraerPorId(id).TipoIngBrutos;
-                    txtCondicion.Text = objCliente.TraerPorId(id).CondicionVenta;
-                    txtCuit.Text = Convert.ToString(objCliente.TraerPorId(id).Cuit);
-               break;
-            }
-            
-            
-            
-        }
-        void LlenarTxtBoxTransporte()
-        {
-            int id = Convert.ToInt32(cboTransporte.SelectedValue);
-            txtDireccionTransporte.Text = objLogicaTransporte.TraerPorId(id).DireccionTransporte;
-            txtTelefonoTransporte.Text = Convert.ToString(objLogicaTransporte.TraerPorId(id).TelefonoTransporte);
-            txtHorarioTransporte.Text = objLogicaTransporte.TraerPorId(id).HorarioDeTransporte;
-        }
-        void LlenarTxtBoxProducto()
-        {
-            int id = Convert.ToInt32(cboProducto.SelectedValue);
-            txtCantidadProducto.Text = Convert.ToString(objLogProd.TraerPorId(id).Cantidad);
-            txtPrecioProducto.Text = Convert.ToString(objLogProd.TraerPorId(id).Costo);
-        }
+        //    dgvPedidoParcial.DataSource = dtPedidoParcial;
+        //}
 
         void LlenarCombos()
         {
@@ -433,19 +391,18 @@ namespace WinRubicat
         {
             Logica.Producto objLogicaProd = new Logica.Producto();
             cboProducto.DataSource = objLogicaProd.SelectProducto(cboProducto.Text);
-            cboProducto.DisplayMember = "Nombre";
+            cboProducto.DisplayMember = "CodProducto";
             cboProducto.ValueMember = "IdProducto";
         }
-        //Carga los textbox con los valores del elemento seleecionado 
-        private void cboTransporte_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Cuando cambio un item llena los textboxs
-            int id = Convert.ToInt32(cboTransporte.SelectedValue);
-            txtDireccionTransporte.Text = objLogicaTransporte.TraerPorId(id).DireccionTransporte;
-            txtTelefonoTransporte.Text = Convert.ToString(objLogicaTransporte.TraerPorId(id).TelefonoTransporte);
-            txtHorarioTransporte.Text = objLogicaTransporte.TraerPorId(id).HorarioDeTransporte;
-
+            int id = Convert.ToInt32(cboProducto.SelectedValue);
+            lblDatosProducto.Text = objLogProd.TraerPorId(id).Nombre;
+            lblDatosProductoCosto.Text = Convert.ToString(objLogProd.TraerPorId(id).Costo);
         }
+
+        //Carga los textbox con los valores del elemento seleecionado
 
         private void cboTransporte_TextChanged(object sender, EventArgs e)
         {
@@ -454,31 +411,42 @@ namespace WinRubicat
             cboTransporte.DisplayMember = "NombreTransporte";
             cboTransporte.ValueMember = "IdTransporte";
         }
-
+        private void cboTransporte_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Cuando cambio un item llena los textboxs
+            int id = Convert.ToInt32(cboTransporte.SelectedValue);
+            lblDatosTransporte.Text = objLogicaTransporte.TraerPorId(id).DireccionTransporte;
+            lblDatosTransporteTelefono.Text = Convert.ToString(objLogicaTransporte.TraerPorId(id).TelefonoTransporte);
+            lblDatosTransporteHorario.Text = objLogicaTransporte.TraerPorId(id).HorarioDeTransporte;
+        }
+       
         private void cboCliente_TextChanged(object sender, EventArgs e)
         {
             Logica.Cliente objLogicaCliente = new Logica.Cliente();
             cboCliente.DataSource = objLogicaCliente.SelectCliente(cboCliente.Text);
-            cboCliente.DisplayMember = "Nombre";
+            cboCliente.DisplayMember = "CodCliente";
             cboCliente.ValueMember = "IdCliente";
         }
-
         private void cboCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(cboCliente.SelectedValue);
-            txtDomicilio.Text = objCliente.TraerPorId(id).DomicilioFiscal;
-            txtLocalidad.Text = objCliente.TraerPorId(id).Localidad;
-            txtIva.Text = objCliente.TraerPorId(id).TipoIngBrutos;
-            txtCondicion.Text = objCliente.TraerPorId(id).CondicionVenta;
-            txtCuit.Text = Convert.ToString(objCliente.TraerPorId(id).Cuit);
+            lblDatosCliente.Text = objCliente.TraerPorId(id).Nombre;
+            lblDatosDomicilio.Text = objCliente.TraerPorId(id).DomicilioFiscal;
+            lblDatosLocalidad.Text = objCliente.TraerPorId(id).Localidad;
+            lblDatosIVA.Text = objCliente.TraerPorId(id).TipoIngBrutos;
+            lblDatosCondicion.Text = objCliente.TraerPorId(id).CondicionVenta;
+            lblDatosCUIT.Text = Convert.ToString(objCliente.TraerPorId(id).Cuit);
+            lblDatosTelefono.Text = Convert.ToString(objCliente.TraerPorId(id).Telefono);
         }
 
-        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
+        private void tableLayoutPanel4_Paint(object sender, PaintEventArgs e)
         {
-            //Cuando cambio un item llena los textboxs
-            int id = Convert.ToInt32(cboProducto.SelectedValue);
-            txtCantidadProducto.Text = Convert.ToString(objLogProd.TraerPorId(id).Cantidad);
-            txtPrecioProducto.Text = Convert.ToString(objLogProd.TraerPorId(id).Costo);
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

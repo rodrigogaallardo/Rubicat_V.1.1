@@ -56,7 +56,7 @@
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSalir.Location = new System.Drawing.Point(766, 332);
+            this.btnSalir.Location = new System.Drawing.Point(647, 332);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(127, 63);
             this.btnSalir.TabIndex = 43;
@@ -78,7 +78,7 @@
             this.btnAgregarTransporte.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarTransporte.Image")));
             this.btnAgregarTransporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarTransporte.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAgregarTransporte.Location = new System.Drawing.Point(766, 205);
+            this.btnAgregarTransporte.Location = new System.Drawing.Point(647, 205);
             this.btnAgregarTransporte.Name = "btnAgregarTransporte";
             this.btnAgregarTransporte.Size = new System.Drawing.Size(127, 63);
             this.btnAgregarTransporte.TabIndex = 42;
@@ -100,7 +100,7 @@
             this.btnBorrar.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrar.Image")));
             this.btnBorrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBorrar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnBorrar.Location = new System.Drawing.Point(766, 136);
+            this.btnBorrar.Location = new System.Drawing.Point(647, 136);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(127, 63);
             this.btnBorrar.TabIndex = 41;
@@ -122,7 +122,7 @@
             this.btnModificar.Image = ((System.Drawing.Image)(resources.GetObject("btnModificar.Image")));
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnModificar.Location = new System.Drawing.Point(766, 67);
+            this.btnModificar.Location = new System.Drawing.Point(647, 67);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(127, 63);
             this.btnModificar.TabIndex = 40;
@@ -157,7 +157,7 @@
             this.dgvTransporte.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTransporte.EnableHeadersVisualStyles = false;
             this.dgvTransporte.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.dgvTransporte.Location = new System.Drawing.Point(131, 67);
+            this.dgvTransporte.Location = new System.Drawing.Point(12, 67);
             this.dgvTransporte.Name = "dgvTransporte";
             this.dgvTransporte.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
@@ -175,7 +175,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox1.Location = new System.Drawing.Point(416, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(233, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 49);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1000, 470);
+            this.ClientSize = new System.Drawing.Size(782, 411);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvTransporte);

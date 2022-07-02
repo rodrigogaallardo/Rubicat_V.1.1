@@ -23,6 +23,7 @@ namespace WinRubicat
         {
             Logica.IngresosStock objLogica = new Logica.IngresosStock();
             dgvIngresosStock.DataSource = objLogica.TraerIngresosStock();
+            dgvIngresosStock.Columns[0].Visible = false;
         }
 
         public void botones(object sender, EventArgs e)

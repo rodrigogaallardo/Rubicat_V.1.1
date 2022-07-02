@@ -147,7 +147,47 @@ namespace WinRubicat
                     FrmRemito.Dock = DockStyle.Fill;
                     FrmRemito.Show();
                     break;
-                //******************************************//
+                //**********Ingrensos de Stock************//
+                case "tsmiStockTotal":
+                    FrmStockTotal FrmStockTotalPri = new FrmStockTotal();
+                    FrmStockTotalPri.MdiParent = this;
+                    FrmStockTotalPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmStockTotalPri.Dock = DockStyle.Fill;
+                    FrmStockTotalPri.Show();
+                    break;
+                case "tsmiConsultarStock":
+                    FrmConsultasStock FrmConsultasStockPri = new FrmConsultasStock();
+                    FrmConsultasStockPri.MdiParent = this;
+                    FrmConsultasStockPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultasStockPri.Dock = DockStyle.Fill;
+                    FrmConsultasStockPri.Show();
+                    break;
+
+                case "tsmiIngresarStock":
+                    FrmIngresosStock FrmIngresosStockPri = new FrmIngresosStock();
+                    FrmIngresosStockPri.MdiParent = this;
+                    FrmIngresosStockPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmIngresosStockPri.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //FrmIngresosStockPri.Dock = DockStyle.Fill;
+                    FrmIngresosStockPri.Show();
+                    break;
+                //************Ingreso de depositos***********//
+                case "tsmiIngresarDepositos":
+                    FrmDepositos FrmDepositosPrim = new FrmDepositos();
+                    FrmDepositosPrim.MdiParent = this;
+                    FrmDepositosPrim.StartPosition = FormStartPosition.CenterScreen;
+                    FrmDepositosPrim.FormBorderStyle = FormBorderStyle.Fixed3D;
+                    //FrmDepositosPrim.Dock = DockStyle.Fill;
+                    FrmDepositosPrim.Show();
+                    break;
+                case "tsmiConsultarDepositos":
+                    FrmConsultaDeposito FrmConsultaDepositoPri = new FrmConsultaDeposito();
+                    FrmConsultaDepositoPri.MdiParent = this;
+                    FrmConsultaDepositoPri.StartPosition = FormStartPosition.CenterScreen;
+                    FrmConsultaDepositoPri.Dock = DockStyle.Fill;
+                    FrmConsultaDepositoPri.Show();
+                    break;
+                //************************************************//
 
                 case "tsmiNuevaVenta":
                     FrmVenta FrmNuevaVent = new FrmVenta();
@@ -164,20 +204,6 @@ namespace WinRubicat
                     FrmConsultaVent.Show();
                     break;
 
-                case "tsmiConsultarStock":
-                    FrmConsultasStock FrmConsultasStockPri = new FrmConsultasStock();
-                    FrmConsultasStockPri.MdiParent = this;
-                    FrmConsultasStockPri.StartPosition = FormStartPosition.CenterScreen;
-                    FrmConsultasStockPri.Dock = DockStyle.Fill;
-                    FrmConsultasStockPri.Show();
-                    break;
-                case "tsmiConsultarDepositos":
-                    FrmConsultaDeposito FrmConsultaDepositoPri = new FrmConsultaDeposito();
-                    FrmConsultaDepositoPri.MdiParent = this;
-                    FrmConsultaDepositoPri.StartPosition = FormStartPosition.CenterScreen;
-                    FrmConsultaDepositoPri.Dock = DockStyle.Fill;
-                    FrmConsultaDepositoPri.Show();
-                    break;
                 case "tsmiConsultarMateriasPrimas":
                     FrmConsultasMateriasPrimas FrmConsultaMateriasPrimasPri = new FrmConsultasMateriasPrimas();
                     FrmConsultaMateriasPrimasPri.MdiParent = this;
@@ -185,31 +211,7 @@ namespace WinRubicat
                     FrmConsultaMateriasPrimasPri.Dock = DockStyle.Fill;
                     FrmConsultaMateriasPrimasPri.Show();
                     break;
-                case "tsmiStockTotal":
-                    FrmStockTotal FrmStockTotalPri = new FrmStockTotal();
-                    FrmStockTotalPri.MdiParent = this;
-                    FrmStockTotalPri.StartPosition = FormStartPosition.CenterScreen;
-                    FrmStockTotalPri.Dock = DockStyle.Fill;
-                    FrmStockTotalPri.Show();
-                    break;
-
                 
-                case "tsmiIngresarStock":
-                    FrmIngresosStock FrmIngresosStockPri = new FrmIngresosStock();
-                    FrmIngresosStockPri.MdiParent = this;
-                    FrmIngresosStockPri.StartPosition = FormStartPosition.CenterScreen;
-                    FrmIngresosStockPri.Dock = DockStyle.Fill;
-                    FrmIngresosStockPri.Show();
-                    break;
-
-                case "tsmiIngresarDepositos":
-                    FrmDepositos FrmDepositosPrim = new FrmDepositos();
-                    FrmDepositosPrim.MdiParent = this;
-                    FrmDepositosPrim.StartPosition = FormStartPosition.CenterScreen;
-                    FrmDepositosPrim.Dock = DockStyle.Fill;
-                    FrmDepositosPrim.Show();
-                    break;
-
                 case "tsmiMateriaPrima":
                     FrmMateriasPrimas FrmMateriasPrimasPri = new FrmMateriasPrimas();
                     FrmMateriasPrimasPri.MdiParent = this;
@@ -222,8 +224,6 @@ namespace WinRubicat
                     break;
             }
         }
-
-
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             SetBackGroundColorOfMDIForm();
@@ -241,10 +241,6 @@ namespace WinRubicat
                 }
             }
         }
-
-       
-
-        
     }
 
 }

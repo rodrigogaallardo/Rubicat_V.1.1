@@ -85,5 +85,10 @@ namespace WinRubicat
 
 
         }
+
+        private void FrmDepositos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

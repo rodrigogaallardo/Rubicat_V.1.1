@@ -17,6 +17,7 @@ namespace Entidades
         public int ProductoId { get; set; }
         public int TransporteId { get; set; }
         public decimal ValorFinal { get; set; }
+        //public List<Stock> Stocks { get; set; }
 
     }
 }

@@ -14,7 +14,6 @@ namespace Entidades
         public string Espacio { get; set; }
 
         public List<IngresoStock> IngresosStock { get; set; }
-        public List<Stock> Stock { get; set; }
 
         
     }

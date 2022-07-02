@@ -19,12 +19,11 @@ namespace WinRubicat
             btnModificar.Click += botones;
             btnCancelar.Click += botones; 
             lblCodigo.Text = materiasPrimas.IdMateriaPrima.ToString();
-            txtFamilia.Text = materiasPrimas.FamiliaMateriaPrima.ToString();
-            txtArquetipo.Text = materiasPrimas.ArquetipoMateriaPrima.ToString();
+            txtArquetipo.Text = materiasPrimas.CodigoMateriaPrima.ToString();
             txtDescripcion.Text = materiasPrimas.DescripcionMateriaPrima.ToString();
             txtCosto.Text = materiasPrimas.CostoMateriaPrima.ToString();
-            txtCantidad.Text = materiasPrimas.CantidadMateriaPrima.ToString();
-            txtPeso.Text = materiasPrimas.PesoMateriaPrima.ToString();
+            txtCantidad.Text = materiasPrimas.KgUniMateriaPrima.ToString();
+            txtPeso.Text = materiasPrimas.UnidadMateriaPrima.ToString();
         }
 
         private void botones(object sender, EventArgs e)
@@ -42,15 +41,7 @@ namespace WinRubicat
                     Close();
                     break;
                 case "btnModificar":
-                    materiaPrimaMod.IdMateriaPrima = Convert.ToInt32(lblCodigo.Text);
-                    materiaPrimaMod.FamiliaMateriaPrima = txtFamilia.Text;
-                    materiaPrimaMod.ArquetipoMateriaPrima = txtArquetipo.Text;
-                    materiaPrimaMod.DescripcionMateriaPrima = txtDescripcion.Text;
-                    materiaPrimaMod.CostoMateriaPrima = Convert.ToDecimal(txtCosto.Text);
-                    materiaPrimaMod.CantidadMateriaPrima = Convert.ToInt32(txtCantidad.Text);
-                    materiaPrimaMod.PesoMateriaPrima = Convert.ToInt32(txtPeso.Text);
-                    objLogMatMod.ModificarMateriaPrima(materiaPrimaMod);
-                    MessageBox.Show("Articulo modificado correctamente.");
+                    
                     Close();
                     break;
             }
