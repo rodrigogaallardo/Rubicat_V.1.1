@@ -9,6 +9,7 @@ namespace Entidades
     public class Cliente
     {
         public int IdCliente { get; set; }
+        public string CodCliente { get; set; }
         public string Nombre { get; set; }
         public string RazonSocial { get; set; }
         public long Cuit { get; set; }

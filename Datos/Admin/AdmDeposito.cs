@@ -40,7 +40,6 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var deposito = (from d in rubicatDB.Depositos
-
                              select new
                              {
                                  Id_de_Deposito= d.IdDeposito,
@@ -54,6 +53,14 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var deposito = rubicatDB.Depositos.Find(id);
+            return deposito;
+        }
+        public static List<Entidades.Deposito> SelectDeposito(string letra)
+        {
+            DBRubicatContext rubicatDB = new DBRubicatContext();
+            var deposito = (from d in rubicatDB.Depositos
+                            where d.Nombre.StartsWith(letra)
+                            select d).ToList();
             return deposito;
         }
     }

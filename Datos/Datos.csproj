@@ -82,53 +82,13 @@
     <Compile Include="Admin\AdmTransporte.cs" />
     <Compile Include="Data\DBRubicatContext.cs" />
     <Compile Include="Admin\AdmProducto.cs" />
-    <Compile Include="Migrations\202203292312469_InicioNuevo.cs" />
-    <Compile Include="Migrations\202203292312469_InicioNuevo.Designer.cs">
-      <DependentUpon>202203292312469_InicioNuevo.cs</DependentUpon>
+    <Compile Include="Migrations\202206100251141_InitialCreate.cs" />
+    <Compile Include="Migrations\202206100251141_InitialCreate.Designer.cs">
+      <DependentUpon>202206100251141_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202203292339517_InicioNuevo+NombreProducto.cs" />
-    <Compile Include="Migrations\202203292339517_InicioNuevo+NombreProducto.Designer.cs">
-      <DependentUpon>202203292339517_InicioNuevo+NombreProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203292352451_ModificacionCuitCliente.cs" />
-    <Compile Include="Migrations\202203292352451_ModificacionCuitCliente.Designer.cs">
-      <DependentUpon>202203292352451_ModificacionCuitCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203292355299_ModificacionTelefonoCliente.cs" />
-    <Compile Include="Migrations\202203292355299_ModificacionTelefonoCliente.Designer.cs">
-      <DependentUpon>202203292355299_ModificacionTelefonoCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.cs" />
-    <Compile Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.Designer.cs">
-      <DependentUpon>202203300413355_ModTelefonoTransporteVendedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204120422431_CambioCostoProducto.cs" />
-    <Compile Include="Migrations\202204120422431_CambioCostoProducto.Designer.cs">
-      <DependentUpon>202204120422431_CambioCostoProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204120507564_ModProducPesoyCosto.cs" />
-    <Compile Include="Migrations\202204120507564_ModProducPesoyCosto.Designer.cs">
-      <DependentUpon>202204120507564_ModProducPesoyCosto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204120510164_Mod2ProductoCostoyPeso.cs" />
-    <Compile Include="Migrations\202204120510164_Mod2ProductoCostoyPeso.Designer.cs">
-      <DependentUpon>202204120510164_Mod2ProductoCostoyPeso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204120515456_ModProdCostoYPeso.cs" />
-    <Compile Include="Migrations\202204120515456_ModProdCostoYPeso.Designer.cs">
-      <DependentUpon>202204120515456_ModProdCostoYPeso.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204120520068_Mod2CP.cs" />
-    <Compile Include="Migrations\202204120520068_Mod2CP.Designer.cs">
-      <DependentUpon>202204120520068_Mod2CP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204260417485_AgregoDetalleParcial.cs" />
-    <Compile Include="Migrations\202204260417485_AgregoDetalleParcial.Designer.cs">
-      <DependentUpon>202204260417485_AgregoDetalleParcial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204282153376_sinDetalleParcial.cs" />
-    <Compile Include="Migrations\202204282153376_sinDetalleParcial.Designer.cs">
-      <DependentUpon>202204282153376_sinDetalleParcial.cs</DependentUpon>
+    <Compile Include="Migrations\202206232001311_CodCliente.cs" />
+    <Compile Include="Migrations\202206232001311_CodCliente.Designer.cs">
+      <DependentUpon>202206232001311_CodCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,41 +116,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203292312469_InicioNuevo.resx">
-      <DependentUpon>202203292312469_InicioNuevo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206100251141_InitialCreate.resx">
+      <DependentUpon>202206100251141_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203292339517_InicioNuevo+NombreProducto.resx">
-      <DependentUpon>202203292339517_InicioNuevo+NombreProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203292352451_ModificacionCuitCliente.resx">
-      <DependentUpon>202203292352451_ModificacionCuitCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203292355299_ModificacionTelefonoCliente.resx">
-      <DependentUpon>202203292355299_ModificacionTelefonoCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203300413355_ModTelefonoTransporteVendedor.resx">
-      <DependentUpon>202203300413355_ModTelefonoTransporteVendedor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204120422431_CambioCostoProducto.resx">
-      <DependentUpon>202204120422431_CambioCostoProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204120507564_ModProducPesoyCosto.resx">
-      <DependentUpon>202204120507564_ModProducPesoyCosto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204120510164_Mod2ProductoCostoyPeso.resx">
-      <DependentUpon>202204120510164_Mod2ProductoCostoyPeso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204120515456_ModProdCostoYPeso.resx">
-      <DependentUpon>202204120515456_ModProdCostoYPeso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204120520068_Mod2CP.resx">
-      <DependentUpon>202204120520068_Mod2CP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204260417485_AgregoDetalleParcial.resx">
-      <DependentUpon>202204260417485_AgregoDetalleParcial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204282153376_sinDetalleParcial.resx">
-      <DependentUpon>202204282153376_sinDetalleParcial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206232001311_CodCliente.resx">
+      <DependentUpon>202206232001311_CodCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,12 +9,12 @@ namespace Entidades
     public class Stock
     {
         public int IdStockTotal { get; set; }
-        public int Cantidad { get; set; }
-
-        public int MateriaPrimaID { get; set; }
-        public int DepositoID { get; set; }
-
-        public MateriaPrima MateriaPrima { get; set; }
-        public Deposito Deposito { get; set; }
+        public int ProductoId { get; set; }
+        public int NumeroDeRemitoId{ get; set; }
+        public int SumaUnidadesIngresados { get; set; }
+        public int SumaUnidadesUsadas { get; set; }
+        public int StockFinal { get; set; }
+        public int StockMinimo { get; set; }
+        public int Status { get; set; }
     }
 }

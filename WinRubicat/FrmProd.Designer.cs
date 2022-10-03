@@ -34,20 +34,22 @@
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblCod = new System.Windows.Forms.Label();
             this.lblArquetipo = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblFamilia = new System.Windows.Forms.Label();
             this.txtArquetipo = new System.Windows.Forms.TextBox();
             this.txtFamilia = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.lblCantidad = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCodigoProducto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtUnidadDeMedida = new System.Windows.Forms.TextBox();
+            this.lblIdProducto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +57,7 @@
             // 
             this.lblPeso.AutoSize = true;
             this.lblPeso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeso.Location = new System.Drawing.Point(30, 284);
+            this.lblPeso.Location = new System.Drawing.Point(25, 323);
             this.lblPeso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(45, 21);
@@ -66,7 +68,7 @@
             // 
             this.lblCosto.AutoSize = true;
             this.lblCosto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCosto.Location = new System.Drawing.Point(30, 326);
+            this.lblCosto.Location = new System.Drawing.Point(25, 415);
             this.lblCosto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCosto.Name = "lblCosto";
             this.lblCosto.Size = new System.Drawing.Size(56, 21);
@@ -76,7 +78,7 @@
             // txtPeso
             // 
             this.txtPeso.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtPeso.Location = new System.Drawing.Point(207, 281);
+            this.txtPeso.Location = new System.Drawing.Point(254, 320);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(96, 29);
@@ -85,7 +87,7 @@
             // txtCosto
             // 
             this.txtCosto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCosto.Location = new System.Drawing.Point(207, 326);
+            this.txtCosto.Location = new System.Drawing.Point(254, 415);
             this.txtCosto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtCosto.Name = "txtCosto";
             this.txtCosto.Size = new System.Drawing.Size(96, 29);
@@ -102,22 +104,11 @@
             this.lblTitulo.TabIndex = 12;
             this.lblTitulo.Text = "Titulo";
             // 
-            // lblCod
-            // 
-            this.lblCod.AutoSize = true;
-            this.lblCod.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCod.Location = new System.Drawing.Point(179, 90);
-            this.lblCod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(44, 21);
-            this.lblCod.TabIndex = 13;
-            this.lblCod.Text = "Cod";
-            // 
             // lblArquetipo
             // 
             this.lblArquetipo.AutoSize = true;
             this.lblArquetipo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArquetipo.Location = new System.Drawing.Point(30, 151);
+            this.lblArquetipo.Location = new System.Drawing.Point(25, 190);
             this.lblArquetipo.Name = "lblArquetipo";
             this.lblArquetipo.Size = new System.Drawing.Size(90, 21);
             this.lblArquetipo.TabIndex = 28;
@@ -127,7 +118,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcion.Location = new System.Drawing.Point(30, 241);
+            this.lblDescripcion.Location = new System.Drawing.Point(25, 280);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(100, 21);
             this.lblDescripcion.TabIndex = 27;
@@ -137,7 +128,7 @@
             // 
             this.lblFamilia.AutoSize = true;
             this.lblFamilia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFamilia.Location = new System.Drawing.Point(30, 111);
+            this.lblFamilia.Location = new System.Drawing.Point(25, 150);
             this.lblFamilia.Name = "lblFamilia";
             this.lblFamilia.Size = new System.Drawing.Size(64, 21);
             this.lblFamilia.TabIndex = 26;
@@ -146,7 +137,7 @@
             // txtArquetipo
             // 
             this.txtArquetipo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtArquetipo.Location = new System.Drawing.Point(133, 154);
+            this.txtArquetipo.Location = new System.Drawing.Point(180, 193);
             this.txtArquetipo.Name = "txtArquetipo";
             this.txtArquetipo.Size = new System.Drawing.Size(170, 29);
             this.txtArquetipo.TabIndex = 2;
@@ -154,7 +145,7 @@
             // txtFamilia
             // 
             this.txtFamilia.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtFamilia.Location = new System.Drawing.Point(133, 114);
+            this.txtFamilia.Location = new System.Drawing.Point(180, 153);
             this.txtFamilia.Name = "txtFamilia";
             this.txtFamilia.Size = new System.Drawing.Size(170, 29);
             this.txtFamilia.TabIndex = 1;
@@ -162,28 +153,10 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtDescripcion.Location = new System.Drawing.Point(133, 244);
+            this.txtDescripcion.Location = new System.Drawing.Point(180, 283);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(170, 29);
             this.txtDescripcion.TabIndex = 4;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCantidad.Location = new System.Drawing.Point(207, 375);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(96, 29);
-            this.txtCantidad.TabIndex = 7;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidad.Location = new System.Drawing.Point(30, 375);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(87, 21);
-            this.lblCantidad.TabIndex = 29;
-            this.lblCantidad.Text = "Cantidad";
             // 
             // btnCancelar
             // 
@@ -200,7 +173,7 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancelar.Location = new System.Drawing.Point(197, 432);
+            this.btnCancelar.Location = new System.Drawing.Point(205, 472);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 53);
             this.btnCancelar.TabIndex = 9;
@@ -223,7 +196,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAgregar.Location = new System.Drawing.Point(16, 432);
+            this.btnAgregar.Location = new System.Drawing.Point(29, 472);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(145, 53);
             this.btnAgregar.TabIndex = 8;
@@ -246,7 +219,7 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtNombre.Location = new System.Drawing.Point(133, 199);
+            this.txtNombre.Location = new System.Drawing.Point(180, 234);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(170, 29);
             this.txtNombre.TabIndex = 3;
@@ -255,11 +228,59 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 202);
+            this.label1.Location = new System.Drawing.Point(25, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 21);
             this.label1.TabIndex = 52;
             this.label1.Text = "Nombre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(25, 112);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(149, 21);
+            this.label2.TabIndex = 53;
+            this.label2.Text = "Cod. de Producto";
+            // 
+            // txtCodigoProducto
+            // 
+            this.txtCodigoProducto.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtCodigoProducto.Location = new System.Drawing.Point(180, 112);
+            this.txtCodigoProducto.Name = "txtCodigoProducto";
+            this.txtCodigoProducto.Size = new System.Drawing.Size(170, 29);
+            this.txtCodigoProducto.TabIndex = 54;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 367);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(157, 21);
+            this.label3.TabIndex = 55;
+            this.label3.Text = "Unidad de Medida";
+            // 
+            // txtUnidadDeMedida
+            // 
+            this.txtUnidadDeMedida.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtUnidadDeMedida.Location = new System.Drawing.Point(254, 364);
+            this.txtUnidadDeMedida.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtUnidadDeMedida.Name = "txtUnidadDeMedida";
+            this.txtUnidadDeMedida.Size = new System.Drawing.Size(96, 29);
+            this.txtUnidadDeMedida.TabIndex = 56;
+            // 
+            // lblIdProducto
+            // 
+            this.lblIdProducto.AutoSize = true;
+            this.lblIdProducto.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdProducto.Location = new System.Drawing.Point(190, 74);
+            this.lblIdProducto.Name = "lblIdProducto";
+            this.lblIdProducto.Size = new System.Drawing.Size(149, 21);
+            this.lblIdProducto.TabIndex = 57;
+            this.lblIdProducto.Text = "Cod. de Producto";
             // 
             // FrmProd
             // 
@@ -267,22 +288,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(354, 511);
+            this.ClientSize = new System.Drawing.Size(388, 544);
             this.ControlBox = false;
+            this.Controls.Add(this.lblIdProducto);
+            this.Controls.Add(this.txtUnidadDeMedida);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtCodigoProducto);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.lblCantidad);
             this.Controls.Add(this.lblArquetipo);
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblFamilia);
             this.Controls.Add(this.txtArquetipo);
             this.Controls.Add(this.txtFamilia);
             this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblCod);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtCosto);
             this.Controls.Add(this.txtPeso);
@@ -305,19 +328,21 @@
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtCosto;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblCod;
         private System.Windows.Forms.Label lblArquetipo;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblFamilia;
         private System.Windows.Forms.TextBox txtArquetipo;
         private System.Windows.Forms.TextBox txtFamilia;
         private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCodigoProducto;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtUnidadDeMedida;
+        private System.Windows.Forms.Label lblIdProducto;
     }
 }

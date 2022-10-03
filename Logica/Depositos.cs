@@ -38,5 +38,9 @@ namespace Logica
         {
             return AdmDeposito.SelectId(id);
         }
+        public List<Entidades.Deposito> SelectDeposito(string letra)
+        {
+            return AdmDeposito.SelectDeposito(letra);
+        }
     }
 }

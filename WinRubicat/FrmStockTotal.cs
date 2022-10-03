@@ -16,20 +16,26 @@ namespace WinRubicat
         {
             InitializeComponent();
             btnSalir.Click += botones;
+            //btnStockReal.Click += botones;
             TraerStockTotal();
         }
 
         void TraerStockTotal()
         {
-            Logica.Stock objLogica = new Logica.Stock();
-            dgvStockTotal.DataSource = objLogica.TraerStock();
+            Logica.IngresosStock objLogica = new Logica.IngresosStock();
+            dgvStockTotal.DataSource = objLogIngreso.TraertStockReal();
         }
+
+        Logica.IngresosStock objLogIngreso = new Logica.IngresosStock();
 
         public void botones(object sender, EventArgs e)
         {
             Button boton = sender as Button;
             switch (boton.Name)
             {
+                case "btnStockReal":
+                    dgvStockTotal.DataSource = objLogIngreso.TraertStockReal();
+                    break;
                 case "btnSalir":
                     Close();
                     break;

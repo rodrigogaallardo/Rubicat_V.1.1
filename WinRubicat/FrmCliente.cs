@@ -39,7 +39,7 @@ namespace WinRubicat
             InitializeComponent();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
-            lblCod.Text = cliente.IdCliente.ToString();
+            txtCodigoDeCliente.Text = cliente.CodCliente.ToString();
             lblTitulo.Text = "Modificar Cliente";
             btnAgregar.Text = "Modificar";
             lblCod.Text = cliente.IdCliente.ToString();
@@ -67,6 +67,8 @@ namespace WinRubicat
                 case "btnAgregar":
                     Cliente modelCliente = new Cliente();
                     Logica.Cliente objLogicaCliente = new Logica.Cliente();
+
+                    modelCliente.CodCliente = txtCodigoDeCliente.Text.ToUpper();
 
                     modelCliente.Nombre = txtNombre.Text;
                     if (modelCliente.Nombre == "")
@@ -221,27 +223,47 @@ namespace WinRubicat
                     switch (Estado)
                     {
                         case Operacion.Alta:
-                            objLogicaCliente.AgregarCliente(modelCliente);
-                            MessageBox.Show("Cliente agregado correctamente.","Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            txtNombre.Clear();
-                            txtRazSocial.Clear();
-                            txtCuit.Clear();
-                            txtIngBrutos.Clear();
-                            txtTipoIngB.Clear();
-                            txtDomFiscal.Clear();
-                            txtLocalidad.Clear();
-                            txtTelefono.Clear();
-                            txtMail.Clear();
-                            txtCondicionDeVenta.Clear();
-                            txtHorarioDeAtencion.Clear();
-                            break;
+                            try
+                            {
+                                objLogicaCliente.AgregarCliente(modelCliente);
+                                MessageBox.Show("Cliente agregado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                txtCodigoDeCliente.Clear();
+                                txtNombre.Clear();
+                                txtRazSocial.Clear();
+                                txtCuit.Clear();
+                                txtIngBrutos.Clear();
+                                txtTipoIngB.Clear();
+                                txtDomFiscal.Clear();
+                                txtLocalidad.Clear();
+                                txtTelefono.Clear();
+                                txtMail.Clear();
+                                txtCondicionDeVenta.Clear();
+                                txtHorarioDeAtencion.Clear();
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("No puede ingresar un Codigo de cliente repetido en el area:'Cod. de Cliente'", "Codigo repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+                            
                             
                         case Operacion.Modificacion:
-                            modelCliente.IdCliente = Convert.ToInt32(lblCod.Text);
-                            objLogicaCliente.ModificarCliente(modelCliente);
-                            MessageBox.Show("Cliente modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Close();
-                            break;
+                            try
+                            {
+                                modelCliente.IdCliente = Convert.ToInt32(lblCod.Text);
+                                objLogicaCliente.ModificarCliente(modelCliente);
+                                MessageBox.Show("Cliente modificado correctamente.", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Close();
+                                break;
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("No se puede modificar el codigo de cliente", "Codigo repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                break;
+                            }
+
+                            
                         default:
                             break;
                     }

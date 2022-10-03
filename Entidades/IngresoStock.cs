@@ -11,13 +11,15 @@ namespace Entidades
         public int IdIngreso { get; set; }
         public DateTime FechaIngreso { get; set; }
         public int Cantidad { get; set; }
-        public int NumeroRemito { get; set; }
+        public int CantidadMinima { get; set; }
         public string Responsable { get; set; }
-
-        public int MateriaPrimaId { get; set; }
         public int DepositoId { get; set; }
-
-        public List<MateriaPrima> MateriasPrimas { get; set; }
-        public List<Deposito> Depositos { get; set; }
+        public int ProductoId { get; set; }
+        public int SumaUnidadesIngresados { get; set; }
+        public int SumaUnidadesUsadas { get; set; }
+        public int StockFinal { get; set; }
+        public int Status { get; set; }
+        public List<Pedido> Pedidos { get; set; }
+        //public List<Stock> Stocks { get; set; }
     }
 }

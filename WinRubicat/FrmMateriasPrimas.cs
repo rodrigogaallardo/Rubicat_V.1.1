@@ -33,12 +33,13 @@ namespace WinRubicat
                     Logica.MateriasPrimas objLogica = new Logica.MateriasPrimas();
 
                     Entidades.MateriaPrima objEntidad = new Entidades.MateriaPrima();
-                    objEntidad.FamiliaMateriaPrima = txtFamilia.Text;
-                    objEntidad.ArquetipoMateriaPrima = txtArquetipo.Text;
+                    objEntidad.CodigoMateriaPrima = txtCodigo.Text;
                     objEntidad.DescripcionMateriaPrima = txtDescripcion.Text;
+                    objEntidad.KgUniMateriaPrima = Convert.ToDecimal(txtKgUnidad.Text);
+                    objEntidad.UnidadMateriaPrima = txtUniMedida.Text;
                     objEntidad.CostoMateriaPrima = Convert.ToDecimal(txtCosto.Text);
-                    objEntidad.CantidadMateriaPrima = Convert.ToInt32(txtCantidad.Text);
-                    objEntidad.PesoMateriaPrima = Convert.ToInt32(txtPeso.Text);
+
+
 
                     objLogica.AgregarMateriaPrima(objEntidad);
                     MessageBox.Show("Producto agregado a la base de datos!");

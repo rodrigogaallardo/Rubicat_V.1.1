@@ -10,12 +10,12 @@ namespace Datos
 {
     public class AdmStock
     {
-        public static void InsertStock(Entidades.Stock stock)
-        {
-            DBRubicatContext rubicatDB = new DBRubicatContext();
-            rubicatDB.Stocks.Add(stock);
-            rubicatDB.SaveChanges();
-        }
+        //public static void InsertStock(Entidades.Stock stock)
+        //{
+            //DBRubicatContext rubicatDB = new DBRubicatContext();
+            //rubicatDB.Stocks.Add(stock);
+            //rubicatDB.SaveChanges();
+        //}
 
         //public static void UpdateStock(Entidades.Stock stock)
         //{
@@ -48,24 +48,16 @@ namespace Datos
         //    return stock;
         //}
 
-        public static IEnumerable<object> SelectStock()
-        {
-            DBRubicatContext rubicatDB = new DBRubicatContext();
-            var stock = (from s in rubicatDB.Stocks
-                         join d in rubicatDB.Depositos on s.DepositoID equals d.IdDeposito
-                         join m in rubicatDB.MateriaPrimas on s.MateriaPrimaID equals m.IdMateriaPrima
-                         select new
-                         {
-                             Id_Stock=s.IdStockTotal,
-                             Familia = m.FamiliaMateriaPrima,
-                             Arquetipo = m.ArquetipoMateriaPrima,
-                             Descripcion = m.DescripcionMateriaPrima,
-                             Costo = m.CostoMateriaPrima,
-                             Deposito =d.Nombre,
-                             Cantidad = s.Cantidad
-                         }
-                             ).ToList();
-            return stock;
-        }
+        //public static IEnumerable<object> SelectStock()
+        //{
+            //DBRubicatContext rubicatDB = new DBRubicatContext();
+            //var stock = (from s in rubicatDB.Stocks
+            //             select new
+            //             {
+            //                 Id_Stock=s.IdStockTotal,
+            //             }
+            //                 ).ToList();
+            //return stock;
+        //}
     }
 }

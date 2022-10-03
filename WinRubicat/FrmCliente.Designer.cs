@@ -62,6 +62,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCodigoDeCliente = new System.Windows.Forms.TextBox();
             lblMail = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +72,7 @@
             // 
             lblMail.AutoSize = true;
             lblMail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblMail.Location = new System.Drawing.Point(19, 368);
+            lblMail.Location = new System.Drawing.Point(19, 399);
             lblMail.Name = "lblMail";
             lblMail.Size = new System.Drawing.Size(51, 21);
             lblMail.TabIndex = 23;
@@ -90,7 +92,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(12, 98);
+            this.lblNombre.Location = new System.Drawing.Point(12, 129);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(161, 21);
             this.lblNombre.TabIndex = 1;
@@ -100,7 +102,7 @@
             // 
             this.lblRazSocial.AutoSize = true;
             this.lblRazSocial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazSocial.Location = new System.Drawing.Point(12, 131);
+            this.lblRazSocial.Location = new System.Drawing.Point(12, 162);
             this.lblRazSocial.Name = "lblRazSocial";
             this.lblRazSocial.Size = new System.Drawing.Size(107, 21);
             this.lblRazSocial.TabIndex = 2;
@@ -110,7 +112,7 @@
             // 
             this.lblCuit.AutoSize = true;
             this.lblCuit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuit.Location = new System.Drawing.Point(14, 164);
+            this.lblCuit.Location = new System.Drawing.Point(14, 195);
             this.lblCuit.Name = "lblCuit";
             this.lblCuit.Size = new System.Drawing.Size(47, 21);
             this.lblCuit.TabIndex = 3;
@@ -120,7 +122,7 @@
             // 
             this.lblIngBrutos.AutoSize = true;
             this.lblIngBrutos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngBrutos.Location = new System.Drawing.Point(12, 197);
+            this.lblIngBrutos.Location = new System.Drawing.Point(12, 228);
             this.lblIngBrutos.Name = "lblIngBrutos";
             this.lblIngBrutos.Size = new System.Drawing.Size(124, 21);
             this.lblIngBrutos.TabIndex = 4;
@@ -130,7 +132,7 @@
             // 
             this.lblTipoIngB.AutoSize = true;
             this.lblTipoIngB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoIngB.Location = new System.Drawing.Point(14, 234);
+            this.lblTipoIngB.Location = new System.Drawing.Point(14, 265);
             this.lblTipoIngB.Name = "lblTipoIngB";
             this.lblTipoIngB.Size = new System.Drawing.Size(185, 21);
             this.lblTipoIngB.TabIndex = 5;
@@ -140,7 +142,7 @@
             // 
             this.lblDomFiscal.AutoSize = true;
             this.lblDomFiscal.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDomFiscal.Location = new System.Drawing.Point(14, 263);
+            this.lblDomFiscal.Location = new System.Drawing.Point(14, 294);
             this.lblDomFiscal.Name = "lblDomFiscal";
             this.lblDomFiscal.Size = new System.Drawing.Size(124, 21);
             this.lblDomFiscal.TabIndex = 6;
@@ -150,7 +152,7 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(14, 335);
+            this.lblTelefono.Location = new System.Drawing.Point(14, 366);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(76, 21);
             this.lblTelefono.TabIndex = 7;
@@ -160,7 +162,7 @@
             // 
             this.lblZona.AutoSize = true;
             this.lblZona.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZona.Location = new System.Drawing.Point(21, 535);
+            this.lblZona.Location = new System.Drawing.Point(21, 566);
             this.lblZona.Name = "lblZona";
             this.lblZona.Size = new System.Drawing.Size(49, 21);
             this.lblZona.TabIndex = 8;
@@ -170,7 +172,7 @@
             // 
             this.cboVendedor.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cboVendedor.FormattingEnabled = true;
-            this.cboVendedor.Location = new System.Drawing.Point(213, 499);
+            this.cboVendedor.Location = new System.Drawing.Point(213, 530);
             this.cboVendedor.Name = "cboVendedor";
             this.cboVendedor.Size = new System.Drawing.Size(288, 28);
             this.cboVendedor.TabIndex = 9;
@@ -179,7 +181,7 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtNombre.Location = new System.Drawing.Point(213, 96);
+            this.txtNombre.Location = new System.Drawing.Point(213, 127);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(288, 27);
             this.txtNombre.TabIndex = 10;
@@ -187,7 +189,7 @@
             // txtRazSocial
             // 
             this.txtRazSocial.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtRazSocial.Location = new System.Drawing.Point(213, 129);
+            this.txtRazSocial.Location = new System.Drawing.Point(213, 160);
             this.txtRazSocial.Name = "txtRazSocial";
             this.txtRazSocial.Size = new System.Drawing.Size(288, 27);
             this.txtRazSocial.TabIndex = 11;
@@ -195,7 +197,7 @@
             // txtCuit
             // 
             this.txtCuit.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCuit.Location = new System.Drawing.Point(213, 162);
+            this.txtCuit.Location = new System.Drawing.Point(213, 193);
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(288, 27);
             this.txtCuit.TabIndex = 12;
@@ -203,7 +205,7 @@
             // txtIngBrutos
             // 
             this.txtIngBrutos.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtIngBrutos.Location = new System.Drawing.Point(213, 195);
+            this.txtIngBrutos.Location = new System.Drawing.Point(213, 226);
             this.txtIngBrutos.Name = "txtIngBrutos";
             this.txtIngBrutos.Size = new System.Drawing.Size(288, 27);
             this.txtIngBrutos.TabIndex = 13;
@@ -211,7 +213,7 @@
             // txtTipoIngB
             // 
             this.txtTipoIngB.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtTipoIngB.Location = new System.Drawing.Point(213, 228);
+            this.txtTipoIngB.Location = new System.Drawing.Point(213, 259);
             this.txtTipoIngB.Name = "txtTipoIngB";
             this.txtTipoIngB.Size = new System.Drawing.Size(288, 27);
             this.txtTipoIngB.TabIndex = 14;
@@ -219,7 +221,7 @@
             // txtDomFiscal
             // 
             this.txtDomFiscal.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtDomFiscal.Location = new System.Drawing.Point(213, 261);
+            this.txtDomFiscal.Location = new System.Drawing.Point(213, 292);
             this.txtDomFiscal.Name = "txtDomFiscal";
             this.txtDomFiscal.Size = new System.Drawing.Size(288, 27);
             this.txtDomFiscal.TabIndex = 15;
@@ -227,7 +229,7 @@
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtTelefono.Location = new System.Drawing.Point(213, 333);
+            this.txtTelefono.Location = new System.Drawing.Point(213, 364);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(288, 27);
             this.txtTelefono.TabIndex = 16;
@@ -236,7 +238,7 @@
             // 
             this.lblVendedor.AutoSize = true;
             this.lblVendedor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendedor.Location = new System.Drawing.Point(19, 501);
+            this.lblVendedor.Location = new System.Drawing.Point(19, 532);
             this.lblVendedor.Name = "lblVendedor";
             this.lblVendedor.Size = new System.Drawing.Size(88, 21);
             this.lblVendedor.TabIndex = 18;
@@ -246,7 +248,7 @@
             // 
             this.cboZona.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cboZona.FormattingEnabled = true;
-            this.cboZona.Location = new System.Drawing.Point(213, 533);
+            this.cboZona.Location = new System.Drawing.Point(213, 564);
             this.cboZona.Name = "cboZona";
             this.cboZona.Size = new System.Drawing.Size(288, 28);
             this.cboZona.TabIndex = 21;
@@ -265,7 +267,7 @@
             // txtCondicionDeVenta
             // 
             this.txtCondicionDeVenta.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtCondicionDeVenta.Location = new System.Drawing.Point(213, 399);
+            this.txtCondicionDeVenta.Location = new System.Drawing.Point(213, 430);
             this.txtCondicionDeVenta.Name = "txtCondicionDeVenta";
             this.txtCondicionDeVenta.Size = new System.Drawing.Size(288, 27);
             this.txtCondicionDeVenta.TabIndex = 28;
@@ -273,7 +275,7 @@
             // txtLocalidad
             // 
             this.txtLocalidad.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtLocalidad.Location = new System.Drawing.Point(213, 294);
+            this.txtLocalidad.Location = new System.Drawing.Point(213, 325);
             this.txtLocalidad.Name = "txtLocalidad";
             this.txtLocalidad.Size = new System.Drawing.Size(288, 27);
             this.txtLocalidad.TabIndex = 27;
@@ -281,7 +283,7 @@
             // txtMail
             // 
             this.txtMail.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtMail.Location = new System.Drawing.Point(213, 366);
+            this.txtMail.Location = new System.Drawing.Point(213, 397);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(288, 27);
             this.txtMail.TabIndex = 26;
@@ -290,7 +292,7 @@
             // 
             this.lblCondicionDeVenta.AutoSize = true;
             this.lblCondicionDeVenta.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCondicionDeVenta.Location = new System.Drawing.Point(19, 401);
+            this.lblCondicionDeVenta.Location = new System.Drawing.Point(19, 432);
             this.lblCondicionDeVenta.Name = "lblCondicionDeVenta";
             this.lblCondicionDeVenta.Size = new System.Drawing.Size(167, 21);
             this.lblCondicionDeVenta.TabIndex = 25;
@@ -300,7 +302,7 @@
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalidad.Location = new System.Drawing.Point(14, 296);
+            this.lblLocalidad.Location = new System.Drawing.Point(14, 327);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(87, 21);
             this.lblLocalidad.TabIndex = 24;
@@ -310,7 +312,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 467);
+            this.label1.Location = new System.Drawing.Point(19, 498);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 21);
             this.label1.TabIndex = 30;
@@ -320,7 +322,7 @@
             // 
             this.cboTransporte.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cboTransporte.FormattingEnabled = true;
-            this.cboTransporte.Location = new System.Drawing.Point(213, 465);
+            this.cboTransporte.Location = new System.Drawing.Point(213, 496);
             this.cboTransporte.Name = "cboTransporte";
             this.cboTransporte.Size = new System.Drawing.Size(288, 28);
             this.cboTransporte.TabIndex = 29;
@@ -329,7 +331,7 @@
             // txtHorarioDeAtencion
             // 
             this.txtHorarioDeAtencion.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.txtHorarioDeAtencion.Location = new System.Drawing.Point(213, 432);
+            this.txtHorarioDeAtencion.Location = new System.Drawing.Point(213, 463);
             this.txtHorarioDeAtencion.Name = "txtHorarioDeAtencion";
             this.txtHorarioDeAtencion.Size = new System.Drawing.Size(288, 27);
             this.txtHorarioDeAtencion.TabIndex = 32;
@@ -338,7 +340,7 @@
             // 
             this.lblHorarioDeAtencion.AutoSize = true;
             this.lblHorarioDeAtencion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHorarioDeAtencion.Location = new System.Drawing.Point(21, 434);
+            this.lblHorarioDeAtencion.Location = new System.Drawing.Point(21, 465);
             this.lblHorarioDeAtencion.Name = "lblHorarioDeAtencion";
             this.lblHorarioDeAtencion.Size = new System.Drawing.Size(165, 21);
             this.lblHorarioDeAtencion.TabIndex = 31;
@@ -371,7 +373,7 @@
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnCancelar.Location = new System.Drawing.Point(313, 567);
+            this.btnCancelar.Location = new System.Drawing.Point(312, 602);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(145, 53);
             this.btnCancelar.TabIndex = 53;
@@ -394,7 +396,7 @@
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
             this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnAgregar.Location = new System.Drawing.Point(64, 568);
+            this.btnAgregar.Location = new System.Drawing.Point(64, 602);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(145, 53);
             this.btnAgregar.TabIndex = 52;
@@ -402,14 +404,34 @@
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgregar.UseVisualStyleBackColor = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 21);
+            this.label2.TabIndex = 54;
+            this.label2.Text = "Codigo del Cliente";
+            // 
+            // txtCodigoDeCliente
+            // 
+            this.txtCodigoDeCliente.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.txtCodigoDeCliente.Location = new System.Drawing.Point(213, 90);
+            this.txtCodigoDeCliente.Name = "txtCodigoDeCliente";
+            this.txtCodigoDeCliente.Size = new System.Drawing.Size(288, 27);
+            this.txtCodigoDeCliente.TabIndex = 55;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(527, 630);
+            this.ClientSize = new System.Drawing.Size(527, 727);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCodigoDeCliente);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.pictureBox1);
@@ -489,5 +511,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCodigoDeCliente;
     }
 }

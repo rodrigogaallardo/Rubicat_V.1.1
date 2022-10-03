@@ -52,7 +52,7 @@ namespace Datos.Admin
                                Fecha_de_Pedido = a.FechaDePedido,
                                Fecha_de_Entrega = a.FechaDeEntrega,
                                Cliente = cl.Nombre,
-                               Producto = pr.Arquetipo,
+                               Producto = pr.Nombre,
                                Transporte = tr.NombreTransporte,
                                Importe = a.ValorFinal
 

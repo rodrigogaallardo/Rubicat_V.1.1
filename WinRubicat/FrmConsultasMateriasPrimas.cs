@@ -71,6 +71,7 @@ namespace WinRubicat
         {
             Logica.MateriasPrimas objlogica = new Logica.MateriasPrimas();
             dgvStockMateriasPrimas.DataSource = objlogica.TraerMateriaPrimas();
+            dgvStockMateriasPrimas.Columns[0].Visible = false;
         }
 
         private void FrmConsultasMateriasPrimas_Load(object sender, EventArgs e)

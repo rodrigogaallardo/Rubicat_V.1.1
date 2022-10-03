@@ -32,8 +32,7 @@ namespace WinRubicat
         void TraerProductos()
         {
             dgvDatos.DataSource = objLogProd.TraerProductos();
-            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
-            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
+            //dgvDatos.Columns[0].Visible = false;
         }
         private void botones(object sender, EventArgs e)
         {
@@ -50,6 +49,7 @@ namespace WinRubicat
                     //Crear instancia de producto y cargar datos del registro seleccionado
                     Producto modelProd = new Producto();
                     modelProd.IdProducto = Convert.ToInt32(dgvDatos.CurrentRow.Cells[0].Value);
+                    
                     modelProd = objLogProd.TraerPorId(modelProd.IdProducto);
                     // Mostrar formulario modificacion
                     FrmProd modifProd = new FrmProd(modelProd);
@@ -70,8 +70,6 @@ namespace WinRubicat
                     break;
             }
             TraerProductos();
-            dgvDatos.Columns[3].DefaultCellStyle.Format = "N2";
-            dgvDatos.Columns[4].DefaultCellStyle.Format = "N2";
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

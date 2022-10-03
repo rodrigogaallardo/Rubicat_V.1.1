@@ -21,15 +21,14 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var mProducto = rubicatDB.Productos.Find(producto.IdProducto);
-            mProducto.Nombre = producto.Nombre;
+            mProducto.CodProducto = producto.CodProducto;
             mProducto.Familia = producto.Familia;
             mProducto.Arquetipo = producto.Arquetipo;
+            mProducto.Nombre = producto.Nombre;            
             mProducto.Descripcion = producto.Descripcion;
-            mProducto.Cantidad = producto.Cantidad;
             mProducto.Peso = producto.Peso;
+            mProducto.uniDeMedida = producto.uniDeMedida;
             mProducto.Costo = producto.Costo;
-            //mProducto.Precio = producto.Precio;
-            //mProducto.Ean = producto.Ean;
 
             rubicatDB.Entry(mProducto).State = EntityState.Modified;
 
@@ -42,11 +41,22 @@ namespace Datos
             rubicatDB.Productos.Remove(producto);
             rubicatDB.SaveChanges();
         }
-        public static List<Entidades.Producto> SelectProductos()
+        public static IEnumerable<object> SelectProductos()
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var productos = (from p in rubicatDB.Productos
-                             select p).ToList();
+                             select new
+                             { 
+                                 p.IdProducto,
+                                 Cod_de_Producto=p.CodProducto,
+                                 p.Familia,
+                                 p.Arquetipo,
+                                 p.Nombre,
+                                 p.Descripcion,
+                                 p.Peso,
+                                 Unidad_de_Medida=p.uniDeMedida,
+                                 p.Costo
+                             }).ToList();
             return productos;
         }
         public static Entidades.Producto SelectId(int id)
@@ -60,7 +70,7 @@ namespace Datos
         {
             DBRubicatContext rubicatDB = new DBRubicatContext();
             var producto = (from p in rubicatDB.Productos
-                            where p.Nombre.StartsWith(letra) 
+                            where p.CodProducto.StartsWith(letra) 
                             
                             select p).ToList();
             return producto;

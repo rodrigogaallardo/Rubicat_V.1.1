@@ -17,27 +17,12 @@ namespace WinRubicat
             InitializeComponent();
             btnAgregar.Click += botones;
             btnCancelar.Click += botones;
-            TraerMateriasPrimas();
-            TraerDepositos();
-        }
+        }      
 
-        void TraerMateriasPrimas()
-        {
-            Logica.MateriasPrimas objLogicaMateriasPrimas = new Logica.MateriasPrimas();
-            cmbIngresosMateriasPrimas1.DataSource = objLogicaMateriasPrimas.TraerMateriaPrimas();
-            cmbIngresosMateriasPrimas1.DisplayMember = "Arquetipo";
-            cmbIngresosMateriasPrimas1.ValueMember = "Id_de_MateriaPrima";
-            
-        }
-
-        void TraerDepositos()
-        {
-            Logica.Depositos objLogicaDepositos = new Logica.Depositos();
-            cmbSectorIngresos.DataSource = objLogicaDepositos.TraerDeposito();
-            cmbSectorIngresos.DisplayMember = "Nombre";
-            cmbSectorIngresos.ValueMember = "Id_de_Deposito";
-
-        }
+       
+        Logica.Producto objLogProd = new Logica.Producto();
+        Logica.Depositos objLogDeposito = new Logica.Depositos();
+        Logica.Stock objStock = new Logica.Stock();
 
         private void botones(object sender, EventArgs e)
         {
@@ -55,56 +40,52 @@ namespace WinRubicat
                     Entidades.IngresoStock objEntidad = new Entidades.IngresoStock();
 
                     objEntidad.FechaIngreso = dtpFechaDeIngresoStock.Value;
+                    objEntidad.Cantidad = Convert.ToInt32(txtCantidad.Text);
                     objEntidad.Responsable = txtResponsable.Text;
-                    objEntidad.Cantidad = Convert.ToInt32(txtCantidad1.Text);
-                    objEntidad.NumeroRemito = Convert.ToInt32(txtRemito1.Text);
+                    objEntidad.DepositoId = Convert.ToInt32(cmbSectorIngresos.SelectedValue);
+                    objEntidad.ProductoId = Convert.ToInt32(cboProducto.SelectedValue);
+                    objEntidad.CantidadMinima = Convert.ToInt32(txtCantidadMinima.Text);
+                    objEntidad.SumaUnidadesIngresados = Convert.ToInt32(txtCantidad.Text) + objEntidad.SumaUnidadesIngresados;
+                    objEntidad.SumaUnidadesUsadas = 0;
+                    objEntidad.StockFinal = objEntidad.SumaUnidadesIngresados - objEntidad.SumaUnidadesUsadas;
+                    objEntidad.Status = 0;
+                    objLogica.AgregarIngresos(objEntidad);
 
-                    //Entidades.Deposito objDepositos = new Entidades.Deposito();
-                    //objDepositos.IdDeposito = Convert.ToInt32(cmbSectorIngresos.SelectedValue);
-                    objEntidad.DepositoId = (int)cmbSectorIngresos.SelectedValue;
+                    //objEntidadStock.SumaUnidadesIngresados = Convert.ToInt32(txtCantidad.Text);
+                    //objEntidadStock.SumaUnidadesUsadas = 0;
+                    //objEntidadStock.StockFinal = objEntidadStock.SumaUnidadesIngresados - objEntidadStock.SumaUnidadesUsadas;
+                    //objEntidadStock.StockMinimo = Convert.ToInt32(txtCantidadMinima.Text);
+                    //objStock.AgregarStock(objEntidadStock);
 
-                    //Entidades.MateriaPrima objMateriasPrimas = new Entidades.MateriaPrima(); //Declaracion de variable Materias Primas
-                    //objMateriasPrimas.IdMateriaPrima = Convert.ToInt32(cmbIngresosMateriasPrimas1.SelectedValue);
-                    objEntidad.MateriaPrimaId = (int)cmbIngresosMateriasPrimas1.SelectedValue;
-
-                    objLogica.AgregarIngresos(objEntidad); //Primer objeto enviado a la transaccion de stock
-
-                    //Envio el articulo y la cantidad a la tabla de Stock
-
-                    Logica.Stock ObjLogicaStock = new Logica.Stock();
-
-                    Entidades.Stock ObjEntidadStock = new Entidades.Stock();
-                    ObjEntidadStock.Cantidad = Convert.ToInt32(txtCantidad1.Text);
-                    ObjEntidadStock.MateriaPrimaID = (int)cmbIngresosMateriasPrimas1.SelectedValue; 
-                    ObjEntidadStock.DepositoID = (int)cmbSectorIngresos.SelectedValue;
-
-                    ObjLogicaStock.AgregarStock(ObjEntidadStock);
 
                     MessageBox.Show("Articulo ingresados en stock");
                     break;
             }
-
-
         }
 
-        private void txtCantidad_TextChanged(object sender, EventArgs e)
+        //Carga de combobox de producto, carga de combobox de 
+        private void cboProducto_TextChanged(object sender, EventArgs e)
         {
-
+            Logica.Producto objLogicaProd = new Logica.Producto();
+            cboProducto.DataSource = objLogicaProd.SelectProducto(cboProducto.Text);
+            cboProducto.DisplayMember = "CodProducto";
+            cboProducto.ValueMember = "IdProducto";
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int id = Convert.ToInt32(cboProducto.SelectedValue);
+            txtCodigoProducto.Text = objLogProd.TraerPorId(id).Nombre;
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void cmbSectorIngresos_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            int id = Convert.ToInt32(cmbSectorIngresos.SelectedValue);
+            txtNombreDeposito.Text = objLogDeposito.TraerPorId(id).Descripcion;
         }
-
-        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void cmbSectorIngresos_TextChanged(object sender, EventArgs e)
         {
-
+            cmbSectorIngresos.DataSource = objLogDeposito.SelectDeposito(cmbSectorIngresos.Text);
+            cmbSectorIngresos.DisplayMember = "Nombre";
+            cmbSectorIngresos.ValueMember = "IdDeposito";
         }
     }
 }
